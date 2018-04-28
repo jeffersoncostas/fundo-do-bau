@@ -1,3 +1,40 @@
-fdba-buttons {
-
+fdba-button {
+  .fdba-button {
+    &--degrade-rosa {
+      width: 100%;
+      height: 60px;
+      color: $white;
+      background: $pink-gradient;
+      font-size: $default-font-size;
+      font-variant: small-caps;
+      box-shadow: $gold-neon;
+    }
+    &--degrade-laranja {
+      width: 100%;
+      height: 60px;
+      color: $white;
+      background: $gold-gradient;
+      font-size: $default-font-size;
+      font-variant: small-caps;
+      box-shadow: $gold-neon;
+    }
+    &--degrade-vermelho {
+      width: 50%;
+      height: 60px;
+      color: $white;
+      background: $red-gradient;
+      font-size: $default-font-size;
+      font-variant: small-caps;
+      box-shadow: $red-neon;
+    }
+    &--degrade-verde {
+      width: 50%;
+      height: 60px;
+      color: $white;
+      background: $green-gradient;
+      font-size: $default-font-size;
+      font-variant: small-caps;
+      box-shadow: $green-neon;
+    }
+  }
 }

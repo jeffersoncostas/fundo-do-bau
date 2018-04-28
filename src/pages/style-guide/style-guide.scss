@@ -1,25 +1,27 @@
 page-style-guide {
-    .style-guide {
-        &__componente {
-            display: block;
-            width: 100%;
-            border: 2px solid rgb(204, 204, 204);
-            margin-bottom: 15px;
-            &__nome-componente {
-                display: inline-block;
-                font-weight: 600;
-                color: rgb(73, 73, 73);
-                border-right: 2px solid rgb(204, 204, 204);
-                padding: 15px;
-            }
-            &__componente-itself {
-                display: inline-block;
-                padding: 15px;
-            }
-        }
+  .style-guide {
+    &__componente {
+      display: block;
+      width: 100%;
+      border: 2px solid rgb(204, 204, 204);
+      margin-bottom: 15px;
+      &__nome-componente {
+        display: inline-block;
+        height: auto;
+        font-weight: 600;
+        color: rgb(73, 73, 73);
+        border-right: 2px solid rgb(204, 204, 204);
+        padding: 15px;
+      }
+      &__componente-itself {
+        display: inline-block;
+        padding: 15px;
+        width: 300px;
+      }
     }
+  }
 }
 
 .teste4 {
-    font-size: 60px;
+  font-size: 60px;
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { HomePage } from '../home/home';
 
 @IonicPage({
 
@@ -10,8 +11,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class StyleGuidePage {
 
-  textoButton: string = "texto setado pelo pai";
-
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -19,4 +18,12 @@ export class StyleGuidePage {
     console.log('ionViewDidLoad StyleGuidePage');
   }
 
+  aceitarDesafioClick(result) {
+    console.log(result)
+  }
+
+  redirecionarPagina(login) {
+    console.log('teste de redirecionamento com dados')
+    this.navCtrl.push(HomePage, login)
+  }
 }

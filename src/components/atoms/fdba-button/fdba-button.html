@@ -1,7 +1,16 @@
-<div *ngIf="type == 'padrao' ">
-  {{buttonText}} + tipo padrao
-</div>
+<button *ngIf="type == 'degrade-rosa' " class="fdba-button--degrade-rosa" (click)="clickButtonEmit($event)">
+  {{buttonText}}
+</button>
 
-<div *ngIf="type == 'degrade-rosa' ">
-  {{type}} {{buttonText}} + tipo degrade rosa
-</div>
+
+<button *ngIf="type == 'degrade-laranja' " class="fdba-button--degrade-laranja" (click)="clickButtonEmit($event)">
+  {{buttonText}}
+</button>
+
+<button *ngIf="type == 'degrade-vermelho' " class="fdba-button--degrade-vermelho" (click)="clickButtonEmit($event)">
+  {{buttonText}}
+</button>
+
+<button *ngIf="type == 'degrade-verde' " class="fdba-button--degrade-verde" (click)="clickButtonEmit($event)">
+  {{buttonText}}
+</button>
