@@ -1,3 +1,11 @@
-page-home {
+h2 {
+  font-size: 70px;
+  color: green;
+}
 
+.teste {
+  background-color: red;
+  &--filho {
+    color: white;
+  }
 }
