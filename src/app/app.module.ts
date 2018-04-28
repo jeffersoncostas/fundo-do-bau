@@ -1,8 +1,11 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { StyleGuidePageModule } from '../pages/style-guide/style-guide.module';
+import { ComponentsModule } from '../components/components.module';
+
 import { MyApp } from './app.component';
-import { StyleGuidePageModule } from '../pages/style-guide/style-guide.module'
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
@@ -22,8 +25,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     StyleGuidePageModule,
-    IonicModule.forRoot(MyApp)
+    ComponentsModule,
+    IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
