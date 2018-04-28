@@ -14,6 +14,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 @Component({
   selector: 'page-style-guide',
   templateUrl: 'style-guide.html',
+  styles: ['style-guide.scss']
 })
 export class StyleGuidePage {
 
