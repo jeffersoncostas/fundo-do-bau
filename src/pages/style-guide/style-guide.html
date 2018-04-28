@@ -1,20 +1,43 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>StyleGuide</ion-title>
+    <ion-title>Style Guide</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <input type="text" #inputteste>
+  <input type="password" #inputteste2>
 
   <section class="style-guide">
 
     <div class="style-guide__componente">
-      <div class="style-guide__componente__nome-componente">NOME COMPONENTE</div>
+      <div class="style-guide__componente__nome-componente">FDBA-BUTTON Degrade Rosa</div>
       <div class="style-guide__componente__componente-itself">
-        <fdba-button buttonText="texto pelo pai" type="degrade-rosa"></fdba-button>
+        <fdba-button type="degrade-rosa" buttonText="aceitar desafio" (clickButton)="aceitarDesafioClick( {login:inputteste, senha:inputteste2.value} )"></fdba-button>
+      </div>
+    </div>
+
+    <div class="style-guide__componente">
+      <div class="style-guide__componente__nome-componente">FDBA-BUTTON Degrade laranja</div>
+      <div class="style-guide__componente__componente-itself">
+        <fdba-button type="degrade-laranja" buttonText="ok" (clickButton)="redirecionarPagina({login:inputteste.value,senha:inputteste2.value})"></fdba-button>
+      </div>
+    </div>
+
+    <div class="style-guide__componente">
+      <div class="style-guide__componente__nome-componente">FDBA-BUTTON Degrade laranja</div>
+      <div class="style-guide__componente__componente-itself">
+        <fdba-button type="degrade-vermelho" buttonText="desisto!"></fdba-button>
+      </div>
+    </div>
+
+    <div class="style-guide__componente">
+      <div class="style-guide__componente__nome-componente">FDBA-BUTTON Degrade laranja</div>
+      <div class="style-guide__componente__componente-itself">
+        <fdba-button type="degrade-verde" buttonText="te achei!"></fdba-button>
       </div>
     </div>
 

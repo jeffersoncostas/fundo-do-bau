@@ -1,16 +1,38 @@
-// http://ionicframework.com/docs/theming/
-
-
 // App Global Sass
-// --------------------------------------------------
-// Put style rules here that you want to apply globally. These
-// styles are for the entire app and not just one component.
-// Additionally, this file can be also used as an entry point
-// to import other Sass files to be included in the output CSS.
+// Texto
+$xxxl-font-size: 40px;
+$xxl-font-size: 36px;
+$xll-font-size: 25px;
+$xl-font-size: 22px;
+$l-font-size: 18px;
+$m-font-size: 17px;
+$default-font-size: 15px;
+$s-font-size: 12px;
+//buttons
 //
-// Shared Sass variables, which can be used to adjust Ionic's
-// default Sass variables, belong in "theme/variables.scss".
+// Colors
+$white: #ffff;
+$grey: #E3E3E3;
+$primary: #218DB8;
+$secondary: #46A29F;
+$dark: #29495D;
+$super-dark: #101F27;
+$border: #FFBA37;
+$gold: #FFBA37;
 //
-// To declare rules for a specific mode, create a child rule
-// for the .md, .ios, or .wp mode classes. The mode class is
-// automatically applied to the <body> element in the app.
+// gradientes
+$primary-gradient: linear-gradient(45deg, #46A29F, #218DB8);
+$primary-invert-grandient: linear-gradient(-45deg, #46A29F, #218DB8);
+$red-gradient: linear-gradient(45deg, #FF2D2D, #FF7070);
+$green-gradient: linear-gradient(45deg, #2AB570, #49EC9A);
+$pink-gradient: linear-gradient(45deg, #FFBA37, #F55DA4);
+$gold-gradient: linear-gradient(45deg, #FFB523, #FFCD6A);
+$dark-blue-gradient: linear-gradient(45deg, #1F58A2, #218DB8);
+$super-dark-blue-gradient: linear-gradient(90deg, #35617D, #101F27);
+$quiz-gradient: linear-gradient(45deg, #218DB8, #53A4C4);
+//
+//Neon Shadow
+$gold-neon: 0 0 40px rgba(255, 186, 55, 0.40);
+$red-neon: 0 0 40px rgba(255, 45, 45, 0.40);
+$green-neon: 0 0 40px rgba(42, 181, 112, 0.40);
+$primary-neon: 0 0 40px rgba(33, 141, 184, 0.40);
