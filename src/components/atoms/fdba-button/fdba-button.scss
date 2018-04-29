@@ -1,6 +1,7 @@
 fdba-button {
   .fdba-button {
     &--degrade-rosa {
+      border-radius: 2px;
       width: 100%;
       height: 60px;
       color: $white;
@@ -35,6 +36,24 @@ fdba-button {
       font-size: $default-font-size;
       font-variant: small-caps;
       box-shadow: $green-neon;
+    }
+    &--onboarding-proximo {
+      width: 50%;
+      height: 60px;
+      color: $white;
+      background: $primary-light-gradient;
+      font-size: $default-font-size;
+      font-variant: small-caps;
+      box-shadow: $primary-neon;
+    }
+    &--onboarding-voltar {
+      width: 50%;
+      height: 60px;
+      color: $white;
+      background: $grey;
+      font-size: $default-font-size;
+      font-variant: small-caps;
+      box-shadow: none;
     }
   }
 }
