@@ -51,6 +51,17 @@ fdba-button {
       border: $border-padrao solid white;
       border-radius: $border-radius-padrao;
     }
+    &--transparente-branco-grande {
+      width: 100%;
+      height: 90px;
+      color: $white;
+      font-size: $m-font-size;
+      font-variant: small-caps;
+      box-shadow: none;
+      background: transparent;
+      border: $border-padrao solid white;
+      border-radius: $border-radius-padrao;
+    }
     &--onboarding-proximo {
       width: 100%;
       height: 60px;
