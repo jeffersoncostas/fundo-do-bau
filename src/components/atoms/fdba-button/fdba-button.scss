@@ -37,6 +37,7 @@ fdba-button {
       font-variant: small-caps;
       box-shadow: $green-neon;
     }
+<<<<<<< HEAD
     &--onboarding-proximo {
       width: 50%;
       height: 60px;
@@ -54,6 +55,16 @@ fdba-button {
       font-size: $default-font-size;
       font-variant: small-caps;
       box-shadow: none;
+=======
+    &--transparente-branco-duplo {
+      width: 50%;
+      height: 60px;
+      color: $white;
+      font-size: $default-font-size;
+      font-variant: none;
+      box-shadow: none;
+      background: transparent;
+>>>>>>> fdba-2
     }
   }
 }
