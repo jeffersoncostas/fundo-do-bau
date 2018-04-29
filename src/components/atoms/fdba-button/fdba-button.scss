@@ -54,6 +54,17 @@ fdba-button {
       font-size: $default-font-size;
       font-variant: small-caps;
       box-shadow: none;
+    }      
+    &--transparente-branco-grande {
+      width: 50%;
+      height: 60px;
+      color: $white;
+      font-size: $default-font-size;
+      font-variant: none;
+      box-shadow: none;
+      background: transparent;
+      border: $border-padrao solid white;
+
     }
   }
 }
