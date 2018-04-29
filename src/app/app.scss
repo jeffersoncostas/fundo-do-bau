@@ -29,10 +29,12 @@ $pink-gradient: linear-gradient(45deg, #FFBA37, #F55DA4);
 $gold-gradient: linear-gradient(45deg, #FFB523, #FFCD6A);
 $dark-blue-gradient: linear-gradient(45deg, #1F58A2, #218DB8);
 $super-dark-blue-gradient: linear-gradient(90deg, #35617D, #101F27);
-$quiz-gradient: linear-gradient(45deg, #218DB8, #53A4C4);
+$primary-light-gradient: linear-gradient(45deg, #218DB8, #53A4C4);
 //
 //Neon Shadow
 $gold-neon: 0 0 40px rgba(255, 186, 55, 0.40);
 $red-neon: 0 0 40px rgba(255, 45, 45, 0.40);
 $green-neon: 0 0 40px rgba(42, 181, 112, 0.40);
 $primary-neon: 0 0 40px rgba(33, 141, 184, 0.40);
+//Border radius
+$border-padrao: 2px;
