@@ -1,33 +1,35 @@
-<button *ngIf="type == 'degrade-rosa' " class="fdba-button--degrade-rosa" (click)="clickButtonEmit($event)">
+<button *ngIf="type == 'degrade-rosa' " class="fdba-button--degrade-rosa" (click)="clickButtonEmit($event)" [style.height.px]="altura">
   {{buttonText}}
 </button>
 
 
-<button *ngIf="type == 'degrade-laranja' " class="fdba-button--degrade-laranja" (click)="clickButtonEmit($event)">
+<button *ngIf="type == 'degrade-laranja' " class="fdba-button--degrade-laranja" (click)="clickButtonEmit($event)" [style.height.px]="altura">
   {{buttonText}}
 </button>
 
-<button *ngIf="type == 'degrade-vermelho' " class="fdba-button--degrade-vermelho" (click)="clickButtonEmit($event)">
+<button *ngIf="type == 'degrade-vermelho' " class="fdba-button--degrade-vermelho" (click)="clickButtonEmit($event)" [style.height.px]="altura">
   {{buttonText}}
 </button>
 
-<button *ngIf="type == 'degrade-verde' " class="fdba-button--degrade-verde" (click)="clickButtonEmit($event)">
+<button *ngIf="type == 'degrade-verde' " class="fdba-button--degrade-verde" (click)="clickButtonEmit($event)" [style.height.px]="altura">
   {{buttonText}}
 </button>
 
 <!-- Back and next -->
-<button *ngIf="type == 'onboarding-proximo' " class="fdba-button--onboarding-proximo" (click)="clickButtonEmit($event)">
+<button *ngIf="type == 'onboarding-proximo' " class="fdba-button--onboarding-proximo" (click)="clickButtonEmit($event)" [style.height.px]="altura">
   {{buttonText}}
 </button>
 
-<button *ngIf="type == 'onboarding-voltar' " class="fdba-button--onboarding-voltar" (click)="clickButtonEmit($event)">
+<button *ngIf="type == 'onboarding-voltar' " class="fdba-button--onboarding-voltar" (click)="clickButtonEmit($event)" [style.height.px]="altura">
   {{buttonText}}
 </button>
 
-<button  *ngIf="type == 'transparente-branco-duplo' " class="fdba-button--transparente-branco-duplo"  (click)="clickButtonEmit($event)">
+<button *ngIf="type == 'transparente-branco-duplo' " class="fdba-button--transparente-branco-duplo" (click)="clickButtonEmit($event)"
+  [style.height.px]="altura">
   {{buttonText}}
 </button>
 
-<button  *ngIf="type == 'transparente-branco-duplo-active' " class="fdba-button--transparente-branco-duplo active"  (click)="clickButtonEmit($event)">
+<button *ngIf="type == 'transparente-branco-duplo-active' " class="fdba-button--transparente-branco-duplo active" (click)="clickButtonEmit($event)"
+  [style.height.px]="altura">
   {{buttonText}}
 </button>

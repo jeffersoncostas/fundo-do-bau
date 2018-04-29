@@ -1,5 +1,4 @@
 fdba-button {
-
   .fdba-button {
     &--degrade-rosa {
       width: 100%;
@@ -9,6 +8,7 @@ fdba-button {
       font-size: $default-font-size;
       font-variant: small-caps;
       box-shadow: $gold-neon;
+      border-radius: $border-radius-padrao;
     }
     &--degrade-laranja {
       width: 100%;
@@ -18,27 +18,30 @@ fdba-button {
       font-size: $default-font-size;
       font-variant: small-caps;
       box-shadow: $gold-neon;
+      border-radius: $border-radius-padrao;
     }
     &--degrade-vermelho {
-      width: 50%;
+      width: 100%;
       height: 60px;
       color: $white;
       background: $red-gradient;
       font-size: $default-font-size;
       font-variant: small-caps;
       box-shadow: $red-neon;
+      border-radius: $border-radius-padrao;
     }
     &--degrade-verde {
-      width: 50%;
+      width: 100%;
       height: 60px;
       color: $white;
       background: $green-gradient;
       font-size: $default-font-size;
       font-variant: small-caps;
       box-shadow: $green-neon;
+      border-radius: $border-radius-padrao;
     }
     &--transparente-branco-duplo {
-      width: 50%;
+      width: 100%;
       height: 60px;
       color: $white;
       font-size: $default-font-size;
@@ -46,11 +49,30 @@ fdba-button {
       box-shadow: none;
       background: transparent;
       border: $border-padrao solid white;
-
+      border-radius: $border-radius-padrao;
+    }
+    &--onboarding-proximo {
+      width: 100%;
+      height: 60px;
+      color: $white;
+      background: $primary-light-gradient;
+      font-size: $default-font-size;
+      font-variant: small-caps;
+      box-shadow: $primary-neon;
+      border-radius: $border-radius-padrao;
+    }
+    &--onboarding-voltar {
+      width: 100%;
+      height: 60px;
+      color: $white;
+      background: $grey;
+      font-size: $default-font-size;
+      font-variant: small-caps;
+      box-shadow: none;
+      border-radius: $border-radius-padrao;
     }
   }
-
-  .active{
+  .active {
     background: $white-transparent;
   }
 }

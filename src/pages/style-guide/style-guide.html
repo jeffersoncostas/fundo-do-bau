@@ -52,27 +52,28 @@
       <div class="style-guide__componente__nome-componente">FDBA-BUTTON ONBOARDING VOLTAR</div>
       <div class="style-guide__componente__componente-itself">
         <fdba-button type="onboarding-voltar" buttonText="voltar"></fdba-button>
-        </div>
-     </div>
+      </div>
+    </div>
 
-     <div class="style-guide__componente">
+    <div class="style-guide__componente">
       <div class="style-guide__componente__nome-componente">FDBA-BUTTON TRANSPARENTE BRANCO DUPLO</div>
       <div class="style-guide__componente__componente-itself--destaque">
         <fdba-button type="transparente-branco-duplo" buttonText="Desafios"></fdba-button>
-        </div>
-     </div>
+      </div>
+    </div>
 
-     <div class="style-guide__componente">
+    <div class="style-guide__componente">
       <div class="style-guide__componente__nome-componente">FDBA-BUTTON TRANSPARENTE BRANCO DUPLO ATIVO</div>
       <div class="style-guide__componente__componente-itself--destaque">
         <fdba-button type="transparente-branco-duplo-active" buttonText="Desafios em andamento"></fdba-button>
-        </div>
-     </div>
+      </div>
+    </div>
 
     <div class="style-guide__componente">
       <div class="style-guide__componente__nome-componente">FDBA-CARD</div>
       <div class="style-guide__componente__componente-itself">
-        <fdba-card (clickCard)="clickCardTeste()" [desafioObject]="desafio"></fdba-card>
+        <fdba-card (clickCard)="clickCardTeste()" (clickButtonAchei)="achouDesafio($event)" (clickButtonDesisto)="desistoDesafio($event)"
+          [listaDesafios]="desafios" botaoCardVermelho="desisto" botaoCardVerde="te achei"></fdba-card>
       </div>
     </div>
 

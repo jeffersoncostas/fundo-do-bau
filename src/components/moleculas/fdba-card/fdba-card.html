@@ -1,10 +1,19 @@
-<section class="fdba-card" (click)="clickCardEmit($event)">
-  <div class="fdba-card__content-image">
-    <img src="../../../assets/imgs/teste.png" alt="">
+<section class="fdba-card" *ngFor="let desafio of listaDesafios">
+  <div class="fdba-card__content-image" (click)="clickCardEmit($event)">
+
+    <img [src]="desafio.imagem" src="../../../assets/imgs/teste.png" alt="">
   </div>
   <div class="fdba-card__content-title">
-    <div class="fdba-card__content-title__title">
-      <span>A vista perfeita</span>
+    <div class="fdba-card__content-title__title" (click)="clickCardEmit($event)">
+
+      <span>{{desafio.nome}}</span>
+    </div>
+    <div class="fdba-card__content-title__buttons" *ngIf="botaoCardVerde && botaoCardVermelho">
+      <fdba-button class="fba-card__content-title__buttons__vermelho" type="degrade-vermelho" altura="30" [buttonText]="botaoCardVermelho"
+        (clickButton)="desisto(desafio)">
+      </fdba-button>
+      <fdba-button class="fba-card__content-title__buttons__verde" type="degrade-verde" altura="30" [buttonText]="botaoCardVerde"
+        (clickButton)="teAchei(desafio)"></fdba-button>
     </div>
   </div>
 </section>
