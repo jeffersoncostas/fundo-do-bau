@@ -3,7 +3,7 @@ import { Component, EventEmitter } from '@angular/core';
   selector: 'fdba-button',
   templateUrl: 'fdba-button.html',
   outputs: ['clickButton'],
-  inputs: ['buttonText', 'type']
+  inputs: ['buttonText', 'type', 'cor']
 })
 export class FdbaButtonComponent {
 

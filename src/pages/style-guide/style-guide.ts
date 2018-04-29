@@ -11,6 +11,8 @@ import { HomePage } from '../home/home';
 })
 export class StyleGuidePage {
 
+  desafio = { name: 'Vista Perfeita', imagem: '../../../assets/imgs/teste.png' };
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -25,5 +27,9 @@ export class StyleGuidePage {
   redirecionarPagina(login) {
     console.log('teste de redirecionamento com dados')
     this.navCtrl.push(HomePage, login)
+  }
+
+  clickCardTeste() {
+    console.log('teste')
   }
 }
