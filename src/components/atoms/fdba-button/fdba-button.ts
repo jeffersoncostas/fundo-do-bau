@@ -10,6 +10,7 @@ export class FdbaButtonComponent {
   buttonText: string;
   type: string;
   altura: string;
+  cor: string;
   clickButton = new EventEmitter();
 
   constructor() {

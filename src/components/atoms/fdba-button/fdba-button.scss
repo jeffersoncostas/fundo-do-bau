@@ -40,6 +40,29 @@ fdba-button {
       box-shadow: $green-neon;
       border-radius: $border-radius-padrao;
     }
+    &--degrade-quiz {
+      display: flex;
+      border: $border-padrao solid $gold;
+      div {
+        display: inline-block;
+        width: 20%;
+        height: 60px;
+        border-right: $border-padrao solid $gold;
+        background-color: black;
+      }
+      button {
+        display: inline-block;
+        width: 80%;
+        height: 60px;
+        color: $white;
+        background: $primary-light-gradient;
+        font-size: $m-font-size;
+        font-variant: none;
+        text-transform: uppercase;
+        box-shadow: $green-neon;
+        border-radius: $border-radius-padrao;
+      }
+    }
     &--transparente-branco-duplo {
       width: 100%;
       height: 60px;
