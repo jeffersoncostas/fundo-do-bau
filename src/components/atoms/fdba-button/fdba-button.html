@@ -39,3 +39,10 @@
   [style.height.px]="altura">
   {{buttonText}}
 </button>
+
+<div *ngIf="type == 'degrade-quiz' " class="fdba-button--degrade-quiz" [style.height.px]="altura" (click)="clickButtonEmit($event)">
+  <div [style.background-color]="cor"></div>
+  <button>
+    {{buttonText}}
+  </button>
+</div>
