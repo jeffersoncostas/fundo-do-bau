@@ -14,6 +14,8 @@ import { StyleGuidePage } from '../pages/style-guide/style-guide';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { TesteDesafioDistanciaPageModule } from '../pages/teste-desafio-distancia/teste-desafio-distancia.module';
+import { TesteDesafioDistanciaPage } from '../pages/teste-desafio-distancia/teste-desafio-distancia';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     StyleGuidePageModule,
     ComponentsModule,
     IonicModule.forRoot(MyApp),
+    TesteDesafioDistanciaPageModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -37,7 +40,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     HomePage,
     TabsPage,
-    StyleGuidePage
+    StyleGuidePage,
+    TesteDesafioDistanciaPage
   ],
   providers: [
     StatusBar,

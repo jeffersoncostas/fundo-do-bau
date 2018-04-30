@@ -1,7 +1,5 @@
 <section class="fdba-card" *ngFor="let desafio of listaDesafios">
-  <div class="fdba-card__content-image" (click)="clickCardEmit($event)">
-
-    <img [src]="desafio.imagem" src="../../../assets/imgs/teste.png" alt="">
+  <div class="fdba-card__content-image" (click)="clickCardEmit($event)" [style.background-image]="'url('+desafio.imagem+')'">
   </div>
   <div class="fdba-card__content-title">
     <div class="fdba-card__content-title__title" (click)="clickCardEmit($event)">
