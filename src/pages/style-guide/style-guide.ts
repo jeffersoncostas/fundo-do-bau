@@ -14,12 +14,12 @@ import { Usuario } from '../../models/usuario.model';
 })
 export class StyleGuidePage {
 
-  desafios = [{ nome: 'Vista Perfeita', dicas: [], dificuldade: 2, pontos: 50, qtdPessoas: 100, latitude: '-4.966599', longitude: '-39.014531', perguntas: [], video: 'x', conquista: '0', imagem: '../../../assets/imgs/teste.png' }, { nome: 'Sobralina', dicas: [], dificuldade: 2, pontos: 50, qtdPessoas: 100, latitude: '-4.978202', longitude: '-39.062926', perguntas: [], video: 'x', conquista: '0', imagem: '../../../assets/imgs/teste.png' }];
+  desafios = [new Desafio('Vista Perfeita', '', 7, 20, 95, '-4.966599', '-39.014531', [], 'x', 0, '../../../assets/imgs/teste.png'),
+  new Desafio('Sobralina', '', 8, 95, 65, '-4.966599', '-39.014531', [], 'x', 0, '../../../assets/imgs/teste.png')]
   usuario: Usuario;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.usuario = new Usuario('marmota', 'mamotinha', 'asd', '123', '0', '150', '', 0, 0, '', '')
-
 
   }
   ionViewDidLoad() {
