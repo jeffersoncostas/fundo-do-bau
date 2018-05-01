@@ -24,7 +24,6 @@ export class StyleGuidePage {
   }
   ionViewDidLoad() {
     if (navigator.geolocation) {
-      console.log('sdasda')
       navigator.geolocation.getCurrentPosition(position => { this.usuario.latitude = position.coords.latitude; this.usuario.longitude = position.coords.longitude });
     }
 
