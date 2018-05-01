@@ -44,6 +44,62 @@ fdba-card {
           }
         }
       }
+      &__progress {
+        height: calc(100% - 40px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0px 5px 10px;
+        &__circle {
+          padding: 0px 10px;
+          position: relative;
+          svg {
+            filter: blur(0.3px);
+          }
+          &:before {
+            content: '';
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            background-color: $gold;
+            opacity: .3;
+            filter: blur(8px);
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+          }
+          &:nth-child(2) {
+            &:before {
+              content: '';
+              position: absolute;
+              width: 35px;
+              height: 35px;
+              background-color: $primary;
+              opacity: .3;
+              filter: blur(8px);
+              left: 50%;
+              top: 50%;
+              transform: translate(-50%, -50%);
+            }
+          }
+          &__number {
+            color: white;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-size: $ss-font-size;
+          }
+          &__label {
+            color: white;
+            position: absolute;
+            left: 50%;
+            bottom: -18px;
+            font-size: $xss-font-size;
+            transform: translateX(-50%);
+          }
+        }
+      }
     }
   }
 }

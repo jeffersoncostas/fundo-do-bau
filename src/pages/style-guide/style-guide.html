@@ -84,16 +84,24 @@
     </div>
 
     <div class="style-guide__componente">
-      <div class="style-guide__componente__nome-componente">FDBA-CARD</div>
+      <div class="style-guide__componente__nome-componente">FDBA-CARD BOTOES</div>
       <div class="style-guide__componente__componente-itself">
         <fdba-card (clickCard)="clickCardTeste()" (clickButtonAchei)="achouDesafio($event)" (clickButtonDesisto)="desistoDesafio($event)"
           [listaDesafios]="desafios" botaoCardVermelho="desisto" botaoCardVerde="te achei"></fdba-card>
       </div>
     </div>
+
+    <div class="style-guide__componente">
+      <div class="style-guide__componente__nome-componente">FDBA-CARD CIRCLE PROGRESS</div>
+      <div class="style-guide__componente__componente-itself">
+        <fdba-card (clickCard)="clickCardTeste()" (clickButtonAchei)="achouDesafio($event)" (clickButtonDesisto)="desistoDesafio($event)"
+          [listaDesafios]="desafios"></fdba-card>
+      </div>
+    </div>
     <div class="style-guide__componente">
       <div class="style-guide__componente__nome-componente">FDBA- CIRCULO DE PROGRESSO</div>
       <div class="style-guide__componente__componente-itself--destaque">
-
+        <round-progress [current]="10" [max]="100" [radius]="17" [stroke]="4" [color]="'#218DB8'"></round-progress>
       </div>
     </div>
     <div class="style-guide__componente">

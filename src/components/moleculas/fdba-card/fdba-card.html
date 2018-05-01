@@ -13,5 +13,20 @@
       <fdba-button class="fba-card__content-title__buttons__verde" type="degrade-verde" altura="30" [buttonText]="botaoCardVerde"
         (clickButton)="teAchei(desafio)"></fdba-button>
     </div>
+    <div class="fdba-card__content-title__progress" *ngIf="!botaoCardVerde && !botaoCardVermelho" (click)="clickCardEmit($event)">
+
+      <div class="fdba-card__content-title__progress__circle">
+        <span class="fdba-card__content-title__progress__circle__number">{{desafio.dificuldade}}</span>
+        <round-progress [current]="desafio.dificuldade" [max]="10" [radius]="17" [stroke]="4" [color]="'#FFBA37'"></round-progress>
+        <span class="fdba-card__content-title__progress__circle__label">Dificuldade</span>
+
+      </div>
+
+      <div class="fdba-card__content-title__progress__circle">
+        <span class="fdba-card__content-title__progress__circle__number">{{desafio.pontos}}</span>
+        <round-progress [current]="desafio.pontos" [max]="100" [radius]="17" [stroke]="4" [color]="'#218DB8'"></round-progress>
+        <span class="fdba-card__content-title__progress__circle__label">Pontos</span>
+      </div>
+    </div>
   </div>
 </section>
