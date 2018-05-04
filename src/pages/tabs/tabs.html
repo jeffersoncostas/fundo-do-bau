@@ -1,6 +1,6 @@
-<ion-tabs>
-  <ion-tab [root]="about" tabTitle="About" tabUrlPath="about" tabIcon="information-circle"></ion-tab>
-  <ion-tab [root]="home" tabTitle="" tabUrlPath="home" tabIcon="home"></ion-tab>
-  <ion-tab [root]="contact" tabTitle="Contact" tabUrlPath="contact" tabIcon="contacts"></ion-tab>
-  <ion-tab [root]="tab4" tabTitle="Style Guide" tabUrlPath="tab4"></ion-tab>
+<ion-tabs selectedIndex="1">
+  <ion-tab [root]="ranking" tabTitle="" tabUrlPath="tab" tabIcon="information-circle"></ion-tab>
+  <ion-tab [root]="home" tabTitle="" tabUrlPath="tab" tabIcon="home" [rootParams]="params"></ion-tab>
+  <ion-tab [root]="perfil" tabTitle="" tabUrlPath="tab" tabIcon="contacts"></ion-tab>
+  <ion-tab [root]="styleguide" tabTitle="Style Guide" tabUrlPath="tab"></ion-tab>
 </ion-tabs>
