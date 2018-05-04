@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { Desafio } from '../../models/desafio.model';
-import { TesteDesafioDistanciaPage } from '../teste-desafio-distancia/teste-desafio-distancia';
 import { Usuario } from '../../models/usuario.model';
 
 @IonicPage({
@@ -13,19 +12,23 @@ import { Usuario } from '../../models/usuario.model';
   templateUrl: 'style-guide.html'
 })
 export class StyleGuidePage {
+  backButton: boolean = true;
 
   desafios = [new Desafio('Vista Perfeita', '', 7, 20, 95, '-4.966599', '-39.014531', [], 'x', 0, '../../../assets/imgs/teste.png'),
   new Desafio('Sobralina', '', 8, 95, 65, '-4.966599', '-39.014531', [], 'x', 0, '../../../assets/imgs/teste.png')]
   usuario: Usuario;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private view: ViewController) {
     this.usuario = new Usuario('marmota', 'mamotinha', 'asd', '123', '0', '150', '', 0, 0, '', '')
-
+    this.backButton = this.navParams.data.backButton
   }
   ionViewDidLoad() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => { this.usuario.latitude = position.coords.latitude; this.usuario.longitude = position.coords.longitude });
     }
+
+    this.view.showBackButton(this.backButton)
+
 
   }
 
@@ -35,7 +38,7 @@ export class StyleGuidePage {
 
   redirecionarPagina(login) {
     console.log('teste de redirecionamento com dados')
-    this.navCtrl.push(HomePage, login)
+    this.navCtrl.push('HomePage', login)
   }
 
   clickCardTeste() {
@@ -45,10 +48,13 @@ export class StyleGuidePage {
   achouDesafio(desafio: Desafio) {
     let desafioUsuario = [this.usuario, desafio]
     console.log('achou o desafio ' + desafio.nome)
-    this.navCtrl.push(TesteDesafioDistanciaPage, desafioUsuario)
+    this.navCtrl.push('TesteDesafioDistanciaPage', desafioUsuario)
   }
   desistoDesafio(desafio: Desafio) {
     console.log('desisto do desafio ' + desafio.nome)
     console.log(this.usuario)
+  }
+  voltarHome() {
+    this.navCtrl.popToRoot()
   }
 }

@@ -1,20 +1,20 @@
 import { Component } from '@angular/core';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-import { AboutPage } from '../about/about';
-import { ContactPage } from '../contact/contact';
-import { HomePage } from '../home/home';
 
 @Component({
-  templateUrl: 'tabs.html'
+  templateUrl: 'tabs.html',
+  selector: 'tabs'
 })
 export class TabsPage {
 
-  about = AboutPage;
-  home = HomePage;
-  contact = ContactPage;
-  tab4 = 'StyleGuidePage'
+  ranking = 'RankingPage';
+  home = 'HomePage';
+  perfil = 'PerfilPage';
+  styleguide = 'StyleGuidePage'
+  params = this.navParams.data;
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
 
-  constructor() {
 
   }
 
