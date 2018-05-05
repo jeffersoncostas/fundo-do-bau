@@ -14,7 +14,6 @@ export class FdbaButtonComponent {
   clickButton = new EventEmitter();
 
   constructor() {
-    console.log('Hello FdbaButtonComponent Component');
   }
 
   clickButtonEmit(click): void {

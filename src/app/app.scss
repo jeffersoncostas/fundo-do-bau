@@ -26,7 +26,8 @@ $white-transparent: rgba(255, 255, 255, 0.30);
 //
 // gradientes
 $primary-gradient: linear-gradient(45deg, #46A29F, #218DB8);
-$primary-invert-grandient: linear-gradient(-45deg, #46A29F, #218DB8);
+$primary-gradient-onboard: linear-gradient(235deg, #46A29F, #218DB8);
+$primary-invert-gradient: linear-gradient(-45deg, #46A29F, #218DB8);
 $red-gradient: linear-gradient(45deg, #FF2D2D, #FF7070);
 $green-gradient: linear-gradient(45deg, #2AB570, #49EC9A);
 $pink-gradient: linear-gradient(45deg, #FFBA37, #F55DA4);
@@ -90,5 +91,3 @@ ion-icon {
     color: rgba(255, 255, 255, 0.55)
   }
 }
-
-.tabs-md .tab-button[aria-selected=true] {}

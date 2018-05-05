@@ -1,0 +1,14 @@
+{
+  "listaSlides": [{
+      "imagem": "../../assets/imgs/logo.svg",
+      "titulo": "Titulo do Json",
+      "subtitulo": "Subtitulo do Json"
+    },
+    {
+      "imagem": "../../assets/imgs/logo.svg",
+      "titulo": "Titulo do Json 1",
+      "subtitulo": "Subtitulo do Json 2"
+    }
+
+  ]
+}

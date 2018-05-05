@@ -1,0 +1,47 @@
+fdba-slider {
+  .fdba-slider {
+    background: $primary-gradient-onboard;
+    height: calc(100% - 150px);
+    color: white;
+    &__imagem-slide {
+      height: 240px;
+      margin-bottom: 15px;
+    }
+    h2 {
+      font-size: $xxl-font-size;
+      margin: 0 0 20px;
+    }
+    h4 {
+      margin: 0px;
+      font-size: $default-font-size;
+      opacity: .5;
+    }
+    .swiper-pagination-bullet-active {
+      background: white;
+    }
+  }
+  .fdba-botoes-slider {
+    height: 150px;
+    width: 100%;
+    background: $medium-dark;
+    padding: 0px 15px;
+    &__start {
+      display: flex;
+      height: 100%;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+    &__end {
+      display: flex;
+      height: 100%;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+    fdba-button {
+      width: 50%;
+      padding: 0px 10px;
+    }
+  }
+}

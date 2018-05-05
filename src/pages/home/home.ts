@@ -27,8 +27,11 @@ export class HomePage {
   }
 
   testclick() {
-  this.navCtrl.push('StyleGuidePage', { backbutton: false })
- 
+    this.navCtrl.push('StyleGuidePage', { backbutton: false })
+
+  }
+  verOnboard() {
+    this.navCtrl.push('OnboardPage')
   }
 
 }
