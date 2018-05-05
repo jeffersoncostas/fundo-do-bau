@@ -1,0 +1,15 @@
+<svg id="ranking" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 127.702 66.157">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <path id="Path_1067" data-name="Path 1067" class="cls-1" d="M168.052.3,171.5,7.255a.53.53,0,0,0,.431.3l7.685,1.126a.537.537,0,0,1,.3.928l-5.565,5.4a.547.547,0,0,0-.166.5l1.325,7.652a.559.559,0,0,1-.8.6l-6.857-3.611a.45.45,0,0,0-.5,0L160.5,23.752a.559.559,0,0,1-.8-.6l1.325-7.652a.577.577,0,0,0-.166-.5l-5.6-5.4a.544.544,0,0,1,.3-.928l7.685-1.126a.651.651,0,0,0,.431-.3L167.124.3A.51.51,0,0,1,168.052.3Z" transform="translate(-103.721)"/>
+  <rect id="Rectangle_1548" data-name="Rectangle 1548" class="cls-1" width="42.567" height="4.141" transform="translate(0 62.013)"/>
+  <rect id="Rectangle_1549" data-name="Rectangle 1549" class="cls-1" width="42.567" height="4.141" transform="translate(42.567 31.868)"/>
+  <rect id="Rectangle_1550" data-name="Rectangle 1550" class="cls-1" width="42.567" height="4.141" transform="translate(85.135 62.013)"/>
+  <rect id="Rectangle_1551" data-name="Rectangle 1551" class="cls-1" width="34.286" height="4.141" transform="translate(85.138 31.871) rotate(90)"/>
+  <rect id="Rectangle_1552" data-name="Rectangle 1552" class="cls-1" width="34.286" height="4.141" transform="translate(46.712 31.871) rotate(90)"/>
+</svg>
