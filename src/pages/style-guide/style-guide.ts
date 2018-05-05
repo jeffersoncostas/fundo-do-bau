@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
-import { HomePage } from '../home/home';
 import { Desafio } from '../../models/desafio.model';
 import { Usuario } from '../../models/usuario.model';
 
