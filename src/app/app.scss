@@ -49,6 +49,7 @@ $border-radius-padrao: 2px;
 //
 //Transparent
 $transparent: transparent;
+//
 //Tab
 .tabs-md .tabbar {
   background: $primary-gradient;
@@ -91,4 +92,20 @@ ion-icon {
   &-icon {
     color: rgba(255, 255, 255, 0.55)
   }
+}
+
+//
+//Header
+.toolbar-background-md {
+  background: $primary;
+}
+
+.toolbar-title-md {
+  color: white;
+}
+
+.bar-button-default-md,
+.bar-button-clear-md-default,
+.bar-button-md-default {
+  color: white;
 }
