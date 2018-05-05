@@ -105,6 +105,18 @@ fdba-button {
       box-shadow: none;
       border-radius: $border-radius-padrao;
     }
+    &--botao-link{
+      color: $white-transparent-medium;
+      font-size: $m-font-size;
+      font-variant: small-caps;
+      box-shadow: none;
+      background: transparent;
+      text-decoration: underline;
+    }
+  }
+  .texto{
+    text-align: center;
+    text-decoration:none;
   }
   .active {
     background: $white-transparent;
