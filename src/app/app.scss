@@ -47,3 +47,48 @@ $border-radius-padrao: 2px;
 //
 //Transparent
 $transparent: transparent;
+//Tab
+.tabs-md .tabbar {
+  background: $primary-gradient;
+  box-Shadow: 0 -10px 60px rgba(0, 0, 0, 0.45)
+}
+
+ion-icon {
+  &[class*="fdba-"] {
+    // Instead of using the font-based icons
+    // We're applying SVG masks
+    mask-size: contain;
+    mask-position: 50% 50%;
+    mask-repeat: no-repeat;
+    background: currentColor;
+    width: 1em;
+    height: 1em;
+  } // custom icons
+  &[class*="fdba-icon"] {
+    mask-image: url(../assets/icon/fundo-do-bau-icon.svg);
+  }
+  &[class*="fdba-perfil"] {
+    mask-image: url(../assets/icon/fdba-perfil.svg);
+  }
+  &[class*="fdba-ranking"] {
+    mask-image: url(../assets/icon/fdba-ranking.svg);
+    width: 1.5em;
+    height: 1.5em;
+  }
+}
+
+.tabs-md .tab-button[aria-selected=true] {
+  color: white;
+  .tab-button-icon {
+    color: white
+  }
+}
+
+.tabs-md .tab-button {
+  color: rgba(255, 255, 255, 0.55);
+  &-icon {
+    color: rgba(255, 255, 255, 0.55)
+  }
+}
+
+.tabs-md .tab-button[aria-selected=true] {}

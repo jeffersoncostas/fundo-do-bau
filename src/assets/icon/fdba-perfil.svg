@@ -1,0 +1,15 @@
+<svg id="fdba-perfil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 26.017">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="Group_1265" data-name="Group 1265" transform="translate(2.595)">
+    <path id="Path_1041" data-name="Path 1041" class="cls-1" d="M53.205,1.416a5.989,5.989,0,1,1-5.989,5.989,5.994,5.994,0,0,1,5.989-5.989m0-1.416A7.405,7.405,0,1,0,60.61,7.405,7.4,7.4,0,0,0,53.205,0Z" transform="translate(-45.8)"/>
+  </g>
+  <g id="Group_1266" data-name="Group 1266" transform="translate(0 16.017)">
+    <path id="Path_1042" data-name="Path 1042" class="cls-1" d="M10,284.116a8.588,8.588,0,0,1,8.465,7.167H1.53A8.588,8.588,0,0,1,10,284.116m0-1.416a10,10,0,0,0-10,10H20a10.006,10.006,0,0,0-10-10Z" transform="translate(0 -282.7)"/>
+  </g>
+</svg>
