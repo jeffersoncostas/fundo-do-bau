@@ -22,24 +22,24 @@ export class FdbaSliderComponent {
   clickButtonWhite = new EventEmitter();
   clickButtonDark = new EventEmitter();
   constructor() {
+    this.endSlide = false;
   }
 
   prevSlide(): void {
+    this.endSlide = false;
     this.slides.slidePrev(500);
+    console.log(this.endSlide);
   }
   nextSlide() {
+    this.endSlide = false;
     this.slides.slideNext(500);
     this.verificarFim();
   }
 
   verificarFim() {
-    if (this.slides.isEnd) {
-      this.endSlide = !this.endSlide;
+    if (this.slides.isEnd()) {
+      this.endSlide = true;
       console.log(this.endSlide);
-      this.slides.pager = false;
-      setTimeout(() => {
-        this.slides.lockSwipes(true);
-      }, 400);
     }
   }
 

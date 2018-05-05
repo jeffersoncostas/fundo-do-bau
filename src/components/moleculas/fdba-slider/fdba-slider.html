@@ -1,5 +1,5 @@
 <ion-content>
-  <ion-slides pager="true" class="fdba-slider" parallax="true" (ionSlideReachEnd)="verificarFim()">
+  <ion-slides pager="true" class="fdba-slider" parallax="true" (ionSlideReachEnd)="verificarFim()" (ionSlidePrevStart)="endSlide = false">
 
     <ion-slide *ngFor="let slide of listaSlides">
       <div class="fdba-slider__imagem-slide">
@@ -13,7 +13,7 @@
 
   <section class="fdba-botoes-slider">
 
-    <div class="fdba-botoes-slider__start" *ngIf="!endSlide">
+    <div class="fdba-botoes-slider__start" *ngIf="endSlide == false">
       <fdba-button type="onboarding-voltar" buttonText="{{buttonWhiteText}}" (clickButton)="prevSlide()"></fdba-button>
       <fdba-button type="onboarding-proximo" buttonText="{{buttonDarkText}}" (clickButton)="nextSlide()"></fdba-button>
     </div>
