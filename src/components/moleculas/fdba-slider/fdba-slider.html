@@ -1,0 +1,28 @@
+<ion-content>
+  <ion-slides pager="true" class="fdba-slider" parallax="true" (ionSlideReachEnd)="verificarFim()">
+
+    <ion-slide *ngFor="let slide of listaSlides">
+      <div class="fdba-slider__imagem-slide">
+        <img [src]="slide.imagem">
+      </div>
+      <h2>{{slide.titulo}}</h2>
+      <h4> {{slide.subtitulo}} </h4>
+    </ion-slide>
+
+  </ion-slides>
+
+  <section class="fdba-botoes-slider">
+
+    <div class="fdba-botoes-slider__start" *ngIf="!endSlide">
+      <fdba-button type="onboarding-voltar" buttonText="{{buttonWhiteText}}" (clickButton)="prevSlide()"></fdba-button>
+      <fdba-button type="onboarding-proximo" buttonText="{{buttonDarkText}}" (clickButton)="nextSlide()"></fdba-button>
+    </div>
+
+    <div class="fdba-botoes-slider__end" *ngIf="endSlide">
+      <fdba-button type="onboarding-voltar" buttonText="{{buttonWhiteEndText}}" (clickButton)="clickButtonWhiteEmit($event)"></fdba-button>
+      <fdba-button type="onboarding-proximo" buttonText="{{buttonDarkEndText}}" (clickButton)="clickButtonDarkEmit($event)"></fdba-button>
+    </div>
+
+  </section>
+
+</ion-content>
