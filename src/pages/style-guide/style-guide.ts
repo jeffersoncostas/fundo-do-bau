@@ -56,4 +56,8 @@ export class StyleGuidePage {
   voltarHome() {
     this.navCtrl.popToRoot()
   }
+
+  testeDica() {
+    console.log('TESTE DICAASD')
+  }
 }

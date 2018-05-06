@@ -105,24 +105,46 @@ fdba-button {
       box-shadow: none;
       border-radius: $border-radius-padrao;
     }
-    &--botao-link{
+    &--botao-link {
       text-align: center;
       color: $white-transparent-medium;
       font-size: $m-font-size;
       box-shadow: none;
       background: transparent;
-      text-decoration:none;
-      &__button{
+      text-decoration: none;
+      &__button {
         @extend .fdba-button--botao-link;
-        font-variant: small-caps;      
+        font-variant: small-caps;
         text-decoration: underline;
-        
       }
-
     }
- 
+    &--dica {
+      &--button {
+        width: 40px;
+        height: 40px;
+        border-radius: $border-radius-circle;
+        border: $border-padrao solid $white;
+        background-color: $white-transparent-light;
+        font-variant: small-caps;
+        font-size: $m-font-size;
+        color: $white;
+        display: inline-block;
+      }
+      &__text {
+        display: inline-block;
+        margin-right: -20px;
+        background-color: $white-transparent;
+        border: $border-padrao solid $white;
+        color: $white;
+        padding: 6px 30px 6px 15px;
+        border-radius: 20px 0px 0px 20px;
+      }
+      &--active {
+        @extend .fdba-button--dica--button;
+        background-color: $super-dark;
+      }
+    }
   }
-
   .active {
     background: $white-transparent;
   }

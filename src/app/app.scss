@@ -24,6 +24,7 @@ $super-dark: #101F27;
 $border: #FFBA37;
 $gold: #FFBA37;
 $white-transparent: rgba(255, 255, 255, 0.30);
+$white-transparent-light: rgba(255, 255, 255, 0.10);
 $white-transparent-medium: rgba(255, 255, 255, 0.50);
 $super-dark-transparent :rgba(13, 37, 52, 0.65);
 //
@@ -50,6 +51,7 @@ $primary-neon: 0 0 40px rgba(33, 141, 184, 0.40);
 $border-padrao: 1px;
 //Border radius
 $border-radius-padrao: 2px;
+$border-radius-circle: 50%;
 //
 //Transparent
 $transparent: transparent;
