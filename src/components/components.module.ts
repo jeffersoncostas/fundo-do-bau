@@ -8,6 +8,7 @@ import { FdbaSliderComponent } from './moleculas/fdba-slider/fdba-slider';
 import { FdbaDicasComponent } from './atoms/fdba-dicas/fdba-dicas';
 import { FdbaTextoExtraParabensComponent } from './atoms/fdba-texto-extra-parabens/fdba-texto-extra-parabens';
 import { FdbaTextoParabensBotaoComponent } from './moleculas/fdba-texto-parabens-botao/fdba-texto-parabens-botao';
+import { FdbaConquistaComponent } from './atoms/fdba-conquista/fdba-conquista';
 
 @NgModule({
 	declarations: [FdbaButtonComponent,
@@ -16,7 +17,8 @@ import { FdbaTextoParabensBotaoComponent } from './moleculas/fdba-texto-parabens
 		FdbaSliderComponent,
 		FdbaDicasComponent,
 		FdbaTextoExtraParabensComponent,
-		FdbaTextoParabensBotaoComponent],
+		FdbaTextoParabensBotaoComponent,
+		FdbaConquistaComponent],
 	imports: [IonicModule, RoundProgressModule],
 	exports: [FdbaButtonComponent,
 		FdbaCardComponent,
@@ -24,6 +26,7 @@ import { FdbaTextoParabensBotaoComponent } from './moleculas/fdba-texto-parabens
 		FdbaSliderComponent,
 		FdbaDicasComponent,
 		FdbaTextoExtraParabensComponent,
-		FdbaTextoParabensBotaoComponent]
+		FdbaTextoParabensBotaoComponent,
+		FdbaConquistaComponent]
 })
 export class ComponentsModule { }

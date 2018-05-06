@@ -12,7 +12,7 @@ import { Usuario } from '../../models/usuario.model';
 })
 export class StyleGuidePage {
   backButton: boolean = true;
-
+  titulo: string = 'TESTEEEE'
   desafios = [new Desafio('Vista Perfeita', '', 7, 20, 95, '-4.966599', '-39.014531', [], 'x', 0, '../../../assets/imgs/teste.png'),
   new Desafio('Sobralina', '', 8, 95, 65, '-4.966599', '-39.014531', [], 'x', 0, '../../../assets/imgs/teste.png')]
   usuario: Usuario;
