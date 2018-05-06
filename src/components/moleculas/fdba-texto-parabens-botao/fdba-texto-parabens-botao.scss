@@ -1,0 +1,18 @@
+fdba-texto-parabens-botao {
+  .fdba-texto-parabens-botao {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    fdba-button {
+      width: 50%;
+      padding: 15px 7px;
+    }
+    &--quiz {
+      @extend .fdba-texto-parabens-botao;
+      fdba-button {
+        width: 100%;
+      }
+    }
+  }
+}

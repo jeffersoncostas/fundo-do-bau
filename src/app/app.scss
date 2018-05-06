@@ -28,6 +28,7 @@ $super-dark-transparent :rgba(13, 37, 52, 0.65);
 //
 // gradientes
 $primary-gradient: linear-gradient(45deg, #46A29F, #218DB8);
+$gradient-barra-fixa: linear-gradient(45deg, #40BBB3, #218DB8);
 $primary-gradient-onboard: linear-gradient(235deg, #46A29F, #218DB8);
 $primary-invert-gradient: linear-gradient(-45deg, #46A29F, #218DB8);
 $red-gradient: linear-gradient(45deg, #FF2D2D, #FF7070);
@@ -53,7 +54,7 @@ $transparent: transparent;
 //
 //Tab
 .tabs-md .tabbar {
-  background: $primary-gradient;
+  background: $gradient-barra-fixa;
   box-Shadow: 0 -10px 60px rgba(0, 0, 0, 0.45)
 }
 
