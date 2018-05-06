@@ -1,0 +1,15 @@
+<div *ngIf="type == 'badge-red' "  class="fdba-badge" >
+  <div class="fdba-badge__content">
+    <span class="fdba-badge__content__text-number">+{{badgePoints}}</span>
+    <span>pontos</span>
+  </div>
+  <img class="fdba-badge__flag" src="../../assets/icon/badge-red.svg" alt="">
+</div>
+
+<div *ngIf="type == 'badge-yellow' "  class="fdba-badge" >
+    <div class="fdba-badge__content">
+      <span class="fdba-badge__content__text-number">{{badgePoints}}</span>
+      <span>pontos</span>
+    </div>
+    <img class="fdba-badge__flag" src="../../assets/icon/badge-yellow.svg" alt="">
+</div>

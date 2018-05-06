@@ -1,0 +1,31 @@
+fdba-badge {
+    .fdba-badge{
+
+            position: relative;
+            display: flex;
+            justify-content: center;
+        
+        &__content{
+            position: absolute;
+            z-index: 1;
+            margin-top: 10px;
+            color: $white;
+            text-align: center;
+
+            &__text-number{
+                display: block;
+                font-size: $xl-font-size;
+                text-align: center;
+            }
+
+            &__text{
+                font-size: $s-font-size;
+            }
+        }
+
+        &__flag{
+            height: 64px;
+        }
+        
+    }
+}
