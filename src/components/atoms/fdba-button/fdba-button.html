@@ -53,3 +53,9 @@
     {{buttonText}}
   </button>
 </div>
+
+
+<button *ngIf="type == 'dica' " class="fdba-button--botao-dica" (click)="clickButtonEmit($event)" [style.height.px]="altura">
+  {{buttonText}}
+ </button>
+ 

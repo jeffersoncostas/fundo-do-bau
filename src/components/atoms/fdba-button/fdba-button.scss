@@ -120,6 +120,15 @@ fdba-button {
       }
 
     }
+    &--botao-dica {
+      text-align: center;
+      color: $white;
+      font-size: $default-font-size;
+      background-color: $super-dark;
+      border: solid $border-padrao $white;
+      border-radius: $border-radius-circle;
+    }
+    
  
   }
 
