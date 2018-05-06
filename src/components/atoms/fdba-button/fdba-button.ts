@@ -3,7 +3,7 @@ import { Component, EventEmitter } from '@angular/core';
   selector: 'fdba-button',
   templateUrl: 'fdba-button.html',
   outputs: ['clickButton'],
-  inputs: ['buttonText', 'type', 'cor', 'altura', 'resume']
+  inputs: ['buttonText', 'type', 'cor', 'altura', 'resume', 'buttonTextActive', 'pontosDica']
 })
 export class FdbaButtonComponent {
 
@@ -12,6 +12,10 @@ export class FdbaButtonComponent {
   type: string;
   altura: string;
   cor: string;
+  buttonTextActive: string;
+  pontosDica: number;
+  clickButtonDica: boolean = false;
+
   clickButton = new EventEmitter();
 
   constructor() {

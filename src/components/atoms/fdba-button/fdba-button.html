@@ -40,8 +40,7 @@
   {{buttonText}}
 </button>
 
-<div *ngIf="type == 'botao-link' " class="fdba-button--botao-link" (click)="clickButtonEmit($event)"
-[style.height.px]="altura">
+<div *ngIf="type == 'botao-link' " class="fdba-button--botao-link" (click)="clickButtonEmit($event)" [style.height.px]="altura">
   <div class="fdba-button--botao-link__resume">{{resume}}</div>
   <button class="fdba-button--botao-link__button">{{buttonText}}</button>
 </div>
@@ -52,4 +51,22 @@
   <button>
     {{buttonText}}
   </button>
+</div>
+
+
+<div *ngIf="type == 'dica' " class="fdba-button--dica" [style.height.px]="altura">
+
+  <button (click)="clickButtonDica = true" *ngIf="!clickButtonDica" class="fdba-button--dica--button">
+    {{buttonText}}
+  </button>
+
+  <div class="fdba-button--dica__text" *ngIf="clickButtonDica">
+    <span>Trocar {{pontosDica}} pontos por uma dica?</span>
+  </div>
+
+  <button *ngIf="clickButtonDica" class="fdba-button--dica--active" (click)="clickButtonEmit($event); clickButtonDica = false">
+
+    {{buttonTextActive}}
+  </button>
+
 </div>
