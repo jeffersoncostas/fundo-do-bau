@@ -1,0 +1,8 @@
+<section class="fdba-texto-extra-parabens">
+  <div class="fdba-texto-extra-parabens__texto" [ngClass]=" {'fdba-texto-extra-parabens__texto': type ==='video', 'fdba-texto-extra-parabens__texto--quiz': type ==='quiz' } ">
+    <div [innerHTML]="texto"></div>
+    <span>{{pontos}}
+      <ng-content></ng-content>
+    </span>
+  </div>
+</section>

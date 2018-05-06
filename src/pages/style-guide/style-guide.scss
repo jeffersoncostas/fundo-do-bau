@@ -16,15 +16,15 @@ page-style-guide {
       }
       &__componente-itself {
         display: inline-block;
-        padding: 15px;
-        width: 300px;
-        &--destaque{
+        padding: 0px;
+        width: 100%;
+        &--destaque {
           display: inline-block;
           padding: 15px;
           width: 300px;
-          background-color: gray;        }
+          background-color: gray;
+        }
       }
-
     }
   }
 }
