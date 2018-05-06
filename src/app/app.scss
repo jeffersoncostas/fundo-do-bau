@@ -15,6 +15,7 @@ $xss-font-size: 10px;
 // Colors
 $white: #ffff;
 $grey: #E3E3E3;
+$dark-grey: rgb(141, 141, 141);
 $primary: #218DB8;
 $secondary: #46A29F;
 $dark: #29495D;
@@ -38,6 +39,7 @@ $gold-gradient: linear-gradient(45deg, #FFB523, #FFCD6A);
 $dark-blue-gradient: linear-gradient(45deg, #1F58A2, #218DB8);
 $super-dark-blue-gradient: linear-gradient(90deg, #35617D, #101F27);
 $primary-light-gradient: linear-gradient(45deg, #218DB8, #53A4C4);
+$conquista-gradient: linear-gradient(45deg, #49A39D, #309B7E);
 //
 //Neon Shadow
 $gold-neon: 0 0 40px rgba(255, 186, 55, 0.40);
@@ -51,6 +53,9 @@ $border-radius-padrao: 2px;
 //
 //Transparent
 $transparent: transparent;
+//
+//Box shadow
+$box-shadow-conquista: 0px 8px 8px rgba(0, 0, 0, 0.15);
 //
 //Tab
 .tabs-md .tabbar {
