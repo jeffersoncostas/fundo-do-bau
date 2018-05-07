@@ -27,6 +27,6 @@ export class FdbaDicasComponent {
   }
 
   newDica() {
-
+    console.log('nova dica !')
   }
 }
