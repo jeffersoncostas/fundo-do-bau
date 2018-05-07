@@ -56,6 +56,7 @@
         <fdba-button type="onboarding-proximo" buttonText="próximo"></fdba-button>
       </div>
     </div>
+
     <div class="style-guide__componente">
       <div class="style-guide__componente__nome-componente">FDBA-BUTTON ONBOARDING VOLTAR</div>
       <div class="style-guide__componente__componente-itself">
@@ -99,6 +100,7 @@
           [listaDesafios]="desafios"></fdba-card>
       </div>
     </div>
+
     <div class="style-guide__componente">
       <div class="style-guide__componente__nome-componente">FDBA- CIRCULO DE PROGRESSO</div>
       <div class="style-guide__componente__componente-itself--destaque">
@@ -146,7 +148,6 @@
     </div>
 
     <div class="style-guide__componente">
-
       <div class="style-guide__componente__nome-componente">FDBA- BOTAO DICA</div>
       <div class="style-guide__componente__componente-itself--destaque">
         <fdba-button type="dica" buttonText="+" buttonTextActive="ok" pontosDica="10" (clickButton)="testeDica()"></fdba-button>
@@ -171,9 +172,13 @@
       <div class="style-guide__componente__nome-componente">FDBA- DICA</div>
       <div class="style-guide__componente__componente-itself--destaque">
         <fdba-dicas [desafio]="desafioDicas" buttonText="+" buttonTextActive="ok" pontosDica="7"></fdba-dicas>
+      </div>
+    </div>
+
+    <div class="style-guide__componente">
       <div class="style-guide__componente__nome-componente">FDBA- HEADER DESAFIO</div>
       <div class="style-guide__componente__componente-itself">
-        <fdba-desafio-header  [desafio]="desafioHeader"> </fdba-desafio-header>
+        <fdba-desafio-header [desafio]="desafioHeader"> </fdba-desafio-header>
       </div>
     </div>
 
