@@ -119,6 +119,8 @@ fdba-button {
       }
     }
     &--dica {
+      display: flex;
+      align-items: center;
       &--button {
         width: 40px;
         height: 40px;
@@ -128,15 +130,16 @@ fdba-button {
         font-variant: small-caps;
         font-size: $m-font-size;
         color: $white;
-        display: inline-block;
       }
       &__text {
-        display: inline-block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
         margin-right: -20px;
         background-color: $white-transparent;
         border: $border-padrao solid $white;
         color: $white;
-        padding: 6px 30px 6px 15px;
         border-radius: 20px 0px 0px 20px;
       }
       &--active {

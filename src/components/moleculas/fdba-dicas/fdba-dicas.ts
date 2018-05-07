@@ -25,4 +25,8 @@ export class FdbaDicasComponent {
   clickButtonDicaEmit(click) {
     this.clickButtonDica.next(click);
   }
+
+  newDica() {
+    console.log('nova dica !')
+  }
 }

@@ -52,19 +52,20 @@
   </button>
 </div>
 
-
+<!-- Dica -->
 <div *ngIf="type == 'dica' " class="fdba-button--dica" [style.height.px]="altura">
 
-  <button (click)="clickButtonDica = true" *ngIf="!clickButtonDica" class="fdba-button--dica--button">
+  <div class="fdba-button--dica__text" [@buttonDica]="botaoDicaAnim">
+    <span [@buttonTextDica]="botaoTextDicaAnim">Trocar {{pontosDica}} pontos por uma dica?</span>
+
+  </div>
+
+  <button (click)="clickButtonDica = true;dicaAnimate();" *ngIf="!clickButtonDica" class="fdba-button--dica--button">
+
     {{buttonText}}
   </button>
 
-  <div class="fdba-button--dica__text" *ngIf="clickButtonDica">
-    <span>Trocar {{pontosDica}} pontos por uma dica?</span>
-  </div>
-
-  <button *ngIf="clickButtonDica" class="fdba-button--dica--active" (click)="clickButtonEmit($event); clickButtonDica = false">
-
+  <button *ngIf="clickButtonDica" class="fdba-button--dica--active" (click)="clickButtonEmit($event); clickButtonDica = false; dicaAnimate();">
     {{buttonTextActive}}
   </button>
 
