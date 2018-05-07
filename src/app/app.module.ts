@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { FormsModule }   from '@angular/forms';
 
 import { MyApp } from './app.component';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -18,7 +19,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   imports: [
     BrowserModule,
     CommonModule,
-    BrowserModule, BrowserAnimationsModule,
+    BrowserModule, BrowserAnimationsModule, FormsModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
