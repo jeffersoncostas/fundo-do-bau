@@ -3,17 +3,17 @@ fdba-parabens {
         height: 100px;
         width: calc(100% + 32px);
         margin: 0px -15px;
-        background: $super-dark-transparent;
+        background: $transparent;
         display: flex;
         align-items: center;
         justify-content: center;
         &__titulo {
             text-align: center;
             font-size:$xl-font-size;
-            color: white;
+            color:$dark-grey;
             }
         &__descricao{
-            color: $white;
+            color: $dark-grey;
             font-size: $l-font-size;    
         }
     }
