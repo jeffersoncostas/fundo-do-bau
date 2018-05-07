@@ -1,0 +1,21 @@
+fdba-dicas {
+  .fdba-dicas {
+    width: 100%;
+    margin-bottom: 24px;
+    &__titulo {
+      color: $white;
+      font-size: $l-font-size;
+      margin-bottom: 15px;
+    }
+    &__dicas {
+      color: $white;
+      font-size: $default-font-size;
+    }
+    &__button {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

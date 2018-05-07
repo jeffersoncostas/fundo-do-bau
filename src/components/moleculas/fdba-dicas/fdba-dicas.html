@@ -1,0 +1,16 @@
+<section class="fdba-dicas">
+  <div class="fdba-dicas__titulo">
+    <span>Dicas</span>
+  </div>
+  <div class="fdba-dicas__dicas" *ngFor="let dica of dicas">
+    <span>
+      {{dica.descricao}}
+    </span>
+  </div>
+</section>
+
+<section class="fdba-dicas__button">
+
+  <fdba-button type="dica" [buttonText]="buttonText" [buttonTextActive]="buttonTextActive" [pontosDica]="pontosDica" (clickButton)="clickButtonDicaEmit($event)"></fdba-button>
+
+</section>

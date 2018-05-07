@@ -1,6 +1,6 @@
 export class Desafio {
     public nome: string;
-    public dicas = [];
+    public dicas: { descricao: string }[];
     public dificuldade: number;
     public pontos: number;
     public qtdPessoas: number;
