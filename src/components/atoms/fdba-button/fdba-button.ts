@@ -1,9 +1,11 @@
 import { Component, EventEmitter } from '@angular/core';
+import { dicaAnimation } from '../../../animations/animation.animation';
 @Component({
   selector: 'fdba-button',
   templateUrl: 'fdba-button.html',
   outputs: ['clickButton'],
-  inputs: ['buttonText', 'type', 'cor', 'altura', 'resume', 'buttonTextActive', 'pontosDica']
+  inputs: ['buttonText', 'type', 'cor', 'altura', 'resume', 'buttonTextActive', 'pontosDica'],
+  animations: [dicaAnimation]
 })
 export class FdbaButtonComponent {
 
@@ -23,5 +25,9 @@ export class FdbaButtonComponent {
 
   clickButtonEmit(click): void {
     this.clickButton.next(click);
+  }
+
+  dicaAnimate() {
+
   }
 }
