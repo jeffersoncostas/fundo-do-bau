@@ -8,14 +8,12 @@ import { Desafio } from '../../../models/desafio.model';
 })
 export class FdbaDesafioHeaderComponent {
 
-  text: string;
   desafio: Desafio;
 
   constructor() {
   }
 
   ngOnInit(){
-    console.log(this.desafio);
     
   }
 }

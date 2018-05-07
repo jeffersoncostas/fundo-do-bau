@@ -12,12 +12,10 @@ fdba-desafio-header {
             width: 100%;
             height: 100%;
             position: relative;
-            // -webkit-backdrop-filter: blur(50px);
-         
+                    
         }
         &__title {
             z-index: 1;
-            display: flex;
             color: white;
             font-size: $default-font-size;
             position: absolute;   
