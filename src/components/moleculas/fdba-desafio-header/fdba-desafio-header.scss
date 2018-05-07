@@ -5,7 +5,6 @@ fdba-desafio-header {
         height: 170px;
         background-size: cover;   
         background-repeat: no-repeat;
-        filter: blur(2px);
         
         &__overlay {
             background: $desafio-header-gradient;
