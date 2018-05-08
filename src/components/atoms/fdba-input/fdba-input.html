@@ -1,0 +1,41 @@
+<form [formGroup]="criarConta" (ngSubmit)="logForm()" *ngIf="type == 'criar-conta'">
+  <ion-item>
+    <ion-label stacked>Username</ion-label>
+    <ion-input type="text" formControlName="username"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked>Email</ion-label>
+    <ion-input type="email" formControlName="email"></ion-input>
+  </ion-item>
+
+  <div formGroupName="senhas">
+    <ion-item class="fdba-input">
+      <ion-label stacked>Senha</ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+    <ion-item class="fdba-input__password">
+      <ion-label stacked>Confirmar Senha</ion-label>
+      <ion-input type="password" formControlName="confirmPassword"></ion-input>
+    </ion-item>
+  </div>
+
+  <fdba-button altura="60" type="criar-conta-submit" buttonText="criar conta" [disabledProp]="!criarConta.valid"></fdba-button>
+
+</form>
+
+
+<form [formGroup]="loginForm" (ngSubmit)="loginEmit()" *ngIf="type == 'login'">
+
+  <ion-item>
+    <ion-label stacked>Email</ion-label>
+    <ion-input type="email" formControlName="email"></ion-input>
+  </ion-item>
+
+  <ion-item class="fdba-input__password">
+    <ion-label stacked>Senha</ion-label>
+    <ion-input type="password" formControlName="password"></ion-input>
+  </ion-item>
+
+  <fdba-button altura="60" type="criar-conta-submit" buttonText="logar" [disabledProp]="!loginForm.valid"></fdba-button>
+
+</form>

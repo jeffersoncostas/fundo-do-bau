@@ -5,7 +5,7 @@ import { dicaAnimation, dicaTextAnimation } from '../../../animations/animation.
   selector: 'fdba-button',
   templateUrl: 'fdba-button.html',
   outputs: ['clickButton'],
-  inputs: ['buttonText', 'type', 'cor', 'altura', 'resume', 'buttonTextActive', 'pontosDica'],
+  inputs: ['buttonText', 'type', 'cor', 'altura', 'resume', 'buttonTextActive', 'pontosDica', 'disabledProp'],
   animations: [dicaAnimation, dicaTextAnimation]
 })
 export class FdbaButtonComponent {
@@ -18,6 +18,7 @@ export class FdbaButtonComponent {
   buttonTextActive: string;
   pontosDica: number;
   clickButtonDica: boolean = false;
+  disabledProp: boolean = true;
 
   clickButton = new EventEmitter();
 

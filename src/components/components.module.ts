@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { IonicModule } from 'ionic-angular'
+import { FormsModule } from '@angular/forms';
+
 import { FdbaButtonComponent } from './atoms/fdba-button/fdba-button';
 import { FdbaCardComponent } from './moleculas/fdba-card/fdba-card';
 import { FdbaCircularProgress2Component } from './atoms/fdba-circular-progress2/fdba-circular-progress2';
@@ -11,6 +13,7 @@ import { FdbaTextoParabensBotaoComponent } from './moleculas/fdba-texto-parabens
 import { FdbaConquistaComponent } from './atoms/fdba-conquista/fdba-conquista';
 import { FdbaBadgeComponent } from './atoms/fdba-badge/fdba-badge';
 import { FdbaDesafioHeaderComponent } from './moleculas/fdba-desafio-header/fdba-desafio-header';
+import { FdbaInputComponent } from './atoms/fdba-input/fdba-input';
 
 @NgModule({
 	declarations: [FdbaButtonComponent,
@@ -21,9 +24,10 @@ import { FdbaDesafioHeaderComponent } from './moleculas/fdba-desafio-header/fdba
 		FdbaTextoExtraParabensComponent,
 		FdbaTextoParabensBotaoComponent,
 		FdbaConquistaComponent,
-    FdbaBadgeComponent,
-    FdbaDesafioHeaderComponent],
-	imports: [IonicModule, RoundProgressModule],
+		FdbaBadgeComponent,
+		FdbaDesafioHeaderComponent,
+		FdbaInputComponent],
+	imports: [IonicModule, RoundProgressModule, FormsModule],
 	exports: [FdbaButtonComponent,
 		FdbaCardComponent,
 		FdbaCircularProgress2Component,
@@ -32,7 +36,8 @@ import { FdbaDesafioHeaderComponent } from './moleculas/fdba-desafio-header/fdba
 		FdbaTextoExtraParabensComponent,
 		FdbaTextoParabensBotaoComponent,
 		FdbaConquistaComponent,
-    FdbaBadgeComponent,
-    FdbaDesafioHeaderComponent]
+		FdbaBadgeComponent,
+		FdbaDesafioHeaderComponent,
+		FdbaInputComponent]
 })
 export class ComponentsModule { }

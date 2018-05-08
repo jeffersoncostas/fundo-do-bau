@@ -70,3 +70,12 @@
   </button>
 
 </div>
+
+<!--  -->
+<!-- botao transparente submit -->
+
+<button type="submit" *ngIf="type == 'criar-conta-submit' " class="fdba-button--transparente-branco-grande active" (click)="clickButtonEmit($event)"
+  [style.height.px]="altura" [disabled]="disabledProp">
+
+  {{buttonText}}
+</button>
