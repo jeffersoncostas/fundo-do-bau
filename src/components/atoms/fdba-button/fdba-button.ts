@@ -18,7 +18,7 @@ export class FdbaButtonComponent {
   buttonTextActive: string;
   pontosDica: number;
   clickButtonDica: boolean = false;
-  disabledProp: boolean = false;
+  disabledProp: boolean = true;
 
   clickButton = new EventEmitter();
 
