@@ -1,11 +1,31 @@
-<ion-item [(ngModel)]="value" *ngIf=" type == 'text' " >
-  <ion-label stacked>{{textLabel}}</ion-label>
-  <ion-input type="text"></ion-input>
-  {{value}}
-</ion-item>
+<!-- <form [formGroup]="novaContaForm" (ngSubmit)="enviarFormEmit()">
 
-<ion-item [(ngModel)]="value"  name="title" *ngIf=" type == 'password' " >
-  <ion-label stacked>{{textLabel}}</ion-label>
-  <ion-input type="password"></ion-input>
-  {{value}}
-</ion-item>
+  <ion-item [(ngModel)]="value" *ngIf=" type == 'criar-conta' ">
+    <ion-label stacked>{{textLabel}}</ion-label>
+    <ion-input type="text"></ion-input>
+    {{value}}
+  </ion-item>
+  <ion-item>
+    <ion-label stacked>{{textLabel}}</ion-label>
+    <ion-input type="password"></ion-input>
+  </ion-item>
+</form> -->
+
+
+<form [formGroup]="criarConta" (ngSubmit)="logForm()" *ngIf="type == 'criar-conta'">
+  <ion-item>
+    <ion-label stacked>Username</ion-label>
+    <ion-input type="text" formControlName="username"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked>Email</ion-label>
+    <ion-input type="email" formControlName="email"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked>Senha</ion-label>
+    <ion-input type="password" formControlName="password"></ion-input>
+  </ion-item>
+
+  <fdba-button altura="60" type="criar-conta-submit" buttonText="criar conta" [disabledProp]="!criarConta.valid"></fdba-button>
+
+</form>
