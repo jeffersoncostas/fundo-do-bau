@@ -18,11 +18,11 @@
       <ion-input type="password" formControlName="confirmPassword"></ion-input>
     </ion-item>
   </div>
-
   <fdba-button altura="60" type="criar-conta-submit" buttonText="criar conta" [disabledProp]="!criarConta.valid"></fdba-button>
 
-</form>
+  <fdba-button class="fdba-input__criar-conta" type="botao-link" buttonText="login" resume="Já possui uma conta?" (clickButton)="logarPageEmit($event)"></fdba-button>
 
+</form>
 
 <form [formGroup]="loginForm" (ngSubmit)="loginEmit()" *ngIf="type == 'login'">
 
@@ -37,5 +37,7 @@
   </ion-item>
 
   <fdba-button altura="60" type="criar-conta-submit" buttonText="logar" [disabledProp]="!loginForm.valid"></fdba-button>
+  <fdba-button class="fdba-input__criar-conta" type="botao-link" buttonText="criar conta" resume="Não possui uma conta?" (clickButton)="criarContaPageEmit($event)"></fdba-button>
+
 
 </form>

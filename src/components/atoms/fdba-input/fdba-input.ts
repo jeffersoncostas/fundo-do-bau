@@ -6,7 +6,7 @@ import { Usuario } from '../../../models/usuario.model';
   selector: 'fdba-input',
   templateUrl: 'fdba-input.html',
   inputs: ['type', 'textLabel'],
-  outputs: ['novaConta', 'login']
+  outputs: ['novaConta', 'login', 'loginPage', 'criarContaPage']
 })
 export class FdbaInputComponent {
   type: string;
@@ -16,8 +16,11 @@ export class FdbaInputComponent {
   senhas: FormGroup;
   loginForm: FormGroup;
 
-  novaConta = new EventEmitter()
-  login = new EventEmitter()
+  novaConta = new EventEmitter();
+  login = new EventEmitter();
+
+  loginPage = new EventEmitter();
+  criarContaPage = new EventEmitter();
 
   constructor(private formBuilder: FormBuilder) {
     this.criarConta = this.formBuilder.group({
@@ -54,5 +57,12 @@ export class FdbaInputComponent {
     console.log(this.loginForm.value);
     this.login.next(this.loginForm.value);
 
+  }
+
+  logarPageEmit(click) {
+    this.loginPage.next(click);
+  }
+  criarContaPageEmit(click) {
+    this.criarContaPage.next(click);
   }
 }
