@@ -1,0 +1,27 @@
+<section class="fdba-parabens">
+  <div>
+      <div class="fdba-parabens__titulo">
+          <span [innerHTML]="titulo"></span>
+      </div>
+      <div class="fdba-parabens__descricao">
+          <span [innerHTML]="descricao"></span>
+      </div>
+  </div>
+  
+</section>
+
+<section class="fdba-parabens--local" *ngIf="type == 'parabens-local' ">
+    <div>
+        <div class="fdba-parabens--local__titulo">
+            <span [innerHTML]="titulo"></span>
+        </div>
+        <div class="fdba-parabens--local__descricao">
+            <span [innerHTML]="descricao"></span>
+        </div>
+
+        <div class="fdba-parabens--local__imagem">
+            <img [src]="imagem">
+        </div>
+    </div>
+    
+  </section>
