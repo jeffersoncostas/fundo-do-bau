@@ -11,6 +11,7 @@ import { FdbaTextoParabensBotaoComponent } from './moleculas/fdba-texto-parabens
 import { FdbaConquistaComponent } from './atoms/fdba-conquista/fdba-conquista';
 import { FdbaBadgeComponent } from './atoms/fdba-badge/fdba-badge';
 import { FdbaDesafioHeaderComponent } from './moleculas/fdba-desafio-header/fdba-desafio-header';
+import { FdbaRankingHeaderComponent } from './moleculas/fdba-ranking-header/fdba-ranking-header';
 
 @NgModule({
 	declarations: [FdbaButtonComponent,
@@ -22,7 +23,8 @@ import { FdbaDesafioHeaderComponent } from './moleculas/fdba-desafio-header/fdba
 		FdbaTextoParabensBotaoComponent,
 		FdbaConquistaComponent,
     FdbaBadgeComponent,
-    FdbaDesafioHeaderComponent],
+    FdbaDesafioHeaderComponent,
+    FdbaRankingHeaderComponent],
 	imports: [IonicModule, RoundProgressModule],
 	exports: [FdbaButtonComponent,
 		FdbaCardComponent,
@@ -33,6 +35,7 @@ import { FdbaDesafioHeaderComponent } from './moleculas/fdba-desafio-header/fdba
 		FdbaTextoParabensBotaoComponent,
 		FdbaConquistaComponent,
     FdbaBadgeComponent,
-    FdbaDesafioHeaderComponent]
+    FdbaDesafioHeaderComponent,
+    FdbaRankingHeaderComponent]
 })
 export class ComponentsModule { }
