@@ -11,7 +11,7 @@ export class FdbaInputComponent {
   type: string;
   textLabel: string;
 
-  private criarConta: FormGroup;
+  criarConta: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {
     this.criarConta = this.formBuilder.group({

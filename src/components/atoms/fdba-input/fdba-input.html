@@ -1,17 +1,3 @@
-<!-- <form [formGroup]="novaContaForm" (ngSubmit)="enviarFormEmit()">
-
-  <ion-item [(ngModel)]="value" *ngIf=" type == 'criar-conta' ">
-    <ion-label stacked>{{textLabel}}</ion-label>
-    <ion-input type="text"></ion-input>
-    {{value}}
-  </ion-item>
-  <ion-item>
-    <ion-label stacked>{{textLabel}}</ion-label>
-    <ion-input type="password"></ion-input>
-  </ion-item>
-</form> -->
-
-
 <form [formGroup]="criarConta" (ngSubmit)="logForm()" *ngIf="type == 'criar-conta'">
   <ion-item>
     <ion-label stacked>Username</ion-label>
@@ -21,7 +7,7 @@
     <ion-label stacked>Email</ion-label>
     <ion-input type="email" formControlName="email"></ion-input>
   </ion-item>
-  <ion-item>
+  <ion-item class="fdba-input__password">
     <ion-label stacked>Senha</ion-label>
     <ion-input type="password" formControlName="password"></ion-input>
   </ion-item>
