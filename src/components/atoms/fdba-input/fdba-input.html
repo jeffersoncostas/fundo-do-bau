@@ -18,7 +18,7 @@
       <ion-input type="password" formControlName="confirmPassword"></ion-input>
     </ion-item>
   </div>
-  <fdba-button altura="60" type="criar-conta-submit" buttonText="criar conta" [disabledProp]="!criarConta.valid"></fdba-button>
+  <fdba-button altura="50" type="criar-conta-submit" buttonText="criar conta" [disabledProp]="!criarConta.valid"></fdba-button>
 
   <fdba-button class="fdba-input__criar-conta" type="botao-link" buttonText="login" resume="Já possui uma conta?" (clickButton)="logarPageEmit($event)"></fdba-button>
 
@@ -36,7 +36,7 @@
     <ion-input type="password" formControlName="password"></ion-input>
   </ion-item>
 
-  <fdba-button altura="60" type="criar-conta-submit" buttonText="logar" [disabledProp]="!loginForm.valid"></fdba-button>
+  <fdba-button altura="50" type="criar-conta-submit" buttonText="logar" [disabledProp]="!loginForm.valid"></fdba-button>
   <fdba-button class="fdba-input__criar-conta" type="botao-link" buttonText="criar conta" resume="Não possui uma conta?" (clickButton)="criarContaPageEmit($event)"></fdba-button>
 
 

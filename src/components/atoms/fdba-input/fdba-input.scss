@@ -2,6 +2,7 @@ fdba-input {
   form {
     .item-md {
       background-color: transparent;
+      padding: 0px;
     }
     .item-input ion-input,
     .item-input ion-textarea {
@@ -12,6 +13,7 @@ fdba-input {
     }
     .item-md.item-block .item-inner {
       border: none;
+      padding: 0px;
     }
     .label-md[stacked],
     .label-md[floating] {
