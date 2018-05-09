@@ -11,19 +11,17 @@ export class AutenticacaoProvider {
 
   }
 
-  async register(user: Usuario) {
-    try {
-      return await this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.senha);
-    }
-    catch (e) {
-    }
+  async register(emailSenha, user: Usuario) {
+    return await this.afAuth.auth.createUserWithEmailAndPassword(emailSenha.email, emailSenha.senhas.password).then(() => this.criarPerfil(user))
   }
 
   async login(user) {
-    try {
-      return await this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
+    return await this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
+  }
 
-    }
-    catch (e) { }
+  async criarPerfil(user: Usuario) {
+    this.afAuth.authState.subscribe(auth => {
+      this.db.object(`perfis/${auth.uid}`).set(user)
+    })
   }
 }

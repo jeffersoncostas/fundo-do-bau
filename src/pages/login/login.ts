@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AutenticacaoProvider } from '../../providers/autenticacao/autenticacao';
+import { LoadingsProvider } from '../../providers/loadings/loadings';
 
 @IonicPage()
 @Component({
@@ -9,14 +10,18 @@ import { AutenticacaoProvider } from '../../providers/autenticacao/autenticacao'
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private autenticar: AutenticacaoProvider) {
+  constructor(public navCtrl: NavController,
+    public navParams: NavParams,
+    private autenticar: AutenticacaoProvider,
+    private loading: LoadingsProvider) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
+
   }
 
   logar(user) {
-    this.autenticar.login(user).then((data) => console.log('logado com sucesso', data), error => console.log(error))
+    this.loading.loadingPadrao('Logando...')
+    this.autenticar.login(user).then((data) => { this.loading.loadingPadraoDismiss(); this.navCtrl.setRoot('TabsPage') }, error => { this.loading.loadingPadraoDismiss() })
   }
 }

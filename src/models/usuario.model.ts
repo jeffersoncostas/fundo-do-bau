@@ -2,8 +2,6 @@ export class Usuario {
     public key?: string;
     public nome: string;
     public username: string;
-    public email: string;
-    public senha: string;
     public conquistas = [];
     public pontos: number;
     public desafiosEmAndamento = [];
@@ -12,12 +10,10 @@ export class Usuario {
     public desafiosConcluidos = [];
     public adm: boolean;
 
-    constructor(nome, username, email, senha, conquistas, pontos, desafiosEmAndamento, latitude, longitude, desafiosConcluidos, adm) {
+    constructor(nome, username, conquistas, pontos, desafiosEmAndamento, latitude, longitude, desafiosConcluidos, adm) {
 
         this.nome = nome;
         this.username = username;
-        this.email = email;
-        this.senha = senha;
         this.conquistas = conquistas;
         this.pontos = pontos;
         this.desafiosEmAndamento = desafiosEmAndamento;
