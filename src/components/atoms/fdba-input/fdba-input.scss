@@ -3,6 +3,7 @@ fdba-input {
     .item-md {
       background-color: transparent;
       padding: 0px;
+      margin-bottom: 20px;
     }
     .item-input ion-input,
     .item-input ion-textarea {
@@ -34,18 +35,18 @@ fdba-input {
       border-bottom-color: transparent;
       box-shadow: 0 0 0 white;
       ion-input {
-        //border: 2px solid green;
+        border: 2px solid #2AB570;
         position: relative;
         box-shadow: $green-neon;
         &:before {
           content: '';
           position: absolute;
           width: 100%;
-          height: 100%;
+          height: 2px;
           left: 0;
-          bottom: 0;
-          background: $green-gradient;
-          opacity: .05;
+          top: 0; // background: $green-gradient;
+          box-shadow: $green-neon;
+          opacity: 1;
         }
       }
     }
@@ -53,24 +54,24 @@ fdba-input {
       border-bottom-color: transparent;
       box-shadow: 0 0 0 white;
       ion-input {
-        //border: 2px solid green;
+        border: 2px solid rgba(255, 45, 45, 0.801);
         position: relative;
         box-shadow: $red-neon;
         &:before {
           content: '';
           position: absolute;
           width: 100%;
-          height: 100%;
+          height: 2 px;
           left: 0;
-          bottom: 0;
-          background: $red-gradient;
-          opacity: .05;
+          top: 0;
+          box-shadow: $red-neon;
+          opacity: 1;
         }
       }
     }
     .fdba-input {
       &__password {
-        margin-bottom: 20px;
+        margin-bottom: 40px;
       }
       &__criar-conta {
         .fdba-button--botao-link {

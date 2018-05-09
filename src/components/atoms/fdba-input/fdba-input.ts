@@ -43,18 +43,15 @@ export class FdbaInputComponent {
 
 
   passwordMatchValidator(g: FormGroup) {
-    console.log('aaaaaaa');
     return g.get('password').value === g.get('confirmPassword').value
       ? null : { 'mismatch': true };
   }
 
   logForm() {
-    console.log(this.criarConta.value);
     this.novaConta.next(this.criarConta.value);
   }
 
   loginEmit() {
-    console.log(this.loginForm.value);
     this.login.next(this.loginForm.value);
 
   }

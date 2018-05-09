@@ -4,6 +4,6 @@
     <img src="../../assets/imgs/fdba-logo.svg" alt="">
   </div>
 
-  <fdba-input type="criar-conta"></fdba-input>
+  <fdba-input type="criar-conta" (novaConta)="novaConta($event)" (loginPage)="navCtrl.setRoot('LoginPage')"></fdba-input>
 
 </section>
