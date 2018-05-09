@@ -20,9 +20,9 @@ export class StyleGuidePage {
 
   desafioHeader = new Desafio('Vista Perfeita', '', 7, 20, 95, '-4.966599', '-39.014531', [], 'x', 0, '../../../assets/imgs/teste.png');
   valorInput: string;
-  
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private view: ViewController) {
-    this.usuario = new Usuario('marmota', 'mamotinha', 'asd', '123', '0', '150', '', 0, 0, '', '')
+    this.usuario = new Usuario('marmota', 'mamotinha', [], 0, [], 0, 0, [], false)
     this.backButton = this.navParams.data.backButton
   }
   ionViewDidLoad() {
