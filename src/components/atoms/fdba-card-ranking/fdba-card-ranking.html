@@ -1,0 +1,50 @@
+<div *ngIf="type == 'gold' " class="fdba-card-ranking" >
+    <div class="fdba-card-ranking__card-gold">
+        <span class="fdba-card-ranking__position-star">1</span>
+        <img class="fdba-card-ranking__image-star" src="../../assets/icon/gold-star.svg" alt="">
+
+        <span class="fdba-cardranking__text-name">{{userName}}</span>
+        <span class="fdba-card-ranking__text-nick">@{{userNick}}</span>
+
+        <fdba-badge class="fdba-card-ranking__flag" type="badge-yellow" badgePoints={{userPoints}}></fdba-badge>
+    </div>
+</div>
+
+<div *ngIf="type == 'silver' " class="fdba-card-ranking" >
+    <div class="fdba-card-ranking__card-silver">
+        <span class="fdba-card-ranking__position-star">2</span>
+        <img class="fdba-card-ranking__image-star" src="../../assets/icon/silver-star.svg" alt="">
+
+        <span class="fdba-card-ranking__text-name">{{userName}}</span>
+        <span class="fdba-card-ranking__text-nick">@{{userNick}}</span>
+
+        <fdba-badge class="fdba-card-ranking__flag" type="badge-silver" badgePoints={{userPoints}}></fdba-badge>
+    </div>
+</div>
+
+<div *ngIf="type == 'coper' " class="fdba-card-ranking" >
+    <div class="fdba-card-ranking__card-coper">
+        <span class="fdba-card-ranking__position-star">3</span>
+        <img class="fdba-card-ranking__image-star" src="../../assets/icon/coper-star.svg" alt="">
+
+        <span class="fdba-card-ranking__text-name">{{userName}}</span>
+        <span class="fdba-card-ranking__text-nick">@{{userNick}}</span>
+
+        <fdba-badge class="fdba-card-ranking__flag" type="badge-coper" badgePoints={{userPoints}}></fdba-badge>
+    </div>
+</div>
+
+
+<div *ngIf="type == 'normal' " class="fdba-card-ranking" >
+    <div class="fdba-card-ranking__card-normal">
+        <span class="fdba-card-ranking__position-circle">{{userPosition}}</span>
+        <img class="fdba-card-ranking__image-circle" src="../../assets/icon/normal-circle.svg" alt="">
+
+        <span class="fdba-card-ranking__text-name">{{userName}}</span>
+        <span class="fdba-card-ranking__text-nick">@{{userNick}}</span>
+
+        <div class="fdba-card-ranking__point-box">
+            <span class="fdba-card-ranking__text-points">{{userPoints}} Pontos</span>
+        </div>
+    </div>
+</div>
