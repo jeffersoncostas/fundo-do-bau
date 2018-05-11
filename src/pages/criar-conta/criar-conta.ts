@@ -25,8 +25,11 @@ export class CriarContaPage {
   novaConta(novaContaObject) {
     this.loading.loadingPadrao('Criando conta...')
     this.user = new Usuario('', novaContaObject.username, [''], 0, [''], 0, 0, [''], false)
-    console.log(this.user)
-    this.autenticar.register(novaContaObject, this.user).then((data) => { this.loading.loadingPadraoDismiss(); this.navCtrl.setRoot('TabsPage') }, error => this.loading.loadingPadraoDismiss())
+
+    this.autenticar.register(novaContaObject, this.user).then((data) => {
+      this.loading.loadingPadraoDismiss(); this.navCtrl.setRoot('TabsPage')
+    },
+      error => { this.loading.loadingPadraoDismiss(); console.log(error) })
   }
 
 

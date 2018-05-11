@@ -1,21 +1,22 @@
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>home</ion-title>
-  </ion-navbar>
-
-</ion-header>
+<section class="fdba-page--home">
+  <ion-content padding>
+    <h2>Bem vindo {{(userData$)?.username}} !</h2>
 
 
-<ion-content padding>
-  <h2>Bem vindo {{login}} !</h2>
 
-  <div class="teste4">
-    <span>Sua senha é : {{senha}}</span>
-  </div>
 
-  <button ion-button block (click)=" testclick()">TESTE</button>
-  <button ion-button (click)="verOnboard()"> Ver onboard</button>
-  <button ion-button [navPush]="'CriarContaPage'"> Ver criar conta</button>
 
-</ion-content>
+    <!-- <div class="teste4">
+      <span>Você tem {{(userDataObservable | async )?.pontos}} pontos</span>
+    </div> -->
+
+    <button ion-button block (click)=" testclick()">TESTE</button>
+    <button ion-button (click)="verOnboard()"> Ver onboard</button>
+    <button ion-button [navPush]="'CriarContaPage'"> Ver criar conta</button>
+    <button ion-button (click)="logoutTest()"> Logout</button>
+
+
+  </ion-content>
+
+
+</section>
