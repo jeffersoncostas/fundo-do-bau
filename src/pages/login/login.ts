@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AutenticacaoProvider } from '../../providers/autenticacao/autenticacao';
 import { LoadingsProvider } from '../../providers/loadings/loadings';
@@ -13,15 +13,17 @@ export class LoginPage {
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     private autenticar: AutenticacaoProvider,
-    private loading: LoadingsProvider) {
+    private loading: LoadingsProvider, ) {
   }
 
   ionViewDidLoad() {
-
   }
 
   logar(user) {
     this.loading.loadingPadrao('Logando...')
-    this.autenticar.login(user).then((data) => { this.loading.loadingPadraoDismiss(); this.navCtrl.setRoot('TabsPage') }, error => { this.loading.loadingPadraoDismiss() })
+    this.autenticar.login(user).then((data) => {
+      this.loading.loadingPadraoDismiss(); this.navCtrl.setRoot('TabsPage', {}, { animate: true, direction: 'forward' })
+    },
+      error => { this.loading.loadingPadraoDismiss() })
   }
 }

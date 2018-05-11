@@ -21,6 +21,7 @@ import { FIREBASE_CONFIG } from './firebase.credentials';
 import { AutenticacaoProvider } from '../providers/autenticacao/autenticacao';
 import { LoadingsProvider } from '../providers/loadings/loadings';
 import { TratamentoErrosProvider } from '../providers/tratamento-erros/tratamento-erros';
+import { DatabaseProvider } from '../providers/database/database';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { TratamentoErrosProvider } from '../providers/tratamento-erros/tratament
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     AutenticacaoProvider,
     LoadingsProvider,
-    TratamentoErrosProvider
+    TratamentoErrosProvider,
+    DatabaseProvider
   ]
 })
 export class AppModule { }

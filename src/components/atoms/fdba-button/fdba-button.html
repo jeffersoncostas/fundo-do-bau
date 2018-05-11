@@ -40,9 +40,9 @@
   {{buttonText}}
 </button>
 
-<div *ngIf="type == 'botao-link' " class="fdba-button--botao-link" (click)="clickButtonEmit($event)" [style.height.px]="altura">
+<div *ngIf="type == 'botao-link' " class="fdba-button--botao-link" [style.height.px]="altura">
   <div class="fdba-button--botao-link__resume">{{resume}}</div>
-  <button class="fdba-button--botao-link__button">{{buttonText}}</button>
+  <button class="fdba-button--botao-link__button" (click)="clickButtonEmit($event)">{{buttonText}}</button>
 </div>
 
 <div *ngIf="type == 'degrade-quiz' " class="fdba-button--degrade-quiz" [style.height.px]="altura" (click)="clickButtonEmit($event)">

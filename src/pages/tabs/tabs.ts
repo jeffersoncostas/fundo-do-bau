@@ -12,11 +12,9 @@ export class TabsPage {
   ranking = 'RankingPage';
   home = 'HomePage';
   perfil = 'PerfilPage';
-  styleguide = 'StyleGuidePage'
+  styleguide = 'StyleGuidePage';
   params = this.navParams.data;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-
-
   }
 
   click(): void {
