@@ -16,8 +16,8 @@ export class HomePage {
   login: string
   senha: number
   params = this.navParams.data;
-  userData$: any;
-  userDataObservable: Observable<any>
+  userData$: Usuario;
+  userDataObservable: Observable<Usuario>
   userDataObservableSnapshot: Subscription;
 
   constructor(public navCtrl: NavController,
@@ -26,6 +26,7 @@ export class HomePage {
     private autenticacao: AutenticacaoProvider) {
     //this.autenticacao.estaLogado().then((data) => console.log(data))
     this.autenticacao.estaLogado().then((id) => {
+
       this.userDataObservable = this.autenticacao
         .getProfile(id)
         .valueChanges();
