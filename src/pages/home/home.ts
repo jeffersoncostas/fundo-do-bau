@@ -22,9 +22,7 @@ export class HomePage {
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
-    private getDatabase: DatabaseProvider,
     private autenticacao: AutenticacaoProvider) {
-    //this.autenticacao.estaLogado().then((data) => console.log(data))
     this.autenticacao.estaLogado().then((id) => {
 
       this.userDataObservable = this.autenticacao
@@ -38,12 +36,7 @@ export class HomePage {
           this.userData$ = profile.payload.val();
           console.log(this.userData$)
         })
-
-
     })
-
-
-
   }
 
   ionViewDidLoad() {
