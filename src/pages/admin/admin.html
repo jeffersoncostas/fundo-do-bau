@@ -22,6 +22,11 @@
           <ion-input required type="text" [(ngModel)]="desafio.nome" name="title"></ion-input>
         </ion-item>
         <ion-item>
+          <ion-label floating>Video do desafio</ion-label>
+          <ion-input required type="text" [(ngModel)]="desafio.video" name="title"></ion-input>
+        </ion-item>
+        <ion-item>
+
           <ion-label floating>Id da conquista</ion-label>
           <ion-input required type="text" [(ngModel)]="desafio.conquista" name="title"></ion-input>
         </ion-item>
@@ -94,27 +99,30 @@
       </section>
       <section class="section-forms">
 
-        <h3>Quiz - Pergunta 1</h3>
+        <h3 (click)="click()">Quiz - Pergunta 1</h3>
         <ion-item>
           <ion-label floating>Pergunta 1</ion-label>
           <ion-input type="text" [(ngModel)]="perguntas.perguntas[0]" name="pergunta"></ion-input>
         </ion-item>
 
+
         <ion-item>
           <ion-label floating>Pergunta 1 - Alternativa 1</ion-label>
-          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[0].pergunta0[0].alternativa" name="alternativa"></ion-input>
+          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[0][0]" name="alternativa"></ion-input>
         </ion-item>
+
+
         <ion-item>
           <ion-label floating>Pergunta 1 - Alternativa 2</ion-label>
-          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[0].pergunta0[1].alternativa" name="alternativa"></ion-input>
+          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[0][1]" name="alternativa"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label floating>Pergunta 1 - Alternativa 3</ion-label>
-          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[0].pergunta0[2].alternativa" name="alternativa"></ion-input>
+          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[0][2]" name="alternativa"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label floating>Pergunta 1 - Alternativa 4</ion-label>
-          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[0].pergunta0[3].alternativa" name="alternativa"></ion-input>
+          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[0][3]" name="alternativa"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label floating>Pergunta 1 - Resposta</ion-label>
@@ -133,19 +141,19 @@
 
         <ion-item>
           <ion-label floating>Pergunta 2 - Alternativa 1</ion-label>
-          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[1].pergunta1[0].alternativa" name="alternativa"></ion-input>
+          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[1][0]" name="alternativa"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label floating>Pergunta 2 - Alternativa 2</ion-label>
-          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[1].pergunta1[1].alternativa" name="alternativa"></ion-input>
+          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[1][1]" name="alternativa"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label floating>Pergunta 2 - Alternativa 3</ion-label>
-          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[1].pergunta1[2].alternativa" name="alternativa"></ion-input>
+          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[1][2]" name="alternativa"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label floating>Pergunta 2 - Alternativa 4</ion-label>
-          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[1].pergunta1[3].alternativa" name="alternativa"></ion-input>
+          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[1][3]" name="alternativa"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label floating>Pergunta 2 - Resposta</ion-label>
@@ -165,19 +173,19 @@
 
         <ion-item>
           <ion-label floating>Pergunta 3 - Alternativa 1</ion-label>
-          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[2].pergunta2[0].alternativa" name="alternativa"></ion-input>
+          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[2][0]" name="alternativa"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label floating>Pergunta 3 - Alternativa 2</ion-label>
-          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[2].pergunta2[1].alternativa" name="alternativa"></ion-input>
+          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[2][1]" name="alternativa"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label floating>Pergunta 3 - Alternativa 3</ion-label>
-          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[2].pergunta2[2].alternativa" name="alternativa"></ion-input>
+          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[2][2]" name="alternativa"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label floating>Pergunta 3 - Alternativa 4</ion-label>
-          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[2].pergunta2[3].alternativa" name="alternativa"></ion-input>
+          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[2][3]" name="alternativa"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label floating>Pergunta 3 - Resposta</ion-label>
@@ -197,19 +205,19 @@
 
         <ion-item>
           <ion-label floating>Pergunta 4 - Alternativa 1</ion-label>
-          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[3].pergunta3[0].alternativa" name="alternativa"></ion-input>
+          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[3][0]" name="alternativa"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label floating>Pergunta 4 - Alternativa 2</ion-label>
-          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[3].pergunta3[1].alternativa" name="alternativa"></ion-input>
+          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[3][1]" name="alternativa"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label floating>Pergunta 4 - Alternativa 3</ion-label>
-          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[3].pergunta3[2].alternativa" name="alternativa"></ion-input>
+          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[3][2]" name="alternativa"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label floating>Pergunta 4 - Alternativa 4</ion-label>
-          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[3].pergunta3[3].alternativa" name="alternativa"></ion-input>
+          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[3][3]" name="alternativa"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label floating>Pergunta 4 - Resposta</ion-label>
@@ -228,19 +236,19 @@
 
         <ion-item>
           <ion-label floating>Pergunta 5 - Alternativa 1</ion-label>
-          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[4].pergunta4[0].alternativa" name="alternativa"></ion-input>
+          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[4][0]" name="alternativa"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label floating>Pergunta 5 - Alternativa 2</ion-label>
-          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[4].pergunta4[1].alternativa" name="alternativa"></ion-input>
+          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[4][1]" name="alternativa"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label floating>Pergunta 5 - Alternativa 3</ion-label>
-          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[4].pergunta4[2].alternativa" name="alternativa"></ion-input>
+          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[4][2]" name="alternativa"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label floating>Pergunta 5 - Alternativa 4</ion-label>
-          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[4].pergunta4[3].alternativa" name="alternativa"></ion-input>
+          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[4][3]" name="alternativa"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label floating>Pergunta 5 - Resposta</ion-label>
