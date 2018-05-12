@@ -36,7 +36,6 @@ export class HomePage {
           console.log(this.userData$);
         });
     });
-    this.navCtrl.setRoot("AdminPage");
   }
 
   ionViewDidLoad() {
