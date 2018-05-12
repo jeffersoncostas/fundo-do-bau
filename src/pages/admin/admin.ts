@@ -14,48 +14,13 @@ import { Subscription } from "rxjs/Subscription";
 export class AdminPage {
   perguntas: Perguntas = {
     perguntas: [],
-    todasAlternativas: [
-      {
-        pergunta0: [
-          { alternativa: "" },
-          { alternativa: "" },
-          { alternativa: "" },
-          { alternativa: "" }
-        ]
-      },
-      {
-        pergunta1: [
-          { alternativa: "" },
-          { alternativa: "" },
-          { alternativa: "" },
-          { alternativa: "" }
-        ]
-      },
-      {
-        pergunta2: [
-          { alternativa: "" },
-          { alternativa: "" },
-          { alternativa: "" },
-          { alternativa: "" }
-        ]
-      },
-      {
-        pergunta3: [
-          { alternativa: "" },
-          { alternativa: "" },
-          { alternativa: "" },
-          { alternativa: "" }
-        ]
-      },
-      {
-        pergunta4: [
-          { alternativa: "" },
-          { alternativa: "" },
-          { alternativa: "" },
-          { alternativa: "" }
-        ]
-      }
-    ],
+    todasAlternativas: {
+      0: [""],
+      1: [""],
+      2: [""],
+      3: [""],
+      4: [""]
+    },
     respostas: [],
     pontos: 0
   };
@@ -94,6 +59,9 @@ export class AdminPage {
 
   ionViewDidLoad() {}
 
+  click() {
+    console.log(this.desafio);
+  }
   novoDesafio() {
     console.log(this.desafio);
     this.database
