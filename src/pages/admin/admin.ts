@@ -4,12 +4,6 @@ import { Desafio } from "../../models/desafio.model";
 import { Perguntas } from "../../models/perguntas.model";
 import { Conquista } from "../../models/conquista.model";
 
-/**
- * Generated class for the AdminPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({

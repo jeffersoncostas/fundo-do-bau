@@ -41,5 +41,9 @@ fdba-conquista {
         font-size: $default-font-size;
       }
     }
+    &--no-descricao {
+      @extend .fdba-conquista;
+      height: auto;
+    }
   }
 }
