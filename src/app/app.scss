@@ -2,7 +2,7 @@
 // Texto
 $xxxl-font-size: 40px;
 $xxl-font-size: 36px;
-$xlll-font-size:28px;
+$xlll-font-size: 28px;
 $xll-font-size: 25px;
 $xl-font-size: 22px;
 $l-font-size: 18px;
@@ -15,41 +15,41 @@ $xss-font-size: 10px;
 //
 // Colors
 $white: #ffff;
-$grey: #E3E3E3;
+$grey: #e3e3e3;
 $dark-grey: rgb(141, 141, 141);
-$primary: #218DB8;
-$secondary: #46A29F;
-$dark: #29495D;
+$primary: #218db8;
+$secondary: #46a29f;
+$dark: #29495d;
 $medium-dark: #224053;
-$super-dark: #101F27;
+$super-dark: #101f27;
 $input-registro: #2e7080;
-$border: #FFBA37;
-$gold: #FFBA37;
-$white-transparent: rgba(255, 255, 255, 0.30);
-$white-transparent-light: rgba(255, 255, 255, 0.10);
-$white-transparent-medium: rgba(255, 255, 255, 0.50);
-$super-dark-transparent :rgba(13, 37, 52, 0.65);
+$border: #ffba37;
+$gold: #ffba37;
+$white-transparent: rgba(255, 255, 255, 0.3);
+$white-transparent-light: rgba(255, 255, 255, 0.1);
+$white-transparent-medium: rgba(255, 255, 255, 0.5);
+$super-dark-transparent: rgba(13, 37, 52, 0.65);
 //
 // gradientes
-$primary-gradient: linear-gradient(45deg, #46A29F, #218DB8);
-$gradient-barra-fixa: linear-gradient(45deg, #40BBB3, #218DB8);
-$primary-gradient-onboard: linear-gradient(235deg, #46A29F, #218DB8);
-$primary-invert-gradient: linear-gradient(-45deg, #46A29F, #218DB8);
-$red-gradient: linear-gradient(45deg, #FF2D2D, #FF7070);
-$green-gradient: linear-gradient(45deg, #2AB570, #49EC9A);
-$pink-gradient: linear-gradient(45deg, #FFBA37, #F55DA4);
-$gold-gradient: linear-gradient(45deg, #FFB523, #FFCD6A);
-$dark-blue-gradient: linear-gradient(45deg, #1F58A2, #218DB8);
-$super-dark-blue-gradient: linear-gradient(180deg, #35617D, #101F27);
-$primary-light-gradient: linear-gradient(45deg, #218DB8, #53A4C4);
-$conquista-gradient: linear-gradient(45deg, #49A39D, #309B7E);
-$desafio-header-gradient: linear-gradient(-180deg, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.404));
+$primary-gradient: linear-gradient(45deg, #46a29f, #218db8);
+$gradient-barra-fixa: linear-gradient(45deg, #40bbb3, #218db8);
+$primary-gradient-onboard: linear-gradient(235deg, #46a29f, #218db8);
+$primary-invert-gradient: linear-gradient(-45deg, #46a29f, #218db8);
+$red-gradient: linear-gradient(45deg, #ff2d2d, #ff7070);
+$green-gradient: linear-gradient(45deg, #2ab570, #49ec9a);
+$pink-gradient: linear-gradient(45deg, #ffba37, #f55da4);
+$gold-gradient: linear-gradient(45deg, #ffb523, #ffcd6a);
+$dark-blue-gradient: linear-gradient(45deg, #1f58a2, #218db8);
+$super-dark-blue-gradient: linear-gradient(180deg, #35617d, #101f27);
+$primary-light-gradient: linear-gradient(45deg, #218db8, #53a4c4);
+$conquista-gradient: linear-gradient(45deg, #49a39d, #309b7e);
+$desafio-header-gradient: linear-gradient( -180deg, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.404));
 //
 //Neon Shadow
-$gold-neon: 0 0 40px rgba(255, 186, 55, 0.40);
-$red-neon: 0 0 40px rgba(255, 45, 45, 0.40);
-$green-neon: 0 0 40px rgba(42, 181, 112, 0.40);
-$primary-neon: 0 0 40px rgba(33, 141, 184, 0.40);
+$gold-neon: 0 0 40px rgba(255, 186, 55, 0.4);
+$red-neon: 0 0 40px rgba(255, 45, 45, 0.4);
+$green-neon: 0 0 40px rgba(42, 181, 112, 0.4);
+$primary-neon: 0 0 40px rgba(33, 141, 184, 0.4);
 //Border width
 $border-padrao: 1px;
 //Border radius
@@ -65,7 +65,7 @@ $box-shadow-conquista: 0px 8px 8px rgba(0, 0, 0, 0.15);
 //Tab
 .tabs-md .tabbar {
   background: $gradient-barra-fixa;
-  box-Shadow: 0 -10px 60px rgba(0, 0, 0, 0.45)
+  box-shadow: 0 -10px 60px rgba(0, 0, 0, 0.45);
 }
 
 ion-icon {
@@ -92,17 +92,17 @@ ion-icon {
   }
 }
 
-.tabs-md .tab-button[aria-selected=true] {
+.tabs-md .tab-button[aria-selected="true"] {
   color: white;
   .tab-button-icon {
-    color: white
+    color: white;
   }
 }
 
 .tabs-md .tab-button {
   color: rgba(255, 255, 255, 0.55);
   &-icon {
-    color: rgba(255, 255, 255, 0.55)
+    color: rgba(255, 255, 255, 0.55);
   }
 }
 
@@ -121,3 +121,7 @@ ion-icon {
 .bar-button-md-default {
   color: white;
 }
+
+//
+// Padding
+$padding-page: 16px;
