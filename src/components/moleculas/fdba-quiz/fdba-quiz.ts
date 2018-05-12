@@ -19,8 +19,8 @@ export class FdbaQuizComponent {
   }
 
   singleArrayF() {
-    let coresArrayShuffle = this.shuffle(this.cores);
-    let textArrayShuffle = this.shuffle(this.text);
+    this.shuffle(this.cores);
+    this.shuffle(this.text);
     for (var _i = 0; _i < this.cores.length; _i++) {
       this.singleArray.push({
         cores: this.cores[_i],
@@ -37,5 +37,7 @@ export class FdbaQuizComponent {
     );
     return o;
   }
-  clickButtonQuizEmit(click) {}
+  clickButtonQuizEmit(click) {
+    this.clickButtonQuiz.next(click);
+  }
 }

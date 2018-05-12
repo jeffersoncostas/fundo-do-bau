@@ -1,3 +1,264 @@
-<ion-content padding>
+<div padding>
+  <ion-segment [(ngModel)]="adminSegment">
+    <ion-segment-button value="desafio">
+      criar novo desafio
+    </ion-segment-button>
+    <ion-segment-button value="conquista">
+      criar nova conquista
+    </ion-segment-button>
+  </ion-segment>
+</div>
 
-</ion-content>
+<div [ngSwitch]="adminSegment" class="admin-segments">
+
+  <ion-content *ngSwitchCase="'desafio'" padding>
+
+    <form (ngSubmit)="novoDesafio()">
+      <section>
+
+        <ion-item>
+          <ion-label floating>Nome do desafio</ion-label>
+          <ion-input required type="text" [(ngModel)]="desafio.nome" name="title"></ion-input>
+        </ion-item>
+      </section>
+
+      <section>
+        <h3>Dicas</h3>
+        <ion-item>
+          <ion-label floating>Dica 1</ion-label>
+          <ion-input [(ngModel)]="desafio.dicas[0]" name="dicas"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Dica 2</ion-label>
+          <ion-input [(ngModel)]="desafio.dicas[1]" name="dicas"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Dica 3</ion-label>
+          <ion-input [(ngModel)]="desafio.dicas[2]" name="dicas"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Dica 4</ion-label>
+          <ion-input [(ngModel)]="desafio.dicas[3]" name="dicas"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Dica 5</ion-label>
+          <ion-input [(ngModel)]="desafio.dicas[4]" name="dicas"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Dica 6</ion-label>
+          <ion-input [(ngModel)]="desafio.dicas[5]" name="dicas"></ion-input>
+        </ion-item>
+      </section>
+
+      <section>
+        <h3>Geral</h3>
+        <ion-item>
+          <ion-label floating>Dificuldade</ion-label>
+          <ion-input type="number" [(ngModel)]="desafio.dificuldade" name="dificuldade"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Pontos</ion-label>
+          <ion-input type="number" [(ngModel)]="desafio.pontos" name="pontos"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Latitude</ion-label>
+          <ion-input type="number" [(ngModel)]="desafio.latitude" name="latitude"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Longitude</ion-label>
+          <ion-input type="number" [(ngModel)]="desafio.longitude" name="longitude"></ion-input>
+        </ion-item>
+      </section>
+
+      <section>
+        <h3>Pergunta 1</h3>
+        <ion-item>
+          <ion-label floating>Pergunta 1</ion-label>
+          <ion-input type="text" [(ngModel)]="perguntas.perguntas[0]" name="pergunta"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Pergunta 1 - Alternativa 1</ion-label>
+          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[0].pergunta0[0].alternativa" name="alternativa"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Pergunta 1 - Alternativa 2</ion-label>
+          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[0].pergunta0[1].alternativa" name="alternativa"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Pergunta 1 - Alternativa 3</ion-label>
+          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[0].pergunta0[2].alternativa" name="alternativa"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Pergunta 1 - Alternativa 4</ion-label>
+          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[0].pergunta0[3].alternativa" name="alternativa"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Pergunta 1 - Resposta</ion-label>
+          <ion-input type="text" [(ngModel)]="perguntas.respostas[0]" name="resposta"></ion-input>
+        </ion-item>
+      </section>
+
+
+      <section>
+        <h3>Pergunta 2</h3>
+        <ion-item>
+          <ion-label floating>Pergunta 2</ion-label>
+          <ion-input type="text" [(ngModel)]="perguntas.perguntas[1]" name="pergunta"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Pergunta 2 - Alternativa 1</ion-label>
+          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[1].pergunta1[0].alternativa" name="alternativa"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Pergunta 2 - Alternativa 2</ion-label>
+          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[1].pergunta1[1].alternativa" name="alternativa"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Pergunta 2 - Alternativa 3</ion-label>
+          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[1].pergunta1[2].alternativa" name="alternativa"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Pergunta 2 - Alternativa 4</ion-label>
+          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[1].pergunta1[3].alternativa" name="alternativa"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Pergunta 2 - Resposta</ion-label>
+          <ion-input type="text" [(ngModel)]="perguntas.respostas[1]" name="resposta"></ion-input>
+        </ion-item>
+      </section>
+
+
+
+      <section>
+        <h3>Pergunta 3</h3>
+        <ion-item>
+          <ion-label floating>Pergunta 3</ion-label>
+          <ion-input type="text" [(ngModel)]="perguntas.perguntas[2]" name="pergunta"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Pergunta 3 - Alternativa 1</ion-label>
+          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[2].pergunta2[0].alternativa" name="alternativa"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Pergunta 3 - Alternativa 2</ion-label>
+          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[2].pergunta2[1].alternativa" name="alternativa"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Pergunta 3 - Alternativa 3</ion-label>
+          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[2].pergunta2[2].alternativa" name="alternativa"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Pergunta 3 - Alternativa 4</ion-label>
+          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[2].pergunta2[3].alternativa" name="alternativa"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Pergunta 3 - Resposta</ion-label>
+          <ion-input type="text" [(ngModel)]="perguntas.respostas[2]" name="resposta"></ion-input>
+        </ion-item>
+      </section>
+
+
+
+      <section>
+        <h3>Pergunta 4</h3>
+        <ion-item>
+          <ion-label floating>Pergunta 4</ion-label>
+          <ion-input type="text" [(ngModel)]="perguntas.perguntas[3]" name="pergunta"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Pergunta 4 - Alternativa 1</ion-label>
+          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[3].pergunta3[0].alternativa" name="alternativa"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Pergunta 4 - Alternativa 2</ion-label>
+          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[3].pergunta3[1].alternativa" name="alternativa"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Pergunta 4 - Alternativa 3</ion-label>
+          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[3].pergunta3[2].alternativa" name="alternativa"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Pergunta 4 - Alternativa 4</ion-label>
+          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[3].pergunta3[3].alternativa" name="alternativa"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Pergunta 4 - Resposta</ion-label>
+          <ion-input type="text" [(ngModel)]="perguntas.respostas[3]" name="resposta"></ion-input>
+        </ion-item>
+      </section>
+
+
+
+      <section>
+        <h3>Pergunta 5</h3>
+        <ion-item>
+          <ion-label floating>Pergunta 5</ion-label>
+          <ion-input type="text" [(ngModel)]="perguntas.perguntas[4]" name="pergunta"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Pergunta 5 - Alternativa 1</ion-label>
+          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[4].pergunta4[0].alternativa" name="alternativa"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Pergunta 5 - Alternativa 2</ion-label>
+          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[4].pergunta4[1].alternativa" name="alternativa"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Pergunta 5 - Alternativa 3</ion-label>
+          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[4].pergunta4[2].alternativa" name="alternativa"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Pergunta 5 - Alternativa 4</ion-label>
+          <ion-input type="text" [(ngModel)]="perguntas.todasAlternativas[4].pergunta4[3].alternativa" name="alternativa"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Pergunta 5 - Resposta</ion-label>
+          <ion-input type="text" [(ngModel)]="perguntas.respostas[4]" name="resposta"></ion-input>
+        </ion-item>
+      </section>
+      <button ion-button type="submit" block>Novo Desafio</button>
+    </form>
+    <button ion-button> Proximo</button>
+
+
+  </ion-content>
+
+  <ion-content *ngSwitchCase="'conquista'" padding>
+
+    <form (ngSubmit)="novoDesafio()">
+      <section>
+
+        <ion-item>
+          <ion-label floating>Nome da Conquista</ion-label>
+          <ion-input required type="text" [(ngModel)]="conquista.nome" name="conquista-nome"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Descrição da Conquista</ion-label>
+          <ion-input required type="text" [(ngModel)]="conquista.descricao" name="conquista-descricao"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Imagem da Conquista</ion-label>
+          <ion-input required type="text" [(ngModel)]="conquista.imagem" name="conquista-imagem"></ion-input>
+        </ion-item>
+      </section>
+
+
+      <button ion-button type="submit" block>Novo Desafio</button>
+    </form>
+    {{perguntas | json}}
+
+  </ion-content>
+</div>
