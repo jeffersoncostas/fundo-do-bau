@@ -55,5 +55,7 @@ export class HomePage {
     this.autenticacao.logout().then(() => console.log("deslogado :)"));
   }
 
-  quizTeste() {}
+  quizTeste() {
+    this.navCtrl.push("QuizPage");
+  }
 }
