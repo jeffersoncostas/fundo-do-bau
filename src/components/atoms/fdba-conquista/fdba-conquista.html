@@ -1,5 +1,6 @@
 <section class="fdba-conquista" *ngIf="descricao">
-  <div class="fdba-conquista__titulo">
+  <div class="fdba-conquista__titulo" [style.background]="background">
+
     <div class="fdba-conquista__titulo__imagem">
       <img [src]="imagem">
     </div>
@@ -13,7 +14,7 @@
 </section>
 
 <section class="fdba-conquista--no-descricao" *ngIf="!descricao">
-  <div class="fdba-conquista__titulo">
+  <div class="fdba-conquista__titulo" [style.background]="background">
     <div class="fdba-conquista__titulo__imagem">
       <img [src]="imagem">
     </div>

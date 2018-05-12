@@ -1,5 +1,4 @@
 import { Perguntas } from "./perguntas.model";
-import { Conquista } from "./conquista.model";
 
 export class Desafio {
   public nome: string;
@@ -11,7 +10,7 @@ export class Desafio {
   public longitude: number;
   public perguntas: Perguntas;
   public video: string;
-  public conquista: Conquista;
+  public conquista: string;
   public imagem: string;
 
   constructor(
