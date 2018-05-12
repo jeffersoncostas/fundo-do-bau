@@ -14,15 +14,22 @@
   <ion-content *ngSwitchCase="'desafio'" padding>
 
     <form (ngSubmit)="novoDesafio()">
-      <section>
+      <section class="section-forms">
+
 
         <ion-item>
           <ion-label floating>Nome do desafio</ion-label>
           <ion-input required type="text" [(ngModel)]="desafio.nome" name="title"></ion-input>
         </ion-item>
+        <ion-item>
+          <ion-label floating>Id da conquista</ion-label>
+          <ion-input required type="text" [(ngModel)]="desafio.conquista" name="title"></ion-input>
+        </ion-item>
+
       </section>
 
-      <section>
+      <section class="section-forms">
+
         <h3>Dicas</h3>
         <ion-item>
           <ion-label floating>Dica 1</ion-label>
@@ -55,7 +62,8 @@
         </ion-item>
       </section>
 
-      <section>
+      <section class="section-forms">
+
         <h3>Geral</h3>
         <ion-item>
           <ion-label floating>Dificuldade</ion-label>
@@ -77,9 +85,16 @@
           <ion-input type="number" [(ngModel)]="desafio.longitude" name="longitude"></ion-input>
         </ion-item>
       </section>
+      <section class="section-forms">
+        <h3>Quiz</h3>
+        <ion-item>
+          <ion-label floating>Pontos do Quiz</ion-label>
+          <ion-input type="number" [(ngModel)]="perguntas.pontos" name="resposta"></ion-input>
+        </ion-item>
+      </section>
+      <section class="section-forms">
 
-      <section>
-        <h3>Pergunta 1</h3>
+        <h3>Quiz - Pergunta 1</h3>
         <ion-item>
           <ion-label floating>Pergunta 1</ion-label>
           <ion-input type="text" [(ngModel)]="perguntas.perguntas[0]" name="pergunta"></ion-input>
@@ -108,8 +123,9 @@
       </section>
 
 
-      <section>
-        <h3>Pergunta 2</h3>
+      <section class="section-forms">
+
+        <h3>Quiz - Pergunta 2</h3>
         <ion-item>
           <ion-label floating>Pergunta 2</ion-label>
           <ion-input type="text" [(ngModel)]="perguntas.perguntas[1]" name="pergunta"></ion-input>
@@ -139,8 +155,9 @@
 
 
 
-      <section>
-        <h3>Pergunta 3</h3>
+      <section class="section-forms">
+
+        <h3>Quiz -Pergunta 3</h3>
         <ion-item>
           <ion-label floating>Pergunta 3</ion-label>
           <ion-input type="text" [(ngModel)]="perguntas.perguntas[2]" name="pergunta"></ion-input>
@@ -170,8 +187,9 @@
 
 
 
-      <section>
-        <h3>Pergunta 4</h3>
+      <section class="section-forms">
+
+        <h3>Quiz -Pergunta 4</h3>
         <ion-item>
           <ion-label floating>Pergunta 4</ion-label>
           <ion-input type="text" [(ngModel)]="perguntas.perguntas[3]" name="pergunta"></ion-input>
@@ -200,9 +218,9 @@
       </section>
 
 
+      <section class="section-forms">
 
-      <section>
-        <h3>Pergunta 5</h3>
+        <h3>Quiz -Pergunta 5</h3>
         <ion-item>
           <ion-label floating>Pergunta 5</ion-label>
           <ion-input type="text" [(ngModel)]="perguntas.perguntas[4]" name="pergunta"></ion-input>
@@ -228,18 +246,25 @@
           <ion-label floating>Pergunta 5 - Resposta</ion-label>
           <ion-input type="text" [(ngModel)]="perguntas.respostas[4]" name="resposta"></ion-input>
         </ion-item>
+
       </section>
+
+
       <button ion-button type="submit" block>Novo Desafio</button>
     </form>
-    <button ion-button> Proximo</button>
+
 
 
   </ion-content>
 
   <ion-content *ngSwitchCase="'conquista'" padding>
+    <section class="section-forms">
+      <h3>Visualizador</h3>
+      <fdba-conquista [titulo]="conquista.nome" [imagem]="conquista.imagem" [descricao]="conquista.descricao" [background]="conquista.background"></fdba-conquista>
+    </section>
 
-    <form (ngSubmit)="novoDesafio()">
-      <section>
+    <form (ngSubmit)="novaConquista()">
+      <section class="section-forms">
 
         <ion-item>
           <ion-label floating>Nome da Conquista</ion-label>
@@ -253,12 +278,32 @@
           <ion-label floating>Imagem da Conquista</ion-label>
           <ion-input required type="text" [(ngModel)]="conquista.imagem" name="conquista-imagem"></ion-input>
         </ion-item>
+        <ion-item>
+          <ion-label floating>Background</ion-label>
+          <ion-input required type="text" [(ngModel)]="conquista.background" name="conquista-imagem"></ion-input>
+        </ion-item>
+
+        <button ion-button type="submit" block>Nova Conquista</button>
+
+
       </section>
 
 
-      <button ion-button type="submit" block>Novo Desafio</button>
     </form>
-    {{perguntas | json}}
+
+    <section class="section-forms">
+      <h3>Lista de Conquistas</h3>
+      <div class="conquista" *ngFor="let conquista of listaConquistas$">
+        <h3>id: </h3>
+        <fdba-conquista [titulo]="conquista.nome" [imagem]="conquista.imagem" [descricao]="conquista.descricao" [background]="conquista.background"></fdba-conquista>
+
+      </div>
+    </section>
+
+
+
+
+
 
   </ion-content>
 </div>

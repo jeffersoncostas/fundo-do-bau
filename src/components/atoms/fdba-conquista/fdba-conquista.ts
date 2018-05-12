@@ -1,18 +1,16 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'fdba-conquista',
-  templateUrl: 'fdba-conquista.html',
-  inputs: ['imagem', 'titulo', 'descricao']
+  selector: "fdba-conquista",
+  templateUrl: "fdba-conquista.html",
+  inputs: ["imagem", "titulo", "descricao", "background"]
 })
 export class FdbaConquistaComponent {
-
   imagem: string;
   titulo: string;
   descricao: string;
+  background: string;
   constructor() {
-    console.log('Hello FdbaConquistaComponent Component');
-
+    console.log("Hello FdbaConquistaComponent Component");
   }
-
 }

@@ -3,7 +3,8 @@ import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { Desafio } from "../../models/desafio.model";
 import { Perguntas } from "../../models/perguntas.model";
 import { Conquista } from "../../models/conquista.model";
-
+import { DatabaseProvider } from "../../providers/database/database";
+import { Subscription } from "rxjs/Subscription";
 
 @IonicPage()
 @Component({
@@ -59,9 +60,11 @@ export class AdminPage {
     pontos: 0
   };
   conquista: Conquista = {
+    key: "",
     nome: "",
     descricao: "",
-    imagem: ""
+    imagem: "",
+    background: ""
   };
   desafio: Desafio = {
     nome: "",
@@ -73,16 +76,52 @@ export class AdminPage {
     longitude: 0,
     perguntas: this.perguntas,
     video: "",
-    conquista: this.conquista,
+    conquista: "",
     imagem: ""
   };
-  adminSegment = "desafio";
+  adminSegment = "conquista";
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  listaConquistas$: Conquista[];
+  listaConquistaSubscribe: Subscription;
+
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private database: DatabaseProvider
+  ) {
+    this.getConquistas();
+  }
 
   ionViewDidLoad() {}
 
   novoDesafio() {
     console.log(this.desafio);
+    this.database
+      .novoDesafio(this.desafio)
+      .then(
+        data => console.log("pronto!", data.key),
+        error => console.log("vishe!", error)
+      );
+  }
+  novaConquista(conquista) {
+    console.log(this.conquista);
+    this.database
+      .novaConquista(this.conquista)
+      .then(
+        data => console.log("pronto!", data.key),
+        error => console.log("vishe!", error)
+      );
+  }
+  getConquistas() {
+    this.listaConquistaSubscribe = this.database
+      .getAllConquistas()
+      .subscribe(conquistas => {
+        this.listaConquistas$ = [];
+        conquistas.forEach(element => {
+          console.log(element.payload.val());
+          this.listaConquistas$.push(element.payload.val());
+          console.log(this.listaConquistas$);
+        });
+      });
   }
 }

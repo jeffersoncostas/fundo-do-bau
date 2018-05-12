@@ -2,12 +2,15 @@ page-admin {
   .item-md {
     background: none;
   }
-  section {
+  .section-forms {
     margin-bottom: 50px;
     background: $grey;
     padding: 20px 0px;
     h3 {
       padding: 0px 20px;
+    }
+    .conquista {
+      margin-bottom: 30px;
     }
   }
   .admin-segments {
@@ -16,5 +19,8 @@ page-admin {
     ion-content {
       height: 100%;
     }
+  }
+  .scroll-content {
+    margin-bottom: 130px;
   }
 }
