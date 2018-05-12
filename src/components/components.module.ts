@@ -14,7 +14,10 @@ import { FdbaConquistaComponent } from './atoms/fdba-conquista/fdba-conquista';
 import { FdbaBadgeComponent } from './atoms/fdba-badge/fdba-badge';
 import { FdbaDesafioHeaderComponent } from './moleculas/fdba-desafio-header/fdba-desafio-header';
 import { FdbaInputComponent } from './atoms/fdba-input/fdba-input';
+<<<<<<< HEAD
 import { FdbaQuizComponent } from './moleculas/fdba-quiz/fdba-quiz';
+=======
+>>>>>>> fdba-card-ranking arrumado
 import { FdbaCardRankingComponent } from './atoms/fdba-card-ranking/fdba-card-ranking';
 
 @NgModule({
@@ -29,7 +32,10 @@ import { FdbaCardRankingComponent } from './atoms/fdba-card-ranking/fdba-card-ra
 		FdbaBadgeComponent,
 		FdbaDesafioHeaderComponent,
 		FdbaInputComponent,
+<<<<<<< HEAD
     	FdbaQuizComponent,
+=======
+>>>>>>> fdba-card-ranking arrumado
 		FdbaCardRankingComponent],
 	imports: [IonicModule, RoundProgressModule, FormsModule],
 	exports: [FdbaButtonComponent,
@@ -43,7 +49,10 @@ import { FdbaCardRankingComponent } from './atoms/fdba-card-ranking/fdba-card-ra
 		FdbaBadgeComponent,
 		FdbaDesafioHeaderComponent,
 		FdbaInputComponent,
+<<<<<<< HEAD
     	FdbaQuizComponent,
+=======
+>>>>>>> fdba-card-ranking arrumado
 		FdbaCardRankingComponent]
 
 })
