@@ -1,0 +1,14 @@
+page-quiz {
+  .fdba-page--quiz {
+    background: $super-dark-blue-gradient;
+    height: 100%;
+    width: 100%;
+    padding: $padding-page;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    fdba-quiz {
+      width: 100%;
+    }
+  }
+}

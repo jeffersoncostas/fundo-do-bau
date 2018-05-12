@@ -14,6 +14,7 @@ import { FdbaConquistaComponent } from './atoms/fdba-conquista/fdba-conquista';
 import { FdbaBadgeComponent } from './atoms/fdba-badge/fdba-badge';
 import { FdbaDesafioHeaderComponent } from './moleculas/fdba-desafio-header/fdba-desafio-header';
 import { FdbaInputComponent } from './atoms/fdba-input/fdba-input';
+import { FdbaQuizComponent } from './moleculas/fdba-quiz/fdba-quiz';
 
 @NgModule({
 	declarations: [FdbaButtonComponent,
@@ -26,7 +27,8 @@ import { FdbaInputComponent } from './atoms/fdba-input/fdba-input';
 		FdbaConquistaComponent,
 		FdbaBadgeComponent,
 		FdbaDesafioHeaderComponent,
-		FdbaInputComponent],
+		FdbaInputComponent,
+    FdbaQuizComponent],
 	imports: [IonicModule, RoundProgressModule, FormsModule],
 	exports: [FdbaButtonComponent,
 		FdbaCardComponent,
@@ -38,6 +40,7 @@ import { FdbaInputComponent } from './atoms/fdba-input/fdba-input';
 		FdbaConquistaComponent,
 		FdbaBadgeComponent,
 		FdbaDesafioHeaderComponent,
-		FdbaInputComponent]
+		FdbaInputComponent,
+    FdbaQuizComponent]
 })
 export class ComponentsModule { }

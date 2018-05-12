@@ -1,15 +1,13 @@
-export class Perguntas{
+export class Perguntas {
+  public perguntas: string[];
+  public todasAlternativas;
+  public respostas: string[];
+  public pontos: number;
 
-    public pergunta:string;
-    public alternativas=[];
-    public resposta:string;
-    public pontos:number;
-
-    constructor(pergunta,alternativas,resposta,pontos){
-        
-        this.pergunta=pergunta;
-        this.alternativas=alternativas;
-        this.resposta=resposta;
-        this.pontos=pontos;
-        }
+  constructor(pergunta, alternativas, resposta, pontos) {
+    this.perguntas = pergunta;
+    this.todasAlternativas = alternativas;
+    this.respostas = resposta;
+    this.pontos = pontos;
+  }
 }

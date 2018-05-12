@@ -1,0 +1,46 @@
+fdba-quiz {
+  .fdba-quiz {
+    &__paginacao {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin: 0 0 10px;
+      &--inactive {
+        height: 6px;
+        width: 15px;
+        margin: 0px 7px;
+        background: $white;
+      }
+      &--active {
+        @extend .fdba-quiz__paginacao--inactive;
+        width: 50px;
+      }
+    }
+    &__pergunta {
+      width: calc(100% + 32px);
+      margin: 0px -16px 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 120px;
+      background: $super-dark-transparent;
+      &__numero {
+        color: $white;
+        font-size: $xxl-font-size;
+        display: inline-block;
+      }
+      &__pergunta {
+        color: $white;
+        width: 200px;
+        display: inline-block;
+        font-size: $xl-font-size;
+      }
+    }
+    &__alternativas {
+      &__botoes {
+        margin: 0px 0px 20px;
+      }
+    }
+  }
+}
