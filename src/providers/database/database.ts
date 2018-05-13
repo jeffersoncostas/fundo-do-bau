@@ -5,13 +5,6 @@ import { AngularFireDatabase } from "angularfire2/database";
 import { Conquista } from "../../models/conquista.model";
 import { Desafio } from "../../models/desafio.model";
 @Injectable()
-/*
-  Generated class for the DatabaseProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
-@Injectable()
 export class DatabaseProvider {
   constructor(
     private afAuth: AngularFireAuth,
@@ -25,7 +18,7 @@ export class DatabaseProvider {
   }
 
   async getConquista(id) {
-    return this.db.object(`conquistas/${id}`).snapshotChanges();
+    return await this.db.list(`conquistas/${id}`).snapshotChanges();
   }
   getAllConquistas() {
     return this.db.list("conquistas/").snapshotChanges();
@@ -33,5 +26,8 @@ export class DatabaseProvider {
 
   async novoDesafio(desafio: Desafio) {
     return await this.db.list(`desafios/`).push(desafio);
+  }
+  getDesafio(id) {
+    return this.db.object(`desafios/${id}`).snapshotChanges();
   }
 }

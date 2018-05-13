@@ -1,30 +1,42 @@
-import { Component, EventEmitter } from "@angular/core";
+import {
+  Component,
+  EventEmitter,
+  SimpleChange,
+  SimpleChanges
+} from "@angular/core";
+import { Desafio } from "../../../models/desafio.model";
 
 @Component({
   selector: "fdba-quiz",
   templateUrl: "fdba-quiz.html",
-  inputs: ["paginacao"],
+  inputs: ["paginacao", "pergunta", "resposta", "alternativa"],
   outputs: ["clickButtonQuiz"]
 })
 export class FdbaQuizComponent {
   paginacao: number;
+  pergunta: string;
+  resposta: string;
+  alternativa: string[];
   clickButtonQuiz = new EventEmitter();
 
   singleArray = [];
   text = ["amore", "docura", "caralhao", "bucetao"];
   cores = ["#3DD689", "#FFC350", "#E97C29", "#FF2D2D"];
 
-  constructor() {
+  constructor() {}
+  ngOnInit() {}
+  ngOnChanges(changes: SimpleChanges) {
+    this.singleArray = [];
     this.singleArrayF();
   }
 
   singleArrayF() {
     this.shuffle(this.cores);
-    this.shuffle(this.text);
+    this.shuffle(this.alternativa);
     for (var _i = 0; _i < this.cores.length; _i++) {
       this.singleArray.push({
         cores: this.cores[_i],
-        text: this.text[_i]
+        text: this.alternativa[_i]
       });
     }
   }
