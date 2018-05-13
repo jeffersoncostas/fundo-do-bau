@@ -17,18 +17,20 @@ $xss-font-size: 10px;
 $white: #ffff;
 $grey: #e3e3e3;
 $dark-grey: rgb(141, 141, 141);
-$primary: #218db8;
-$secondary: #46a29f;
-$dark: #29495d;
+$silver: #BABABA;
+$primary: #218DB8;
+$secondary: #46A29F;
+$dark: #29495D;
 $medium-dark: #224053;
 $super-dark: #101f27;
 $input-registro: #2e7080;
-$border: #ffba37;
-$gold: #ffba37;
-$white-transparent: rgba(255, 255, 255, 0.3);
-$white-transparent-light: rgba(255, 255, 255, 0.1);
-$white-transparent-medium: rgba(255, 255, 255, 0.5);
-$super-dark-transparent: rgba(13, 37, 52, 0.65);
+$border: #FFBA37;
+$gold: #FFBA37;
+$coper: #C26F00;
+$white-transparent: rgba(255, 255, 255, 0.30);
+$white-transparent-light: rgba(255, 255, 255, 0.10);
+$white-transparent-medium: rgba(255, 255, 255, 0.50);
+$super-dark-transparent :rgba(13, 37, 52, 0.65);
 //
 // gradientes
 $primary-gradient: linear-gradient(45deg, #46a29f, #218db8);
@@ -52,6 +54,8 @@ $green-neon: 0 0 40px rgba(42, 181, 112, 0.4);
 $primary-neon: 0 0 40px rgba(33, 141, 184, 0.4);
 //Border width
 $border-padrao: 1px;
+//border medium
+$border-medium: 1.5px;
 //Border radius
 $border-radius-padrao: 2px;
 $border-radius-circle: 50%;
