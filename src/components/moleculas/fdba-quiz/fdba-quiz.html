@@ -1,19 +1,21 @@
 <section class="fdba-quiz">
 
   <div class="fdba-quiz__paginacao">
-    <span [ngClass]=" {'fdba-quiz__paginacao--active': paginacao==1,'fdba-quiz__paginacao--inactive': paginacao!=1 } "></span>
+    <span [ngClass]=" {'fdba-quiz__paginacao--active': paginacao==0,'fdba-quiz__paginacao--inactive': paginacao!=0 } "></span>
+    <span [ngClass]=" {'fdba-quiz__paginacao--active': paginacao==1,'fdba-quiz__paginacao--inactive': paginacao!=1} "></span>
     <span [ngClass]=" {'fdba-quiz__paginacao--active': paginacao==2,'fdba-quiz__paginacao--inactive': paginacao!=2} "></span>
     <span [ngClass]=" {'fdba-quiz__paginacao--active': paginacao==3,'fdba-quiz__paginacao--inactive': paginacao!=3} "></span>
     <span [ngClass]=" {'fdba-quiz__paginacao--active': paginacao==4,'fdba-quiz__paginacao--inactive': paginacao!=4} "></span>
-    <span [ngClass]=" {'fdba-quiz__paginacao--active': paginacao==5,'fdba-quiz__paginacao--inactive': paginacao!=5} "></span>
   </div>
 
-  <div class="fdba-quiz__pergunta">
-    <span class="fdba-quiz__pergunta__numero">{{paginacao}}.</span>
-    <span class="fdba-quiz__pergunta__pergunta">Quem construiu a parede do Cedro?</span>
+  <div class="fdba-quiz__pergunta" *ngIf="pergunta">
+    <span class="fdba-quiz__pergunta__numero">{{paginacao+1}}.</span>
+    <span class="fdba-quiz__pergunta__pergunta">{{pergunta}}</span>
+
   </div>
 
-  <div class="fdba-quiz__alternativas">
+  <div class="fdba-quiz__alternativas" *ngIf="pergunta">
+
     <div class="fdba-quiz__alternativas__botoes" *ngFor="let item of singleArray; index as i">
       <fdba-button type="degrade-quiz" [buttonText]="item.text" [cor]="item.cores" (clickButton)="clickButtonQuizEmit(item.text)"></fdba-button>
     </div>
