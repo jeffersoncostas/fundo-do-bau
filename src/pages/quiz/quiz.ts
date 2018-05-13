@@ -30,7 +30,6 @@ export class QuizPage {
   ) {}
 
   ionViewDidLoad() {
-    console.log("ionViewDidLoad QuizPage");
     this.acessarDatabase();
   }
 
@@ -66,13 +65,13 @@ export class QuizPage {
       console.log("resposta errada D:");
     }
 
-    this.paginacao++;
-
-    if (this.paginacao == 5) {
+    if (this.paginacao == 4) {
       console.log("parabens, vc conseguiu " + this.quizPontos + " pontos");
+      this.navCtrl.setRoot("HomePage");
+    } else {
+      this.paginacao++;
+      this.separarPerguntas();
     }
-
-    this.separarPerguntas();
   }
 
   pontuacaoConfig() {
