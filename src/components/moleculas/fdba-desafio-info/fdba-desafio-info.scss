@@ -7,9 +7,6 @@ fdba-desafio-info {
         }
         &--box-inside{
             display: flex;
-            //text-align: center;
-            //align-items: center;
-            //justify-content: center;
             position: relative;
             padding: 10px;
             
@@ -36,7 +33,7 @@ fdba-desafio-info {
                   height: 55px;
                   background-color: $primary;
                   opacity: .3;
-                  filter: blur(8px);
+                  filter: blur(15px);
                   left: 50%;
                   top: 50%;
                   transform: translate(-50%, -50%);
