@@ -1,0 +1,77 @@
+fdba-desafio-info {
+    .fdba-desafio-info {
+        &--box{
+            display: flex;
+            justify-content: center;
+
+        }
+        &--box-inside{
+            display: flex;
+            position: relative;
+            padding: 10px;
+            
+            svg {
+                filter: blur(0.3px);
+            }
+            &:before {
+                content: '';    
+                position: absolute;
+                width: 55px;
+                height: 55px;
+                background-color: $gold;
+                opacity: .2;
+                filter: blur(15px);
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+              }
+            &:nth-child(2) {
+                &:before {
+                  content: '';
+                  position: absolute;
+                  width: 55px;
+                  height: 55px;
+                  background-color: $primary;
+                  opacity: .3;
+                  filter: blur(15px);
+                  left: 50%;
+                  top: 50%;
+                  transform: translate(-50%, -50%);
+                }
+            }
+            &:nth-child(3) {
+                &:before {
+                  content: '';
+                  position: absolute;
+                  width: 55px;
+                  height: 55px;
+                  background-color: $primary;
+                  opacity: .3;
+                  filter: blur(15px);
+                  left: 50%;
+                  top: 50%;
+                  transform: translate(-50%, -50%);
+                }
+            }   
+        }
+        &--text{
+            
+            &__number{
+                left: 50%;
+                top: 50%;
+                color: $white;
+                position: absolute;
+                transform: translate(-50%, -50%);
+             
+            }
+            &__name{
+                left: 50%;
+                top: 110%;
+                color: $white;
+                position: absolute;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+    }
+}
