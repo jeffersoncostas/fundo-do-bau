@@ -18,6 +18,7 @@ import { FdbaQuizComponent } from "./moleculas/fdba-quiz/fdba-quiz";
 import { FdbaCardRankingComponent } from "./atoms/fdba-card-ranking/fdba-card-ranking";
 import { FdbaHeaderConfigComponent } from "./moleculas/fdba-header-config/fdba-header-config";
 import { FdbaDesafioInfoComponent } from "./moleculas/fdba-desafio-info/fdba-desafio-info";
+import { FdbaRankingHeaderComponent } from "./moleculas/fdba-ranking-header/fdba-ranking-header";
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { FdbaDesafioInfoComponent } from "./moleculas/fdba-desafio-info/fdba-des
     FdbaQuizComponent,
     FdbaCardRankingComponent,
     FdbaDesafioInfoComponent,
-    FdbaHeaderConfigComponent
+    FdbaHeaderConfigComponent,
+    FdbaRankingHeaderComponent
   ],
   imports: [IonicModule, RoundProgressModule, FormsModule],
   exports: [
@@ -53,7 +55,8 @@ import { FdbaDesafioInfoComponent } from "./moleculas/fdba-desafio-info/fdba-des
     FdbaQuizComponent,
     FdbaDesafioInfoComponent,
     FdbaCardRankingComponent,
-    FdbaHeaderConfigComponent
+    FdbaHeaderConfigComponent,
+    FdbaRankingHeaderComponent
   ]
 })
 export class ComponentsModule {}
