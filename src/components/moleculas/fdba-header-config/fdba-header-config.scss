@@ -16,7 +16,7 @@ fdba-header-config {
   }
   .fdba-header-config__user-info {
     padding: 0px 20px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     &__nome {
       color: $white;
       font-size: $xl-font-size;
@@ -30,9 +30,13 @@ fdba-header-config {
       height: 50px;
       display: flex;
       justify-content: flex-end;
-      img {
+      &__img1 {
         width: 100px;
         height: 100px;
+      }
+      &__img2 {
+        width: 95px;
+        height: 40px;
       }
     }
   }
