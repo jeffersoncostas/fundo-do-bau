@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="fdba-header-config__user-info">
+      <div class="fdba-header-config__user-info__icon-content">
+        <img src="../../../assets/imgs/icon-config.svg">
+      </div>
+      <div class="fdba-header-config__user-info__nome"> {{nomeUsuario}} </div>
+      <div class="fdba-header-config__user-info__pontos"> {{pontos}} pontos</div>
+    </div>
+    <ion-segment [(ngModel)]="configSegment">
+
+      <ion-segment-button value="config" (click)="configSeg.next('config')">
+        configurações
+      </ion-segment-button>
+      <ion-segment-button value="conq" (click)="configSeg.next('conq')">
+
+        conquistas
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>

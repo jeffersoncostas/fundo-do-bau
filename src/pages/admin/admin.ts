@@ -83,13 +83,6 @@ export class AdminPage {
   getConquistas() {
     this.listaConquistaSubscribe = this.database
       .getAllConquistas()
-      .subscribe(conquistas => {
-        this.listaConquistas$ = [];
-        conquistas.forEach(element => {
-          console.log(element.payload.val());
-          this.listaConquistas$.push(element.payload.val());
-          console.log(this.listaConquistas$);
-        });
-      });
+      .subscribe(data => (this.listaConquistas$ = data));
   }
 }

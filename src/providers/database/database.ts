@@ -4,6 +4,7 @@ import { Usuario } from "../../models/usuario.model";
 import { AngularFireDatabase } from "angularfire2/database";
 import { Conquista } from "../../models/conquista.model";
 import { Desafio } from "../../models/desafio.model";
+import "rxjs/add/operator/map";
 @Injectable()
 export class DatabaseProvider {
   constructor(
@@ -21,7 +22,18 @@ export class DatabaseProvider {
     return await this.db.list(`conquistas/${id}`).snapshotChanges();
   }
   getAllConquistas() {
-    return this.db.list("conquistas/").snapshotChanges();
+    return this.db
+      .list("conquistas/")
+      .snapshotChanges()
+      .map(conquistas => {
+        let listaConquistas$ = [];
+        console.log(conquistas);
+        conquistas.forEach(element => {
+          console.log(element.payload.val());
+          listaConquistas$.push(element.payload.val());
+        });
+        return listaConquistas$;
+      });
   }
 
   async novoDesafio(desafio: Desafio) {
