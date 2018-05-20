@@ -1,0 +1,28 @@
+fdba-perfil-input {
+  form {
+    .item-md {
+      background: none;
+      color: $white;
+      margin-bottom: 20px;
+      transition: all .3s
+    }
+    button {
+      margin-top: 40px;
+    }
+    .item-input .label-md {
+      color: $white;
+      font-size: $default-font-size;
+    }
+    .item-md.item-input.item-input-has-focus .item-inner,
+    .item-md.item-input.input-has-focus .item-inner {
+      box-shadow: none;
+      border-bottom: 1px solid white;
+      background: rgba(34, 62, 80, 0.329);
+      border-radius: 2px;
+      transition: all .5s
+    }
+    .item-md.item-block .item-inner {
+      border: none;
+    }
+  }
+}

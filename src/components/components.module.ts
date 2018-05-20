@@ -13,12 +13,13 @@ import { FdbaTextoParabensBotaoComponent } from "./moleculas/fdba-texto-parabens
 import { FdbaConquistaComponent } from "./atoms/fdba-conquista/fdba-conquista";
 import { FdbaBadgeComponent } from "./atoms/fdba-badge/fdba-badge";
 import { FdbaDesafioHeaderComponent } from "./moleculas/fdba-desafio-header/fdba-desafio-header";
-import { FdbaInputComponent } from "./atoms/fdba-input/fdba-input";
+import { FdbaInputComponent } from "./moleculas/fdba-input/fdba-input";
 import { FdbaQuizComponent } from "./moleculas/fdba-quiz/fdba-quiz";
 import { FdbaCardRankingComponent } from "./atoms/fdba-card-ranking/fdba-card-ranking";
 import { FdbaHeaderConfigComponent } from "./moleculas/fdba-header-config/fdba-header-config";
 import { FdbaDesafioInfoComponent } from "./moleculas/fdba-desafio-info/fdba-desafio-info";
 import { FdbaRankingHeaderComponent } from "./moleculas/fdba-ranking-header/fdba-ranking-header";
+import { FdbaPerfilInputComponent } from "./moleculas/fdba-perfil-input/fdba-perfil-input";
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { FdbaRankingHeaderComponent } from "./moleculas/fdba-ranking-header/fdba
     FdbaCardRankingComponent,
     FdbaDesafioInfoComponent,
     FdbaHeaderConfigComponent,
-    FdbaRankingHeaderComponent
+    FdbaRankingHeaderComponent,
+    FdbaPerfilInputComponent
   ],
   imports: [IonicModule, RoundProgressModule, FormsModule],
   exports: [
@@ -56,7 +58,8 @@ import { FdbaRankingHeaderComponent } from "./moleculas/fdba-ranking-header/fdba
     FdbaDesafioInfoComponent,
     FdbaCardRankingComponent,
     FdbaHeaderConfigComponent,
-    FdbaRankingHeaderComponent
+    FdbaRankingHeaderComponent,
+    FdbaPerfilInputComponent
   ]
 })
 export class ComponentsModule {}
