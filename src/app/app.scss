@@ -179,3 +179,30 @@ ion-alert.alert-top {
     box-shadow: $red-neon;
   }
 }
+
+.fdba-modal-naoAchou{
+  .alert-wrapper {
+    background: #192f3c;
+    border: 2px solid $gold;
+    box-shadow: $gold-neon;
+    display: flex;
+    justify-content: center;
+    
+    .alert-message {
+      color: white;
+    }
+    .alert-button {
+      width: 100%;
+      text-align: center;   
+      color: white;
+      border: 1px solid $gold;
+      background: $gold-gradient;
+    }
+
+    .alert-button .button-inner {
+      width: 50%;
+    }
+
+  }
+
+}
