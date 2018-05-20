@@ -7,6 +7,7 @@ import { Observable } from "rxjs/Observable";
 import { Usuario } from "../../models/usuario.model";
 import { AngularFireObject } from "angularfire2/database";
 import { Subscription } from "rxjs/Subscription";
+import { Desafio } from "../../models/desafio.model";
 @IonicPage()
 @Component({
   selector: "page-home",
@@ -15,35 +16,34 @@ import { Subscription } from "rxjs/Subscription";
 export class HomePage {
   // dados capturados do firebase
   userData$: Usuario;
-  userDataObservableSnapshot: Subscription;
+  userDataObservableSubscription: Subscription;
+  listaDesafiosSubscription: Subscription;
+  listaDesafios$: Desafio[];
+  toogleFixed: boolean = false;
+
+  home: string = "desafios";
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    private autenticacao: AutenticacaoProvider
-  ) {}
+    private autenticacao: AutenticacaoProvider,
+    private database: DatabaseProvider
+  ) {
+    setInterval(() => {}, 450);
+  }
 
   ionViewDidEnter() {
     this.getUser();
+    this.getDesafios();
   }
+  ngOnChanges() {
+    console.log("oi");
 
-  testclick() {
-    this.navCtrl.push("StyleGuidePage", { backbutton: false });
-  }
-  verOnboard() {
-    this.navCtrl.push("OnboardPage");
-  }
-
-  logoutTest() {
-    this.autenticacao.logout().then(() => console.log("deslogado :)"));
-  }
-
-  quizTeste() {
-    this.navCtrl.push("QuizPage");
+    this.toogleFixed = false;
   }
 
   getUser() {
-    this.userDataObservableSnapshot = this.autenticacao
+    this.userDataObservableSubscription = this.autenticacao
       .getProfile()
       .subscribe(data => {
         this.userData$ = data;
@@ -51,8 +51,36 @@ export class HomePage {
       });
   }
 
+  getDesafios() {
+    this.listaDesafiosSubscription = this.database
+      .getAllDesafios()
+      .subscribe(data => {
+        this.listaDesafios$ = [];
+        this.listaDesafios$ = data;
+        console.log(this.listaDesafios$);
+      });
+  }
+
+  clickCard(desafio) {
+    console.log(desafio);
+    this.navCtrl.push("DesafioPage", desafio);
+  }
+
+  scroll(event) {
+    if (event.scrollTop >= 70) {
+      this.toogleFixed = true;
+    } else {
+      this.toogleFixed = false;
+    }
+    //console.log(this.toogleFixed);
+  }
+
+  scrollTop() {
+    this.toogleFixed = false;
+  }
   // Encerrar eventos da página
   ionViewDidLeave() {
-    this.userDataObservableSnapshot.unsubscribe();
+    this.userDataObservableSubscription.unsubscribe();
+    this.listaDesafiosSubscription.unsubscribe();
   }
 }

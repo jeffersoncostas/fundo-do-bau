@@ -1,33 +1,76 @@
 fdba-home-header {
-    .fdba-home-header {
-        display: flex;
-        justify-content: center;
-        position: relative;
-        width: 100%;
-        height: 180px;
-
-        &__img {
-            padding: 0px;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        &__overlay {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-color: $primary-transparent;
-            top: 0;
-        }
-
-        &__cidade {
-            position: absolute;
-            color: $white;
-            top: 135px;    
-            text-align: center;     
-            font-size: $xl-font-size;
-        }
-
+  ion-header {
+    position: fixed;
+    justify-content: center;
+    display: flex;
+    fdba-toogle {
+      width: 70%;
     }
+    .toolbar-content-md {
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+    }
+  }
+  .content {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin: -16px -16px 20px;
+    fdba-toogle {
+      z-index: 1;
+      position: absolute;
+      width: 70%;
+      margin-top: 20%;
+    }
+  }
+  .content-fixed {
+    position: fixed;
+  }
+  .fdba-home-header {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 300px;
+    &__img {
+      padding: 0px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    &__overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: $primary-transparent;
+      top: 0;
+    }
+    &__cidade {
+      position: absolute;
+      color: $white;
+      bottom: 65px;
+      text-align: center;
+      font-size: $xxxl-font-size;
+    }
+  }
+  .fdba-home-header--fixed {
+    @extend .fdba-home-header;
+    height: 80px;
+  }
+  .animation {
+    animation-name: slideUp;
+    animation-duration: .3s;
+    animation-iteration-count: 1;
+  }
+  @keyframes slideUp {
+    0% {
+      opacity: 0;
+      top: -100px;
+    }
+    100% {
+      opacity: 1;
+      top: 0px;
+    }
+  }
 }

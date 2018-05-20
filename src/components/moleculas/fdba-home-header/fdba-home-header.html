@@ -1,5 +1,20 @@
-<div class="fdba-home-header">
-  <img src="../../../assets/imgs/quixadaJPG.jpg" alt="" class="fdba-home-header__img">
-  <div class="fdba-home-header__overlay"> </div>
-  <span class="fdba-home-header__cidade">Quixadá</span>
-</div> 
+<ion-header *ngIf="toogleFixed" class="animation">
+
+  <ion-navbar>
+
+    <fdba-toogle [toogle]="toogle" (configToogle)="configToogle.next($event)"></fdba-toogle>
+
+  </ion-navbar>
+
+</ion-header>
+
+<div class="content">
+  <fdba-toogle [toogle]="toogle" (configToogle)="configToogle.next($event)"></fdba-toogle>
+  <div class="fdba-home-header">
+
+    <img src="../../../assets/imgs/quixadaJPG.jpg" alt="" class="fdba-home-header__img">
+    <div class="fdba-home-header__overlay"> </div>
+    <span class="fdba-home-header__cidade">Quixadá </span>
+  </div>
+
+</div>

@@ -1,8 +1,8 @@
 <section class="fdba-card" *ngFor="let desafio of listaDesafios">
-  <div class="fdba-card__content-image" (click)="clickCardEmit($event)" [style.background-image]="'url('+desafio.imagem+')'">
+  <div class="fdba-card__content-image" (click)="clickCardEmit(desafio)" [style.background-image]="'url('+desafio.imagem+')'">
   </div>
   <div class="fdba-card__content-title">
-    <div class="fdba-card__content-title__title" (click)="clickCardEmit($event)">
+    <div class="fdba-card__content-title__title" (click)="clickCardEmit(desafio)">
 
       <span>{{desafio.nome}}</span>
     </div>
@@ -13,7 +13,7 @@
       <fdba-button class="fba-card__content-title__buttons__verde" type="degrade-verde" altura="30" [buttonText]="botaoCardVerde"
         (clickButton)="teAchei(desafio)"></fdba-button>
     </div>
-    <div class="fdba-card__content-title__progress" *ngIf="!botaoCardVerde && !botaoCardVermelho" (click)="clickCardEmit($event)">
+    <div class="fdba-card__content-title__progress" *ngIf="!botaoCardVerde && !botaoCardVermelho" (click)="clickCardEmit(desafio)">
 
       <div class="fdba-card__content-title__progress__circle">
         <span class="fdba-card__content-title__progress__circle__number">{{desafio.dificuldade}}</span>

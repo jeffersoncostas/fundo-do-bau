@@ -25,6 +25,20 @@ export class DatabaseProvider {
     return this.db.object(`desafios/${id}`).snapshotChanges();
   }
 
+  getAllDesafios() {
+    let listaDesafios = [];
+    return this.db
+      .list(`desafios/`)
+      .snapshotChanges()
+      .map(data => {
+        listaDesafios = [];
+        data.forEach(element => {
+          listaDesafios.push(element.payload.val());
+        });
+        return listaDesafios;
+      });
+  }
+
   getConquistaUsuario(idConquista) {
     return this.db
       .object(`conquistas/${idConquista}`)

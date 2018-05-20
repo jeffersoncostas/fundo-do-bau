@@ -1,16 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter } from "@angular/core";
 
 @Component({
-  selector: 'fdba-home-header',
-  templateUrl: 'fdba-home-header.html'
+  selector: "fdba-home-header",
+  templateUrl: "fdba-home-header.html",
+  inputs: ["toogleFixed", "toogle"],
+  outputs: ["configToogle"]
 })
 export class FdbaHomeHeaderComponent {
+  toogleFixed: boolean;
+  toogle: string;
 
-  text: string;
+  configToogle = new EventEmitter();
+  constructor() {}
 
-  constructor() {
-    console.log('Hello FdbaHomeHeaderComponent Component');
-    this.text = 'Hello World';
-  }
-
+  ngOnChanges() {}
 }
