@@ -13,35 +13,18 @@ import { Subscription } from "rxjs/Subscription";
   templateUrl: "home.html"
 })
 export class HomePage {
-  login: string;
-  senha: number;
-  params = this.navParams.data;
+  // dados capturados do firebase
   userData$: Usuario;
-  userDataObservable: Observable<Usuario>;
   userDataObservableSnapshot: Subscription;
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     private autenticacao: AutenticacaoProvider
-  ) {
-    this.autenticacao.estaLogado().then(id => {
-      this.userDataObservable = this.autenticacao.getProfile(id).valueChanges();
+  ) {}
 
-      this.userDataObservableSnapshot = this.autenticacao
-        .getProfile(id)
-        .snapshotChanges()
-        .subscribe(profile => {
-          this.userData$ = profile.payload.val();
-          console.log(this.userData$);
-        });
-    });
-  }
-
-  ionViewDidLoad() {
-    this.login = this.params.login;
-    this.senha = this.params.senha;
-    console.log("ionViewDidLoad HomePage");
+  ionViewDidEnter() {
+    this.getUser();
   }
 
   testclick() {
@@ -57,5 +40,19 @@ export class HomePage {
 
   quizTeste() {
     this.navCtrl.push("QuizPage");
+  }
+
+  getUser() {
+    this.userDataObservableSnapshot = this.autenticacao
+      .getProfile()
+      .subscribe(data => {
+        this.userData$ = data;
+        console.log(data);
+      });
+  }
+
+  // Encerrar eventos da página
+  ionViewDidLeave() {
+    this.userDataObservableSnapshot.unsubscribe();
   }
 }

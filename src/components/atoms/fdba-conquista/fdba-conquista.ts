@@ -10,7 +10,5 @@ export class FdbaConquistaComponent {
   titulo: string;
   descricao: string;
   background: string;
-  constructor() {
-    console.log("Hello FdbaConquistaComponent Component");
-  }
+  constructor() {}
 }

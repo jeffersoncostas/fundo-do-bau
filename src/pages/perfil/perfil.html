@@ -1,25 +1,22 @@
-<fdba-header-config firstSegment="configurações" secondSegment="perfil" nomeUsuario="Jefferson Costa" pontos="7000" [configSegment]="configSegment"
-  (configSeg)="configSegment = $event">
+<fdba-header-config firstSegment="configurações" secondSegment="perfil" [nomeUsuario]="(userData$)?.username" [pontos]="(userData$)?.pontos"
+  [configSegment]="configSegment" (configSeg)="configSegment = $event">
 </fdba-header-config>
 
 <ion-content [ngSwitch]="configSegment" padding>
 
-  <section *ngSwitchCase="'config'">aaaaaaaaaaaaaaa</section>
+
+  <section *ngSwitchCase="'config'">
+    <fdba-perfil-input [email]="userAuth$" [name]="(userData$)?.nome" [username]="(userData$)?.username" (newPerfil)="updatePerfil($event)"></fdba-perfil-input>
+  </section>
 
 
   <section *ngSwitchCase="'conq'">
     <div class="fdba-page--perfil__conquista-list">
-      <div class="fdba-page--perfil__conquista-list__conquista">
-        <fdba-conquista>
-        </fdba-conquista>
-      </div>
-      <div class="fdba-page--perfil__conquista-list__conquista">
-        <fdba-conquista>
+      <div class="fdba-page--perfil__conquista-list__conquista" *ngFor="let conquista of conquistasUsuario$">
+        <fdba-conquista [titulo]="conquista.nome" [imagem]="conquista.imagem" [descricao]="conquista.descricao" [background]="conquista.background">
         </fdba-conquista>
       </div>
     </div>
   </section>
 
 </ion-content>
-
-<!-- [titulo]="conquista.nome" [imagem]="conquista.imagem" [descricao]="conquista.descricao" [background]="conquista.background" -->

@@ -1,16 +1,9 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'fdba-ranking-header',
-  templateUrl: 'fdba-ranking-header.html'
+  selector: "fdba-ranking-header",
+  templateUrl: "fdba-ranking-header.html"
 })
 export class FdbaRankingHeaderComponent {
-
-  text: string;
-
-  constructor() {
-    console.log('Hello FdbaRankingHeaderComponent Component');
-    this.text = 'Hello World';
-  }
-
+  constructor() {}
 }

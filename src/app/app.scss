@@ -136,3 +136,44 @@ ion-icon {
 //
 // Padding
 $padding-page: 16px;
+// Alert
+ion-alert.alert-top {
+  align-items: center;
+  padding: 0;
+}
+
+.fdba-modal- {
+  .alert-wrapper {
+    background: #192f3c;
+    border: 2px solid $gold;
+    box-shadow: $gold-neon;
+    .alert-head {
+      color: white;
+    }
+    .alert-message {
+      color: white;
+    }
+    .alert-input {
+      color: rgba(255, 255, 255, 0.76);
+      &:focus {
+        border-bottom-color: white;
+      }
+    }
+    .alert-input::placeholder {
+      color: rgba(255, 255, 255, 0.486)
+    }
+    .alert-button {
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.288);
+      background: $white-transparent;
+    }
+  }
+}
+
+.fdba-modal-error {
+  @extend .fdba-modal-;
+  .alert-wrapper {
+    border: 2px solid #ff7070;
+    box-shadow: $red-neon;
+  }
+}

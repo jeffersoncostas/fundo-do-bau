@@ -20,7 +20,5 @@ export class FdbaHeaderConfigComponent {
   configSegment: string;
 
   configSeg = new EventEmitter();
-  constructor() {
-    console.log("Hello FdbaHeaderConfigComponent Component");
-  }
+  constructor() {}
 }

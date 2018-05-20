@@ -5,22 +5,53 @@ import { AngularFireDatabase } from "angularfire2/database";
 import { Conquista } from "../../models/conquista.model";
 import { Desafio } from "../../models/desafio.model";
 import "rxjs/add/operator/map";
+import { Subscription } from "rxjs/Subscription";
 @Injectable()
 export class DatabaseProvider {
+  getAllConquistasUsuarioSubscription: Subscription;
   constructor(
     private afAuth: AngularFireAuth,
     private db: AngularFireDatabase
-  ) {
-    console.log("Hello DatabaseProvider Provider");
-  }
+  ) {}
 
   async novaConquista(conquista: Conquista) {
     return await this.db.list(`conquistas/`).push(conquista);
   }
 
-  async getConquista(id) {
-    return await this.db.list(`conquistas/${id}`).snapshotChanges();
+  async novoDesafio(desafio: Desafio) {
+    return await this.db.list(`desafios/`).push(desafio);
   }
+  getDesafio(id) {
+    return this.db.object(`desafios/${id}`).snapshotChanges();
+  }
+
+  getConquistaUsuario(idConquista) {
+    return this.db
+      .object(`conquistas/${idConquista}`)
+      .snapshotChanges()
+      .map(conquista => {
+        return conquista.payload.val();
+      });
+  }
+
+  async getAllConquistasUsuario(arrayId: string[]) {
+    let getConqUserSubscription: Subscription;
+    let conquistasUsuarioReal = [];
+
+    arrayId.forEach(idConquista => {
+      this.getAllConquistasUsuarioSubscription = this.getConquistaUsuario(
+        idConquista
+      ).subscribe(data => {
+        conquistasUsuarioReal.push(data);
+      });
+    });
+    return conquistasUsuarioReal;
+  }
+
+  unsubscribeGetAllConquistasUsuario() {
+    this.getAllConquistasUsuarioSubscription.unsubscribe();
+  }
+
   getAllConquistas() {
     return this.db
       .list("conquistas/")
@@ -34,12 +65,5 @@ export class DatabaseProvider {
         });
         return listaConquistas$;
       });
-  }
-
-  async novoDesafio(desafio: Desafio) {
-    return await this.db.list(`desafios/`).push(desafio);
-  }
-  getDesafio(id) {
-    return this.db.object(`desafios/${id}`).snapshotChanges();
   }
 }

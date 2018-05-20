@@ -1,18 +1,10 @@
-import { Injectable } from '@angular/core';
-import { LoadingController } from 'ionic-angular';
+import { Injectable } from "@angular/core";
+import { LoadingController } from "ionic-angular";
 
-/*
-  Generated class for the LoadingsProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class LoadingsProvider {
   loading: any;
-  constructor(public loadingCtrl: LoadingController) {
-    console.log('Hello LoadingsProvider Provider');
-  }
+  constructor(public loadingCtrl: LoadingController) {}
 
   loadingPadrao(texto) {
     this.loading = this.loadingCtrl.create({
@@ -23,7 +15,6 @@ export class LoadingsProvider {
   }
 
   loadingPadraoDismiss() {
-    this.loading.dismiss()
+    this.loading.dismiss();
   }
-
 }

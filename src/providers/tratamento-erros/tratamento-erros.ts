@@ -1,17 +1,16 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 
-/*
-  Generated class for the TratamentoErrosProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class TratamentoErrosProvider {
+  constructor() {}
 
-  constructor(public http: HttpClient) {
-    console.log('Hello TratamentoErrosProvider Provider');
+  tratarErros(erro) {
+    switch (erro) {
+      case "auth/invalid-email":
+        return "E-mail inválido";
+
+      case "auth/requires-recent-login":
+        return "Você precisa fazer o login novamente";
+    }
   }
-
 }

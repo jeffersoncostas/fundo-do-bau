@@ -1,12 +1,18 @@
-import { Component, EventEmitter } from '@angular/core';
-import { Validators, FormBuilder, FormGroup, FormControl, AbstractControl } from '@angular/forms';
-import { Usuario } from '../../../models/usuario.model';
+import { Component, EventEmitter } from "@angular/core";
+import {
+  Validators,
+  FormBuilder,
+  FormGroup,
+  FormControl,
+  AbstractControl
+} from "@angular/forms";
+import { Usuario } from "../../../models/usuario.model";
 
 @Component({
-  selector: 'fdba-input',
-  templateUrl: 'fdba-input.html',
-  inputs: ['type', 'textLabel'],
-  outputs: ['novaConta', 'login', 'loginPage', 'criarContaPage']
+  selector: "fdba-input",
+  templateUrl: "fdba-input.html",
+  inputs: ["type", "textLabel"],
+  outputs: ["novaConta", "login", "loginPage", "criarContaPage", "esqueciSenha"]
 })
 export class FdbaInputComponent {
   type: string;
@@ -22,29 +28,51 @@ export class FdbaInputComponent {
   loginPage = new EventEmitter();
   criarContaPage = new EventEmitter();
 
+  esqueciSenha = new EventEmitter();
+
   constructor(private formBuilder: FormBuilder) {
     this.criarConta = this.formBuilder.group({
-      username: new FormControl('', { validators: [Validators.required, Validators.minLength(6)] }),
-      email: new FormControl('', { validators: [Validators.required, Validators.minLength(4), Validators.email] }),
-      senhas: this.formBuilder.group({
-        password: new FormControl('', { validators: [Validators.required, Validators.minLength(6)] }),
-        confirmPassword: new FormControl('', { validators: [Validators.required, Validators.minLength(6),] })
-      }, { validator: this.passwordMatchValidator })
-    }
-    );
+      username: new FormControl("", {
+        validators: [Validators.required, Validators.minLength(6)]
+      }),
+      email: new FormControl("", {
+        validators: [
+          Validators.required,
+          Validators.minLength(4),
+          Validators.email
+        ]
+      }),
+      senhas: this.formBuilder.group(
+        {
+          password: new FormControl("", {
+            validators: [Validators.required, Validators.minLength(6)]
+          }),
+          confirmPassword: new FormControl("", {
+            validators: [Validators.required, Validators.minLength(6)]
+          })
+        },
+        { validator: this.passwordMatchValidator }
+      )
+    });
 
     this.loginForm = this.formBuilder.group({
-      email: new FormControl('', { validators: [Validators.required, Validators.minLength(4), Validators.email] }),
-      password: new FormControl('', { validators: [Validators.required, Validators.minLength(6)] })
-    }
-    );
-
+      email: new FormControl("", {
+        validators: [
+          Validators.required,
+          Validators.minLength(4),
+          Validators.email
+        ]
+      }),
+      password: new FormControl("", {
+        validators: [Validators.required, Validators.minLength(6)]
+      })
+    });
   }
 
-
   passwordMatchValidator(g: FormGroup) {
-    return g.get('password').value === g.get('confirmPassword').value
-      ? null : { 'mismatch': true };
+    return g.get("password").value === g.get("confirmPassword").value
+      ? null
+      : { mismatch: true };
   }
 
   logForm() {
@@ -53,7 +81,6 @@ export class FdbaInputComponent {
 
   loginEmit() {
     this.login.next(this.loginForm.value);
-
   }
 
   logarPageEmit(click) {
@@ -61,5 +88,9 @@ export class FdbaInputComponent {
   }
   criarContaPageEmit(click) {
     this.criarContaPage.next(click);
+  }
+
+  esqueciSenhaEmit(click) {
+    this.esqueciSenha.next(click);
   }
 }
