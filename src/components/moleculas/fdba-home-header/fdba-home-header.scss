@@ -1,0 +1,33 @@
+fdba-home-header {
+    .fdba-home-header {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+        height: 180px;
+
+        &__img {
+            padding: 0px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        &__overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: $primary-transparent;
+            top: 0;
+        }
+
+        &__cidade {
+            position: absolute;
+            color: $white;
+            top: 135px;    
+            text-align: center;     
+            font-size: $xl-font-size;
+        }
+
+    }
+}
