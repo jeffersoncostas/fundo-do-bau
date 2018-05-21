@@ -19,7 +19,7 @@ export class DatabaseProvider {
   }
 
   async novoDesafio(desafio: Desafio) {
-    return await this.db.list(`desafios/`).push(desafio);
+    this.db.list(`desafios/`).push(desafio);
   }
   getDesafio(id) {
     return this.db.object(`desafios/${id}`).snapshotChanges();

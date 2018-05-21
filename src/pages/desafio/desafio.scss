@@ -1,3 +1,19 @@
 page-desafio {
-
+  ion-content {
+    background: $super-dark-blue-gradient;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    fdba-dicas {
+      .fdba-dicas__content {
+        margin-top: 12%;
+        margin-bottom: 10%;
+      }
+    }
+    .fdba-page--desafio__aceitarButton {
+      position: absolute;
+      bottom: 20px;
+      width: calc(100% - 32px)
+    }
+  }
 }

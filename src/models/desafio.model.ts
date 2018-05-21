@@ -2,7 +2,7 @@ import { Perguntas } from "./perguntas.model";
 
 export class Desafio {
   public nome: string;
-  public dicas: { descricao: string }[];
+  public dicas: string[];
   public dificuldade: number;
   public pontos: number;
   public qtdPessoas: number;

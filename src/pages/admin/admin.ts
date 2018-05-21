@@ -67,7 +67,7 @@ export class AdminPage {
     this.database
       .novoDesafio(this.desafio)
       .then(
-        data => console.log("pronto!", data.key),
+        data => console.log("pronto!", data),
         error => console.log("vishe!", error)
       );
   }

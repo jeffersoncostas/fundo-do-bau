@@ -13,5 +13,7 @@ export class FdbaHomeHeaderComponent {
   configToogle = new EventEmitter();
   constructor() {}
 
-  ngOnChanges() {}
+  ngOnChanges() {
+
+  }
 }

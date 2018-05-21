@@ -1,25 +1,24 @@
-import { Component, EventEmitter } from '@angular/core';
-import { Desafio } from '../../../models/desafio.model';
+import { Component, EventEmitter } from "@angular/core";
+import { Desafio } from "../../../models/desafio.model";
 
 @Component({
-  selector: 'fdba-dicas',
-  templateUrl: 'fdba-dicas.html',
-  inputs: ['desafio', 'buttonText', 'buttonTextActive', 'pontosDica'],
-  outputs: ['clickButtonDica']
+  selector: "fdba-dicas",
+  templateUrl: "fdba-dicas.html",
+  inputs: ["desafio", "buttonText", "buttonTextActive", "pontosDica"],
+  outputs: ["clickButtonDica"]
 })
 export class FdbaDicasComponent {
   desafio: Desafio;
-  dicas: { descricao: string }[];
+  dicas: string[];
   buttonText: string;
   buttonTextActive: string;
   pontosDica: number;
 
   clickButtonDica = new EventEmitter();
-  constructor() {
-  }
+  constructor() {}
   ngOnInit() {
-    console.log(this.desafio)
-    this.dicas = this.desafio.dicas
+    console.log(this.desafio.dicas);
+    this.dicas = this.desafio.dicas;
   }
 
   clickButtonDicaEmit(click) {
@@ -27,6 +26,6 @@ export class FdbaDicasComponent {
   }
 
   newDica() {
-    console.log('nova dica !')
+    console.log("nova dica !");
   }
 }

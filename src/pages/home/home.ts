@@ -29,7 +29,7 @@ export class HomePage {
     private autenticacao: AutenticacaoProvider,
     private database: DatabaseProvider
   ) {
-    setInterval(() => {}, 450);
+    setInterval(() => {}, 300);
   }
 
   ionViewDidEnter() {
