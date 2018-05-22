@@ -5,7 +5,6 @@ import { Subscription } from "rxjs/Subscription";
 import { Desafio } from "../../models/desafio.model";
 import { Observable } from "rxjs/Observable";
 import "rxjs/add/operator/map";
-import { FdbaQuizComponent } from "../../components/moleculas/fdba-quiz/fdba-quiz";
 import { Perguntas } from "../../models/perguntas.model";
 
 @IonicPage()
