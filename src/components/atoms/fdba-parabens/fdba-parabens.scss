@@ -7,34 +7,54 @@ fdba-parabens {
         display: flex;
         align-items: center;
         justify-content: center;
+        color: $dark-grey;
         &__titulo {
             text-align: center;
-            font-size:$xl-font-size;
-            color:$dark-grey;
+            font-size:$xl-font-size;  
             }
         &__descricao{
-            color: $dark-grey;
             font-size: $l-font-size;    
         }
-        &__local__titulo{
-            text-align: center;
-            font-size:$xl-font-size;
-            color:$dark-grey;
-        }
-        &__local__descricao{
+        &__local{
             color: $dark-grey;
-            font-size: $l-font-size; 
+            &__titulo{
+                text-align: center;
+                font-size:$xl-font-size;
+            }
+            &__descricao{
+                text-align: center;
+                font-size: $l-font-size; 
+            }
+             &__imagem{
+                position: relative;
+                width: 100px;
+                height: 100%;
+                margin: auto;
+                background: $transparent;
+                // box-shadow: $gold-neon;
+                display: block;
+                img {
+                height: 100%;
+                width: 100px;
+            }
+            &__neon{
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                background: $radial-gradient-gold;
+                filter: blur(15px);
+                border-radius: 50%;
+
+            }
+                
+            }
+            
+
         }
-        &__local__imagem{
-            width: 60px;
-            height: 100%;
-            background: $transparent;
-            box-shadow: $gold-neon;
-            display: block;
-            img {
-            height: 100%;
-            width: 60px;
         }
-    }
+       
 } 
-}
+

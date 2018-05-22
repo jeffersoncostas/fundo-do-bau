@@ -37,6 +37,7 @@ import { FdbaParabensComponent } from './atoms/fdba-parabens/fdba-parabens';
     FdbaBadgeComponent,
     FdbaDesafioHeaderComponent,
 
+    FdbaParabensComponent,
     FdbaInputComponent,
     FdbaQuizComponent,
     FdbaCardRankingComponent,
@@ -59,6 +60,7 @@ import { FdbaParabensComponent } from './atoms/fdba-parabens/fdba-parabens';
     FdbaConquistaComponent,
     FdbaBadgeComponent,
     FdbaDesafioHeaderComponent,
+    FdbaParabensComponent,
     FdbaInputComponent,
     FdbaQuizComponent,
     FdbaDesafioInfoComponent,
@@ -69,5 +71,6 @@ import { FdbaParabensComponent } from './atoms/fdba-parabens/fdba-parabens';
     FdbaHomeHeaderComponent,
     FdbaToogleComponent,
     FdbaParabensComponent]
+  
 })
 export class ComponentsModule {}
