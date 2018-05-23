@@ -20,7 +20,8 @@ import { FdbaHeaderConfigComponent } from "./moleculas/fdba-header-config/fdba-h
 import { FdbaDesafioInfoComponent } from "./moleculas/fdba-desafio-info/fdba-desafio-info";
 import { FdbaRankingHeaderComponent } from "./moleculas/fdba-ranking-header/fdba-ranking-header";
 import { FdbaPerfilInputComponent } from "./moleculas/fdba-perfil-input/fdba-perfil-input";
-import { FdbaHomeHeaderComponent } from './moleculas/fdba-home-header/fdba-home-header';
+import { FdbaHomeHeaderComponent } from "./moleculas/fdba-home-header/fdba-home-header";
+import { FdbaToogleComponent } from "./moleculas/fdba-toogle/fdba-toogle";
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { FdbaHomeHeaderComponent } from './moleculas/fdba-home-header/fdba-home-
     FdbaHeaderConfigComponent,
     FdbaRankingHeaderComponent,
     FdbaPerfilInputComponent,
-    FdbaHomeHeaderComponent
+    FdbaHomeHeaderComponent,
+    FdbaToogleComponent
   ],
   imports: [IonicModule, RoundProgressModule, FormsModule],
   exports: [
@@ -62,7 +64,8 @@ import { FdbaHomeHeaderComponent } from './moleculas/fdba-home-header/fdba-home-
     FdbaHeaderConfigComponent,
     FdbaRankingHeaderComponent,
     FdbaPerfilInputComponent,
-    FdbaHomeHeaderComponent
+    FdbaHomeHeaderComponent,
+    FdbaToogleComponent
   ]
 })
 export class ComponentsModule {}

@@ -89,15 +89,14 @@
       <div class="style-guide__componente__nome-componente">FDBA-CARD BOTOES</div>
       <div class="style-guide__componente__componente-itself">
         <fdba-card (clickCard)="clickCardTeste()" (clickButtonAchei)="achouDesafio($event)" (clickButtonDesisto)="desistoDesafio($event)"
-          [listaDesafios]="desafios" botaoCardVermelho="desisto" botaoCardVerde="te achei"></fdba-card>
+          botaoCardVermelho="desisto" botaoCardVerde="te achei"></fdba-card>
       </div>
     </div>
 
     <div class="style-guide__componente">
       <div class="style-guide__componente__nome-componente">FDBA-CARD CIRCLE PROGRESS</div>
       <div class="style-guide__componente__componente-itself">
-        <fdba-card (clickCard)="clickCardTeste()" (clickButtonAchei)="achouDesafio($event)" (clickButtonDesisto)="desistoDesafio($event)"
-          [listaDesafios]="desafios"></fdba-card>
+        <fdba-card (clickCard)="clickCardTeste()" (clickButtonAchei)="achouDesafio($event)" (clickButtonDesisto)="desistoDesafio($event)"></fdba-card>
       </div>
     </div>
 
@@ -193,14 +192,14 @@
     <div class="style-guide__componente">
       <div class="style-guide__componente__nome-componente">FDBA- DICA</div>
       <div class="style-guide__componente__componente-itself--destaque">
-        <fdba-dicas [desafio]="desafioDicas" buttonText="+" buttonTextActive="ok" pontosDica="7"></fdba-dicas>
+        <!-- <fdba-dicas buttonText="+" buttonTextActive="ok" pontosDica="7"></fdba-dicas> -->
       </div>
     </div>
 
     <div class="style-guide__componente">
       <div class="style-guide__componente__nome-componente">FDBA- HEADER DESAFIO</div>
       <div class="style-guide__componente__componente-itself">
-        <fdba-desafio-header [desafio]="desafioHeader"> </fdba-desafio-header>
+        <!-- <fdba-desafio-header> </fdba-desafio-header> -->
       </div>
     </div>
 
@@ -267,9 +266,11 @@
       </div>
     </div>
 
-      <div class="style-guide__componente__nome-componente">FDBA- HEADER HOME</div>
-      <div class="style-guide__componente__componente-itself"> <fdba-home-header> </fdba-home-header></div>
-    
+    <div class="style-guide__componente__nome-componente">FDBA- HEADER HOME</div>
+    <div class="style-guide__componente__componente-itself">
+      <fdba-home-header> </fdba-home-header>
+    </div>
+
     <div class="style-guide__componente">
       <div class="style-guide__componente__nome-componente">NOME COMPONENTE</div>
       <div class="style-guide__componente__componente-itself"> COMPONENTE EM SI</div>

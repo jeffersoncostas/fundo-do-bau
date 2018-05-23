@@ -19,10 +19,24 @@ export class DatabaseProvider {
   }
 
   async novoDesafio(desafio: Desafio) {
-    return await this.db.list(`desafios/`).push(desafio);
+    this.db.list(`desafios/`).push(desafio);
   }
   getDesafio(id) {
     return this.db.object(`desafios/${id}`).snapshotChanges();
+  }
+
+  getAllDesafios() {
+    let listaDesafios = [];
+    return this.db
+      .list(`desafios/`)
+      .snapshotChanges()
+      .map(data => {
+        listaDesafios = [];
+        data.forEach(element => {
+          listaDesafios.push(element.payload.val());
+        });
+        return listaDesafios;
+      });
   }
 
   getConquistaUsuario(idConquista) {

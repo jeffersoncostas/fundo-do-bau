@@ -37,8 +37,7 @@ export class AdminPage {
     dificuldade: 0,
     pontos: 0,
     qtdPessoas: 0,
-    latitude: 0,
-    longitude: 0,
+    latLong: [],
     perguntas: this.perguntas,
     video: "",
     conquista: "",
@@ -67,7 +66,7 @@ export class AdminPage {
     this.database
       .novoDesafio(this.desafio)
       .then(
-        data => console.log("pronto!", data.key),
+        data => console.log("pronto!", data),
         error => console.log("vishe!", error)
       );
   }
