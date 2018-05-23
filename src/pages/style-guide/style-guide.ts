@@ -12,22 +12,16 @@ import { Usuario } from '../../models/usuario.model';
 })
 export class StyleGuidePage {
   backButton: boolean = true;
-  titulo: string = 'TESTEEEE'
-  desafios = [new Desafio('Vista Perfeita', '', 7, 20, 95, '-4.966599', '-39.014531', [], 'x', 0, '../../../assets/imgs/teste.png'),
-  new Desafio('Sobralina', '', 8, 95, 65, '-4.966599', '-39.014531', [], 'x', 0, '../../../assets/imgs/teste.png')]
+  titulo: string = 'TESTEEEE';
   usuario: Usuario;
-  desafioDicas = new Desafio('Vista Perfeita', [{ descricao: "Cantor famoso falava deste local..." }, { descricao: "Bem conhecida, muita gente vai." }], 7, 20, 95, '-4.966599', '-39.014531', [], 'x', 0, '../../../assets/imgs/teste.png')
-
-  desafioHeader = new Desafio('Vista Perfeita', '', 7, 20, 95, '-4.966599', '-39.014531', [], 'x', 0, '../../../assets/imgs/teste.png');
   valorInput: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private view: ViewController) {
-    this.usuario = new Usuario('marmota', 'mamotinha', [], 0, [], 0, 0, [], false)
     this.backButton = this.navParams.data.backButton
   }
   ionViewDidLoad() {
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(position => { this.usuario.latitude = position.coords.latitude; this.usuario.longitude = position.coords.longitude });
+      //navigator.geolocation.getCurrentPosition(position => { this.usuario.latitude = position.coords.latitude; this.usuario.longitude = position.coords.longitude });
     }
 
     this.view.showBackButton(this.backButton)

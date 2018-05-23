@@ -6,8 +6,7 @@ export class Desafio {
   public dificuldade: number;
   public pontos: number;
   public qtdPessoas: number;
-  public latitude: number;
-  public longitude: number;
+  public latLong: string[];
   public perguntas: Perguntas;
   public video: string;
   public conquista: string;
@@ -19,8 +18,6 @@ export class Desafio {
     dificuldade,
     pontos,
     qtdPessoas,
-    latitude,
-    longitude,
     perguntas,
     video,
     conquista,
@@ -31,8 +28,6 @@ export class Desafio {
     this.dificuldade = dificuldade;
     this.pontos = pontos;
     this.qtdPessoas = qtdPessoas;
-    this.latitude = latitude;
-    this.longitude = longitude;
     this.perguntas = perguntas;
     this.video = video;
     this.conquista = conquista;
