@@ -19,7 +19,13 @@ export class DatabaseProvider {
   }
 
   async novoDesafio(desafio: Desafio) {
-    this.db.list(`desafios/`).push(desafio);
+    return this.db
+      .list(`desafios/`)
+      .push(desafio)
+      .then(desafio2 => {
+        let desafioLocation = [desafio.latLong[0], desafio.latLong[1]];
+        this.db.object("desafioLocation/" + desafio2.key).set(desafioLocation);
+      });
   }
   getDesafio(id) {
     return this.db.object(`desafios/${id}`).snapshotChanges();
