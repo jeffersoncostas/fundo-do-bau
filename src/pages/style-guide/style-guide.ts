@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { Desafio } from '../../models/desafio.model';
 import { Usuario } from '../../models/usuario.model';
+import { AlertsProvider } from "../../providers/alerts/alerts";
 
 @IonicPage({
 
@@ -16,8 +17,10 @@ export class StyleGuidePage {
   usuario: Usuario;
   valorInput: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private view: ViewController) {
-    this.backButton = this.navParams.data.backButton
+  constructor(public navCtrl: NavController, public navParams: NavParams, private view: ViewController, private alerts: AlertsProvider) {
+    this.usuario = new Usuario('marmota', 'mamotinha', [], 0, [], 0, 0, [], false)
+    this.backButton = this.navParams.data.backButton;
+    
   }
   ionViewDidLoad() {
     if (navigator.geolocation) {
@@ -57,5 +60,9 @@ export class StyleGuidePage {
 
   testeDica() {
     console.log('TESTE DICAASD')
+  }
+
+  clickModal(){
+    this.alerts.alertaNaoAchou();
   }
 }

@@ -32,4 +32,13 @@ export class AlertsProvider {
     console.log(error);
     alertSuccess.present();
   }
+
+  alertaNaoAchou(){
+    let alert = this.alert.create({
+      cssClass: "fdba-modal-naoAchou",
+      message: "Você não me achou ainda, me procure mais um pouco",
+      buttons: ['OK']
+    });
+    alert.present();
+  }
 }
