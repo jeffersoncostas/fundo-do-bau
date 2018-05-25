@@ -20,8 +20,9 @@ import { FdbaHeaderConfigComponent } from "./moleculas/fdba-header-config/fdba-h
 import { FdbaDesafioInfoComponent } from "./moleculas/fdba-desafio-info/fdba-desafio-info";
 import { FdbaRankingHeaderComponent } from "./moleculas/fdba-ranking-header/fdba-ranking-header";
 import { FdbaPerfilInputComponent } from "./moleculas/fdba-perfil-input/fdba-perfil-input";
-import { FdbaHomeHeaderComponent } from "./moleculas/fdba-home-header/fdba-home-header";
 import { FdbaToogleComponent } from "./moleculas/fdba-toogle/fdba-toogle";
+import { FdbaHomeHeaderComponent } from './moleculas/fdba-home-header/fdba-home-header';
+import { FdbaParabensComponent } from './atoms/fdba-parabens/fdba-parabens';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,8 @@ import { FdbaToogleComponent } from "./moleculas/fdba-toogle/fdba-toogle";
     FdbaConquistaComponent,
     FdbaBadgeComponent,
     FdbaDesafioHeaderComponent,
+
+    FdbaParabensComponent,
     FdbaInputComponent,
     FdbaQuizComponent,
     FdbaCardRankingComponent,
@@ -57,6 +60,7 @@ import { FdbaToogleComponent } from "./moleculas/fdba-toogle/fdba-toogle";
     FdbaConquistaComponent,
     FdbaBadgeComponent,
     FdbaDesafioHeaderComponent,
+    FdbaParabensComponent,
     FdbaInputComponent,
     FdbaQuizComponent,
     FdbaDesafioInfoComponent,
@@ -65,7 +69,8 @@ import { FdbaToogleComponent } from "./moleculas/fdba-toogle/fdba-toogle";
     FdbaRankingHeaderComponent,
     FdbaPerfilInputComponent,
     FdbaHomeHeaderComponent,
-    FdbaToogleComponent
-  ]
+    FdbaToogleComponent,
+    FdbaParabensComponent]
+  
 })
 export class ComponentsModule {}
