@@ -86,4 +86,25 @@ export class DatabaseProvider {
         return listaConquistas$;
       });
   }
+
+  async setDesafioAndamento(desafio: Desafio) {
+    let id = this.afAuth.auth.currentUser.uid;
+
+    // return await this.db
+    //   .list("perfis/" + id + "/desafiosEmAndamento")
+    //   .push(desafio.key)
+    //   .then(desafioId => {
+    //     console.log(desafioId.key);
+    //     this.db
+    //       .object("desafioUsario/" + desafioId.key)
+    //       .set({
+    //         desafioKey: desafio.key,
+    //         userKey: id,
+    //         pontosDesafio: desafio.pontos
+    //       });
+    //   });
+    return await this.db
+      .object("perfis/" + id + "/desafiosEmAndamento/" + desafio.key)
+      .set({ pontosDesafio: desafio.pontos, dicasVistas: [] });
+  }
 }

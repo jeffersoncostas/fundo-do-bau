@@ -13,5 +13,6 @@
 
   <fdba-desafio-info [dificuldade]="desafio.dificuldade" [completaram]="desafio.qtdPessoas" [pontos]="desafio.pontos"></fdba-desafio-info>
   <fdba-dicas *ngIf="desafioAceito" [desafio]="desafio" buttonTextActive="ok" [buttonText]="'+'"></fdba-dicas>
-  <fdba-button class="fdba-page--desafio__aceitarButton" type="degrade-rosa" buttonText="aceitar desafio!" (clickButton)="aceitarDesafio()"></fdba-button>
+
+  <fdba-button class="fdba-page--desafio__aceitarButton" type="degrade-rosa" buttonText="aceitar desafio!" (clickButton)="alertAceitar()"></fdba-button>
 </ion-content>

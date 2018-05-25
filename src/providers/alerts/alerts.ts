@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { AlertController } from "ionic-angular";
+import { AlertController, AlertButton } from "ionic-angular";
 
 @Injectable()
 export class AlertsProvider {
@@ -33,11 +33,21 @@ export class AlertsProvider {
     alertSuccess.present();
   }
 
-  alertaNaoAchou(){
+  alertaHandler(title, message, handler?: (string | AlertButton)[], error?) {
+    let alert = this.alert.create({
+      cssClass: "fdba-modal-" + error,
+      title: title,
+      message: message,
+      buttons: handler
+    });
+    console.log(error);
+    alert.present();
+  }
+  alertaNaoAchou() {
     let alert = this.alert.create({
       cssClass: "fdba-modal-naoAchou",
       message: "Você não me achou ainda, me procure mais um pouco",
-      buttons: ['OK']
+      buttons: ["OK"]
     });
     alert.present();
   }

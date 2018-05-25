@@ -10,7 +10,8 @@
     </section>
     <section *ngSwitchCase="'desafiosAndamento'">
 
-      desafios em andamento!
+      <fdba-card [listaDesafios]="listaDesafios$" (clickCard)="clickCard($event)"></fdba-card>
+
     </section>
   </div>
 </ion-content>

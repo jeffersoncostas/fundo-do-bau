@@ -57,7 +57,10 @@ export class LocationProvider {
         .object("desafios/" + desafioProx.key)
         .snapshotChanges()
         .forEach(data => {
-          this.listaDesafiosProximos.push(data.payload.val());
+          let key = data.payload.key;
+          let desafio = data.payload.val();
+          desafio.key = key;
+          this.listaDesafiosProximos.push(desafio);
         });
     });
   }
