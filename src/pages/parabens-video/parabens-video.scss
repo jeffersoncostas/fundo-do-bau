@@ -8,8 +8,10 @@ page-parabens-video {
         display: flex;
         justify-content: center;
         align-items: center;
+        border-bottom: 2px solid $white;
       }
       &__conquista {
+        padding-top: 15%;
         height: 30%;
         display: flex;
         justify-content: center;
