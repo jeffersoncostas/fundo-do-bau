@@ -5,14 +5,14 @@
     </div>
 
     <ng-container *ngIf="desafio.myDesafio == true">
-      <div class="fdba-dicas__dicas" *ngFor="let dica of dicasSolicitadas">
+      <div class="fdba-dicas__dicas" *ngFor="let dica of desafio.dicas">
         <span>
           {{dica}}
         </span>
       </div>
     </ng-container>
 
-    <div class="fdba-dicas__dicas" *ngIf="!desafio.myDesafio">
+    <div class="fdba-dicas__dicas marmota" *ngIf="!desafio.myDesafio">
       <span>
         {{firstDica}}
       </span>
@@ -20,7 +20,7 @@
 
   </section>
 
-  <section class="fdba-dicas__button" *ngIf="desafio.myDesafio == true">
+  <section class="fdba-dicas__button" *ngIf="desafio.myDesafio == true && desafio.dicas.length < 6">
     <fdba-button type="dica" [buttonText]="buttonText" [buttonTextActive]="buttonTextActive" [pontosDica]="pontosDica" (clickButton)="clickButtonDicaEmit($event); newDica()"></fdba-button>
   </section>
 

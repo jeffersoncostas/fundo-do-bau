@@ -2,17 +2,29 @@
   <ion-navbar>
     <ion-title>{{desafio.nome}}</ion-title>
   </ion-navbar>
-  <fdba-desafio-header [desafio]="desafio"></fdba-desafio-header>
 </ion-header>
 
 
 <ion-content padding>
+  <fdba-desafio-header [desafio]="desafio"></fdba-desafio-header>
 
-  <fdba-desafio-info [dificuldade]="desafio.dificuldade" [completaram]="desafio.qtdPessoas" [pontos]="desafio.pontos"></fdba-desafio-info>
+  <section class="fdba-page--desafio__info">
+    <fdba-desafio-info [dificuldade]="desafio.dificuldade" [completaram]="desafio.qtdPessoas" [pontos]="desafio.pontos"></fdba-desafio-info>
+  </section>
 
-  <fdba-dicas [firstDica]="desafio.dicas[0]" [dicasSolicitadas]="dicasSolicitadas" buttonTextActive="ok" [buttonText]="'+'"
-    (clickButtonDica)="pedirDica()" [desafio]="desafio"></fdba-dicas>
+
+  <section class="fdba-page--desafio__dicas">
+    <fdba-dicas [firstDica]="desafio.dicas[0]" [dicasSolicitadas]="dicasSolicitadas" buttonTextActive="ok" [buttonText]="'+'"
+      (clickButtonDica)="pedirDica()" [desafio]="desafio"></fdba-dicas>
+  </section>
+
 
   <fdba-button *ngIf="!desafio.myDesafio" class="fdba-page--desafio__aceitarButton" type="degrade-rosa" buttonText="aceitar desafio!"
     (clickButton)="alertAceitar()"></fdba-button>
+
+  <section *ngIf="desafio.myDesafio" class="fdba-page--desafio__botoesAceitarDesistir">
+    <fdba-button type="degrade-vermelho" buttonText="desisto!" (clickButton)="desistir()"></fdba-button>
+    <fdba-button type="degrade-verde" buttonText="te achei!" (clickButton)="achei()"></fdba-button>
+  </section>
+
 </ion-content>

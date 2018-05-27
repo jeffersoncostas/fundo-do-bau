@@ -114,7 +114,9 @@ export class DatabaseProvider {
               let desafio: Desafio = data.payload.val();
               desafio.key = data.key;
               desafio.myDesafio = true;
-              desafio.pontos = desafioUser.pontosDesafio;
+              desafio.pontos = desafioUser.pontosAtuais;
+              desafio.dicas = desafioUser.dicasVistas;
+
               listaDesafiosEmAndamento.push(desafio);
               console.log(listaDesafiosEmAndamento);
             });
@@ -126,10 +128,12 @@ export class DatabaseProvider {
   novaDicaUsuario(desafioKey, dicas) {
     let id = this.afAuth.auth.currentUser.uid;
     let allDicas = dicas;
-    allDicas.shift();
-    let desaf: { pontosDesafio: number; dicasVistas: string[] };
+    let desaf: {
+      pontosDesafio: number;
+      dicasVistas: string[];
+      pontosAtuais: number;
+    };
     let dicaSolicitada: string;
-    let pontosDesafio: number;
     return this.db
       .object("perfis/" + id + "/desafiosEmAndamento/" + desafioKey)
       .snapshotChanges()
@@ -139,23 +143,50 @@ export class DatabaseProvider {
         if (!desaf.dicasVistas) {
           desaf.dicasVistas = [];
           desaf.dicasVistas.push(allDicas[0]);
+          desaf.pontosAtuais = desaf.pontosDesafio;
           dicaSolicitada = allDicas[0];
           console.log("entrei ahaha");
-        } else {
-          for (let index = 0; index < allDicas.length; index++) {
-            const element = allDicas[index];
 
-            if (desaf.dicasVistas.indexOf(element) < 0) {
-              desaf.dicasVistas.push(element);
-              dicaSolicitada = element;
-              break;
-            }
-          }
+          this.db
+            .object("perfis/" + id + "/desafiosEmAndamento/" + desafioKey)
+            .update(desaf);
+          return {
+            dicaSVistas: desaf.dicasVistas,
+            pontosDesafio: desaf.pontosAtuais
+          };
+        } else {
+          let pontoTotal = desaf.pontosDesafio;
+          let pontosAtuais = desaf.pontosAtuais;
+          let pontoDivido = pontoTotal / 6;
+          this.db
+            .object("desafios/" + desafioKey + "/dicas")
+            .snapshotChanges()
+            .forEach(todasDicas => {
+              let allDicas = todasDicas.payload.val();
+              for (let index = 0; index < allDicas.length; index++) {
+                const element = allDicas[index];
+
+                if (desaf.dicasVistas.indexOf(element) < 0) {
+                  desaf.dicasVistas.push(element);
+                  dicaSolicitada = element;
+
+                  desaf.pontosAtuais = Math.round(pontosAtuais - pontoDivido);
+
+                  break;
+                }
+              }
+              this.db
+                .object("perfis/" + id + "/desafiosEmAndamento/" + desafioKey)
+                .update(desaf);
+            })
+            .then(() => {
+              console.log("ENTREI NO THEN");
+            });
+          return {
+            dicaSVistas: desaf.dicasVistas,
+            pontosDesafio: Math.round(pontosAtuais - pontoDivido)
+          };
         }
-        this.db
-          .object("perfis/" + id + "/desafiosEmAndamento/" + desafioKey)
-          .update(desaf);
-        return {dicaSolicitada:dicaSolicitada,pontosDesafio:pontosDesafio}
       });
 
     //this.db.object("perfis/"+id+"/desafiosEmAndamento/"+desafioKey).update(dicas)

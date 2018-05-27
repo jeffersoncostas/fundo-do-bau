@@ -10,6 +10,14 @@ fdba-dicas {
     &__dicas {
       color: $white;
       font-size: $default-font-size;
+      background-color: rgba(0, 172, 255, 0.3);
+      padding: 10px;
+      border-radius: 3px;
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      margin-bottom: 10px;
+      &:first-of-type {
+        background-color: rgba(0, 255, 90, 0.3);
+      }
     }
     &__button {
       width: 100%;

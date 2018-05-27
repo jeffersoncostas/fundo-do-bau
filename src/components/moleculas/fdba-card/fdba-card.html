@@ -1,8 +1,12 @@
-<section class="fdba-card" *ngFor="let desafio of listaDesafios">
+<section class="fdba-card" *ngFor="let desafio of listaDesafios" [ngClass]="{'fdba-card--andamento': desafio.myDesafio}">
+
   <div class="fdba-card__content-image" (click)="clickCardEmit(desafio)" [style.background-image]="'url('+desafio.imagem+')'">
+    <div class="fdba-card__content-image__overlay" *ngIf="desafio.myDesafio"></div>
   </div>
-  <div class="fdba-card__content-title">
-    <div class="fdba-card__content-title__title" (click)="clickCardEmit(desafio)">
+  <div class="fdba-card__content-title" [ngClass]="{'fdba-card__content-title--andamento': desafio.myDesafio}">
+
+    <div class="fdba-card__content-title__title" (click)="clickCardEmit(desafio)" [ngClass]="{'fdba-card__content-title__title--andamento': desafio.myDesafio}">
+
 
       <span>{{desafio.nome}}</span>
     </div>
