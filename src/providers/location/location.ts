@@ -99,6 +99,8 @@ export class LocationProvider {
           this.desafiosAndamento.forEach(el => {
             if (el.key == desafio.key) {
               desafio.myDesafio = true;
+              desafio.dicas = el.dicas;
+              desafio.pontos = el.pontos;
             }
           });
           this.listaDesafiosProximos.push(desafio);

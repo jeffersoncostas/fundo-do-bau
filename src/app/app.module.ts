@@ -21,8 +21,8 @@ import { AutenticacaoProvider } from "../providers/autenticacao/autenticacao";
 import { LoadingsProvider } from "../providers/loadings/loadings";
 import { TratamentoErrosProvider } from "../providers/tratamento-erros/tratamento-erros";
 import { DatabaseProvider } from "../providers/database/database";
-import { AlertsProvider } from '../providers/alerts/alerts';
-import { LocationProvider } from '../providers/location/location';
+import { AlertsProvider } from "../providers/alerts/alerts";
+import { LocationProvider } from "../providers/location/location";
 
 @NgModule({
   declarations: [MyApp],
@@ -32,7 +32,7 @@ import { LocationProvider } from '../providers/location/location';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp, { pageTransition: "ios-transition" }),
     IonicStorageModule.forRoot(),
     AngularFireModule.initializeApp(FIREBASE_CONFIG),
     AngularFireDatabaseModule,

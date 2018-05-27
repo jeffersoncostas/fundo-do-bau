@@ -46,7 +46,8 @@ export class DesafioPage {
               .setDesafioAndamento(this.desafio)
               .then(() => {
                 this.alertConfirmar(true);
-                this.desafio.myDesafio = true;
+
+                this.pedirDica();
               })
               .catch(() => this.alertConfirmar(false));
           }
@@ -70,7 +71,7 @@ export class DesafioPage {
 
   verificarMyDesafio() {
     if (this.desafio.myDesafio) {
-      console.log("MEU DESAFIO");
+      console.log("MEU DESAFIO", this.desafio.dicas);
     }
   }
 
@@ -80,8 +81,15 @@ export class DesafioPage {
       .novaDicaUsuario(this.desafio.key, this.desafio.dicas)
       .subscribe(data => {
         console.log("DESAFIO COM DICA", data);
-        this.dicasSolicitadas.push(data.dicaSolicitada);
+        this.desafio.myDesafio = true;
+        this.dicasSolicitadas = data.dicaSVistas;
+        this.desafio.dicas = data.dicaSVistas;
+        this.desafio.pontos = data.pontosDesafio;
         uns.unsubscribe();
       });
   }
+
+  desistir() {}
+
+  achei() {}
 }
