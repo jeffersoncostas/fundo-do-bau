@@ -10,6 +10,7 @@ export class FdbaParabensComponent {
   descricao: string;
   imagem: string;
   type: string;
+  linha: string;
 
   constructor() {
   }

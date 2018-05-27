@@ -8,6 +8,7 @@ fdba-parabens {
     align-items: center;
     justify-content: center;
     color: $white;
+    
     &__titulo {
       text-align: center;
       font-size: $xl-font-size;
@@ -24,6 +25,7 @@ fdba-parabens {
       &__descricao {
         text-align: center;
         font-size: $l-font-size;
+        border-bottom: 2px black solid;
       }
       &__imagem {
         position: relative;
