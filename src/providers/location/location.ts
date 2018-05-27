@@ -47,6 +47,7 @@ export class LocationProvider {
           }
         });
         console.log(this.listaIdDesafiosProximos);
+
         this.getDesafiosProximos();
 
         return this.listaDesafiosProximos;
@@ -78,12 +79,43 @@ export class LocationProvider {
     }
   }
 
+  private distanciaUsuarioDesafioComplete(lat2, lon2) {
+    let lat1 = this.userLatitude;
+    let lon1 = this.userLongitude;
+
+    let RADIUSKILOMETERS = 6373,
+      latR1 = this.deg2rad(lat1),
+      lonR1 = this.deg2rad(lon1),
+      latR2 = this.deg2rad(lat2),
+      lonR2 = this.deg2rad(lon2),
+      latDifference = latR2 - latR1,
+      lonDifference = lonR2 - lonR1,
+      a =
+        Math.pow(Math.sin(latDifference / 2), 2) +
+        Math.cos(latR1) *
+          Math.cos(latR2) *
+          Math.pow(Math.sin(lonDifference / 2), 2),
+      c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)),
+      dk = c * RADIUSKILOMETERS;
+    let km = this.round2(dk);
+    console.log(km);
+
+    if (km <= 0.5) {
+      console.log("Voce achou o desafio", km);
+      return km;
+    }
+  }
+
   private deg2rad(deg) {
     var rad = deg * Math.PI / 180;
     return rad;
   }
   private round(x) {
     return Math.round(x * 10) / 10;
+  }
+
+  private round2(x) {
+    return Math.round(x * 10) / 1000;
   }
 
   private async getDesafiosProximos() {
@@ -106,5 +138,19 @@ export class LocationProvider {
           this.listaDesafiosProximos.push(desafio);
         });
     });
+  }
+
+  verificarDesafio(latLongDesafio) {
+    let localUser = { latitude: 0, longitude: 0 };
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(position => {
+        this.userLatitude = position.coords.latitude;
+        this.userLongitude = position.coords.longitude;
+        this.distanciaUsuarioDesafioComplete(
+          latLongDesafio[0],
+          latLongDesafio[1]
+        );
+      });
+    }
   }
 }
