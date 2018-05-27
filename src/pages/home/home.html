@@ -1,4 +1,11 @@
 <ion-content padding class="fdba-page--home" (ionScroll)="scroll($event)" (ionScrollStart)="scrollTop()">
+
+  <ion-refresher (ionRefresh)="refresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+
   <fdba-home-header [toogleFixed]="toogleFixed" [toogle]="home" (configToogle)="home = $event">
 
   </fdba-home-header>
@@ -10,7 +17,8 @@
     </section>
     <section *ngSwitchCase="'desafiosAndamento'">
 
-      desafios em andamento!
+      <fdba-card [listaDesafios]="listaDesafiosEmAndamento$" (clickCard)="clickCard($event)" botaoCardVermelho="desisto" botaoCardVerde="achei"></fdba-card>
+
     </section>
   </div>
 </ion-content>

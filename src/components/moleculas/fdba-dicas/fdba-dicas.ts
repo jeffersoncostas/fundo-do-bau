@@ -4,12 +4,20 @@ import { Desafio } from "../../../models/desafio.model";
 @Component({
   selector: "fdba-dicas",
   templateUrl: "fdba-dicas.html",
-  inputs: ["desafio", "buttonText", "buttonTextActive", "pontosDica"],
+  inputs: [
+    "firstDica",
+    "desafio",
+    "buttonText",
+    "buttonTextActive",
+    "pontosDica",
+    "dicasSolicitadas"
+  ],
   outputs: ["clickButtonDica"]
 })
 export class FdbaDicasComponent {
   desafio: Desafio;
-  dicas: string[];
+  firstDica: string;
+  dicasSolicitadas: string[];
   buttonText: string;
   buttonTextActive: string;
   pontosDica: number;
@@ -18,7 +26,6 @@ export class FdbaDicasComponent {
   constructor() {}
   ngOnInit() {
     console.log(this.desafio.dicas);
-    this.dicas = this.desafio.dicas;
   }
 
   clickButtonDicaEmit(click) {

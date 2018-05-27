@@ -14,6 +14,7 @@ export class TabsPage {
   home = "HomePage";
   perfil = "PerfilPage";
   styleguide = "StyleGuidePage";
+
   admin: string;
   adminBool: boolean = false;
 

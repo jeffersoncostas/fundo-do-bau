@@ -18,9 +18,12 @@ import { AlertsProvider } from "../../providers/alerts/alerts";
 export class HomePage {
   // dados capturados do firebase
   userData$: Usuario;
+  listaDesafiosEmAndamento$: Desafio[];
+
   userDataObservableSubscription: Subscription;
   listaDesafiosSubscription: Subscription;
   userLocationSubscription;
+  desafiosEmAndamentoSubscription: Subscription;
 
   userLatitude: number;
   userLongitude: number;
@@ -57,29 +60,19 @@ export class HomePage {
       .subscribe(data => {
         this.userData$ = data;
         console.log(data);
+        this.userDataObservableSubscription.unsubscribe();
       });
-  }
-
-  getDesafios() {
-    this.listaDesafiosSubscription = this.location
-      .getDesafiosLocation()
-      .subscribe(
-        data => {
-          this.listaDesafios$ = data;
-        },
-        error => console.log(error)
-      );
   }
 
   getUserLocation() {
     if (navigator.geolocation) {
-      this.userLocationSubscription = navigator.geolocation.watchPosition(
+      this.userLocationSubscription = navigator.geolocation.getCurrentPosition(
         position => {
           this.userLatitude = position.coords.latitude;
           this.userLongitude = position.coords.longitude;
           console.log(this.userLatitude, this.userLongitude, position);
           this.location.setUserLocation(this.userLatitude, this.userLongitude);
-          this.getDesafios();
+          this.getDesafiosAndamento();
         },
         e =>
           this.alert.alertaSimples(
@@ -101,6 +94,30 @@ export class HomePage {
     }
   }
 
+  getDesafiosAndamento() {
+    this.desafiosEmAndamentoSubscription = this.database
+      .getDesafiosAndamento()
+      .subscribe(data => {
+        this.listaDesafiosEmAndamento$ = [];
+        this.listaDesafiosEmAndamento$ = data;
+        this.getDesafios();
+        this.desafiosEmAndamentoSubscription.unsubscribe();
+      });
+  }
+
+  getDesafios() {
+    this.listaDesafiosSubscription = this.location
+      .getDesafiosLocation(this.listaDesafiosEmAndamento$)
+      .subscribe(
+        data => {
+          this.listaDesafios$ = data;
+          console.log("desafios total", this.listaDesafios$);
+          this.listaDesafiosSubscription.unsubscribe();
+        },
+        error => console.log(error)
+      );
+  }
+
   clickCard(desafio) {
     console.log(desafio);
     this.navCtrl.push("DesafioPage", desafio);
@@ -119,10 +136,25 @@ export class HomePage {
     this.toogleFixed = false;
   }
 
+  refresh(refresher) {
+    console.log(refresher);
+
+    setTimeout(() => {
+      this.subscribeAll().then(e => {
+        refresher.complete();
+      });
+    }, 800);
+  }
+  async subscribeAll() {
+    this.getUser();
+    this.getUserLocation();
+  }
+
   // Encerrar eventos da página
   ionViewDidLeave() {
-    this.userDataObservableSubscription.unsubscribe();
-    this.listaDesafiosSubscription.unsubscribe();
+    // this.userDataObservableSubscription.unsubscribe();
+    // this.listaDesafiosSubscription.unsubscribe();
+    // this.desafiosEmAndamentoSubscription.unsubscribe();
     navigator.geolocation.clearWatch(this.userLocationSubscription);
   }
 }
