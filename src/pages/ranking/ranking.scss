@@ -3,6 +3,7 @@ fdba-ranking {
         color: $white;
         height: 100%;
         background: $super-dark-blue-gradient;
+        ion-content {
             background: none;
         }
     }
