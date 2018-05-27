@@ -32,7 +32,8 @@ export class AutenticacaoProvider {
       username: user.username,
       pontos: user.pontos,
       nome: user.nome,
-      adm: user.adm
+      adm: user.adm,
+      conquistas: user.conquistas
     };
     this.afAuth.authState.subscribe(auth => {
       this.db.object(`perfis/${auth.uid}`).set(usuario);

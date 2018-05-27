@@ -100,7 +100,7 @@ export class LocationProvider {
     let km = this.round2(dk);
     console.log(km);
 
-    if (km <= 0.5) {
+    if (dk <= 0.05) {
       console.log("Voce achou o desafio", km);
       return km;
     }

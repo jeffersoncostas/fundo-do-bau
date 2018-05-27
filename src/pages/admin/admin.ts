@@ -35,6 +35,7 @@ export class AdminPage {
     nome: "",
     dicas: [],
     dificuldade: 0,
+    raio: 0,
     pontos: 0,
     qtdPessoas: 0,
     latLong: [],

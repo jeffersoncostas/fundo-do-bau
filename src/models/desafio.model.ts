@@ -4,6 +4,7 @@ export interface Desafio {
   key?: string;
   myDesafio?: boolean;
   pontosAtuais?: number;
+  raio?: number;
   nome: string;
   dicas: string[];
   dificuldade: number;
