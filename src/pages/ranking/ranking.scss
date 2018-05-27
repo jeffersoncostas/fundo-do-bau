@@ -1,10 +1,14 @@
-fdba-ranking {
-    .fdba-page--ranking {
+page-ranking {
+    ion-content {
         color: $white;
         height: 100%;
         background: $super-dark-blue-gradient;
-        ion-content {
-            background: none;
-        }
+        
+        
+            .fdba-ranking-header {
+                margin: -16px -16px 10px;
+                width: calc(100% + 32px);
+            }
+        
     }
 }
