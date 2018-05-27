@@ -1,18 +1,13 @@
-<!--
-  Generated template for the RankingPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>ranking</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-
+<ion-content padding class="fdba-page--ranking">
+    <!-- <ion-refresher (ionRefresh)="refresh($event)">
+        <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="Refreshing...">
+        </ion-refresher-content>
+    </ion-refresher> -->
+    
+    <fdba-ranking-header> </fdba-ranking-header> 
+    
+    <fdba-card-ranking type="gold" userName='João Doria' userNick='dorinha_show' userPoints='200'></fdba-card-ranking>
+    <fdba-card-ranking type="silver" userName='João Doria' userNick='dorinha_show' userPoints='200'></fdba-card-ranking>
+    <fdba-card-ranking type="coper" userName='João Doria' userNick='dorinha_show' userPoints='200'></fdba-card-ranking>
+    <fdba-card-ranking type="normal" userName='João Doria' userNick='dorinha_show' userPoints='200' userPosition='4'></fdba-card-ranking>    
 </ion-content>
