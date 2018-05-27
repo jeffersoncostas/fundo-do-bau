@@ -28,8 +28,14 @@ export class AutenticacaoProvider {
   }
 
   async criarPerfil(user: Usuario) {
+    let usuario = {
+      username: user.username,
+      pontos: user.pontos,
+      nome: user.nome,
+      amd: user.adm
+    };
     this.afAuth.authState.subscribe(auth => {
-      this.db.object(`perfis/${auth.uid}`).set(user);
+      this.db.object(`perfis/${auth.uid}`).set(usuario);
     });
   }
 

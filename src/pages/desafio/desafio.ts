@@ -22,7 +22,8 @@ export class DesafioPage {
     public navParams: NavParams,
     private database: DatabaseProvider,
     private alert: AlertsProvider,
-    private loading: LoadingsProvider
+    private loading: LoadingsProvider,
+    private location: LocationProvider
   ) {}
 
   ionViewDidLoad() {
@@ -91,5 +92,8 @@ export class DesafioPage {
 
   desistir() {}
 
-  achei() {}
+  achei() {
+    console.log("achei");
+    this.location.verificarDesafio(this.desafio.latLong);
+  }
 }
