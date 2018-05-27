@@ -1,6 +1,10 @@
 <section class="fdba-conquista" *ngIf="descricao">
   <div class="fdba-conquista__titulo" [style.background]="background">
 
+    <div *ngIf="bonus" class="fdba-conquista__bonus">
+      <fdba-badge type="badge-red" badgePoints={{bonus}}></fdba-badge>
+    </div>
+
     <div *ngIf="pontos" class="fdba-conquista__badge">
       <fdba-badge type="badge-yellow" badgePoints={{pontos}}></fdba-badge>
     </div>
