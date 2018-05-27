@@ -79,11 +79,11 @@ export class LocationProvider {
     }
   }
 
-  private distanciaUsuarioDesafioComplete(lat2, lon2) {
+  private distanciaUsuarioDesafioComplete(lat2, lon2, raioDesafio) {
     let lat1 = this.userLatitude;
     let lon1 = this.userLongitude;
 
-    let RADIUSKILOMETERS = 6373,
+    let RADIUSKILOMETERS = 6378100,
       latR1 = this.deg2rad(lat1),
       lonR1 = this.deg2rad(lon1),
       latR2 = this.deg2rad(lat2),
@@ -98,11 +98,11 @@ export class LocationProvider {
       c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)),
       dk = c * RADIUSKILOMETERS;
     let km = this.round2(dk);
-    console.log(km);
+    console.log(dk);
 
-    if (dk <= 0.05) {
-      console.log("Voce achou o desafio", km);
-      return km;
+    if (dk <= raioDesafio / 1000) {
+      console.log("Voce achou o desafio", dk);
+      return dk;
     }
   }
 
@@ -115,7 +115,7 @@ export class LocationProvider {
   }
 
   private round2(x) {
-    return Math.round(x * 10) / 1000;
+    return Math.round(x * 10) / 10;
   }
 
   private async getDesafiosProximos() {
@@ -140,16 +140,19 @@ export class LocationProvider {
     });
   }
 
-  verificarDesafio(latLongDesafio) {
+  verificarDesafio(latLongDesafio, raioDesafio) {
     let localUser = { latitude: 0, longitude: 0 };
+    console.log(this.userLatitude, this.userLongitude);
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
         this.userLatitude = position.coords.latitude;
         this.userLongitude = position.coords.longitude;
         this.distanciaUsuarioDesafioComplete(
           latLongDesafio[0],
-          latLongDesafio[1]
+          latLongDesafio[1],
+          raioDesafio
         );
+        console.log(this.userLatitude, this.userLongitude);
       });
     }
   }

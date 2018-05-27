@@ -94,6 +94,7 @@ export class DesafioPage {
 
   achei() {
     console.log("achei");
-    this.location.verificarDesafio(this.desafio.latLong);
+    console.log("raio", this.desafio.raio);
+    this.location.verificarDesafio(this.desafio.latLong, this.desafio.raio);
   }
 }
