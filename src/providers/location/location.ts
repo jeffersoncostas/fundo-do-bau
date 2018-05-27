@@ -9,6 +9,7 @@ export class LocationProvider {
   private desafioProximo: { key: string; location: number[] };
   private listaIdDesafiosProximos = [];
   private listaDesafiosProximos: Desafio[] = [];
+  private desafiosAndamento: Desafio[] = [];
   private userLatitude: number;
   private userLongitude: number;
   constructor(
@@ -21,7 +22,8 @@ export class LocationProvider {
     this.userLongitude = userLongitude;
   }
 
-  getDesafiosLocation() {
+  getDesafiosLocation(desafiosAndamento) {
+    this.desafiosAndamento = desafiosAndamento;
     return this.db
       .list("desafioLocation")
       .snapshotChanges()
@@ -46,23 +48,9 @@ export class LocationProvider {
         });
         console.log(this.listaIdDesafiosProximos);
         this.getDesafiosProximos();
+
         return this.listaDesafiosProximos;
       });
-  }
-
-  private async getDesafiosProximos() {
-    this.listaDesafiosProximos = [];
-    return this.listaIdDesafiosProximos.forEach(desafioProx => {
-      this.db
-        .object("desafios/" + desafioProx.key)
-        .snapshotChanges()
-        .forEach(data => {
-          let key = data.payload.key;
-          let desafio = data.payload.val();
-          desafio.key = key;
-          this.listaDesafiosProximos.push(desafio);
-        });
-    });
   }
 
   private distanciaUsuarioDesafio(lat2, lon2) {
@@ -96,5 +84,25 @@ export class LocationProvider {
   }
   private round(x) {
     return Math.round(x * 10) / 10;
+  }
+
+  private async getDesafiosProximos() {
+    this.listaDesafiosProximos = [];
+    return this.listaIdDesafiosProximos.forEach(desafioProx => {
+      this.db
+        .object("desafios/" + desafioProx.key)
+        .snapshotChanges()
+        .forEach(data => {
+          let key = data.payload.key;
+          let desafio: Desafio = data.payload.val();
+          desafio.key = key;
+          this.desafiosAndamento.forEach(el => {
+            if (el.key == desafio.key) {
+              desafio.myDesafio = true;
+            }
+          });
+          this.listaDesafiosProximos.push(desafio);
+        });
+    });
   }
 }

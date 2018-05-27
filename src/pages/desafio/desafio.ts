@@ -4,6 +4,8 @@ import { Desafio } from "../../models/desafio.model";
 import { DatabaseProvider } from "../../providers/database/database";
 import { AlertsProvider } from "../../providers/alerts/alerts";
 import { LoadingsProvider } from "../../providers/loadings/loadings";
+import { LocationProvider } from "../../providers/location/location";
+import { HomePage } from "../home/home";
 
 @IonicPage()
 @Component({
@@ -12,7 +14,9 @@ import { LoadingsProvider } from "../../providers/loadings/loadings";
 })
 export class DesafioPage {
   desafio: Desafio = this.navParams.data;
-  desafioAceito: boolean = true;
+  allDicas = this.desafio.dicas;
+  dicasSolicitadas: string[] = [];
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -21,7 +25,10 @@ export class DesafioPage {
     private loading: LoadingsProvider
   ) {}
 
-  ionViewDidLoad() {}
+  ionViewDidLoad() {
+    this.verificarMyDesafio();
+    this.dicasSolicitadas.push(this.allDicas[0]);
+  }
 
   alertAceitar() {
     console.log("ola");
@@ -37,7 +44,10 @@ export class DesafioPage {
             console.log(this.desafio);
             this.database
               .setDesafioAndamento(this.desafio)
-              .then(() => this.alertConfirmar(true))
+              .then(() => {
+                this.alertConfirmar(true);
+                this.desafio.myDesafio = true;
+              })
               .catch(() => this.alertConfirmar(false));
           }
         },
@@ -46,6 +56,7 @@ export class DesafioPage {
       ""
     );
   }
+
   alertConfirmar(boolean) {
     if (boolean)
       this.alert.alertaSimples(" <center><h2> Pronto! </h2></center>", "", "");
@@ -55,5 +66,22 @@ export class DesafioPage {
         "Tente novamente :/",
         "error"
       );
+  }
+
+  verificarMyDesafio() {
+    if (this.desafio.myDesafio) {
+      console.log("MEU DESAFIO");
+    }
+  }
+
+  pedirDica() {
+    console.log("pedindo dica");
+    let uns = this.database
+      .novaDicaUsuario(this.desafio.key, this.desafio.dicas)
+      .subscribe(data => {
+        console.log("DESAFIO COM DICA", data);
+        this.dicasSolicitadas.push(data.dicaSolicitada);
+        uns.unsubscribe();
+      });
   }
 }

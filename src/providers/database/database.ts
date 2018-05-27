@@ -90,21 +90,74 @@ export class DatabaseProvider {
   async setDesafioAndamento(desafio: Desafio) {
     let id = this.afAuth.auth.currentUser.uid;
 
-    // return await this.db
-    //   .list("perfis/" + id + "/desafiosEmAndamento")
-    //   .push(desafio.key)
-    //   .then(desafioId => {
-    //     console.log(desafioId.key);
-    //     this.db
-    //       .object("desafioUsario/" + desafioId.key)
-    //       .set({
-    //         desafioKey: desafio.key,
-    //         userKey: id,
-    //         pontosDesafio: desafio.pontos
-    //       });
-    //   });
     return await this.db
       .object("perfis/" + id + "/desafiosEmAndamento/" + desafio.key)
       .set({ pontosDesafio: desafio.pontos, dicasVistas: [] });
+  }
+
+  getDesafiosAndamento() {
+    let id = this.afAuth.auth.currentUser.uid;
+    let listaDesafiosEmAndamento = [];
+    return this.db
+      .list("perfis/" + id + "/desafiosEmAndamento")
+      .snapshotChanges()
+      .map(data => {
+        listaDesafiosEmAndamento = [];
+
+        data.forEach(desafioEmAndamentoUsuario => {
+          let desafioUser = desafioEmAndamentoUsuario.payload.val();
+          console.log(desafioEmAndamentoUsuario.key);
+          this.db
+            .object("desafios/" + desafioEmAndamentoUsuario.key)
+            .snapshotChanges()
+            .forEach(data => {
+              let desafio: Desafio = data.payload.val();
+              desafio.key = data.key;
+              desafio.myDesafio = true;
+              desafio.pontos = desafioUser.pontosDesafio;
+              listaDesafiosEmAndamento.push(desafio);
+              console.log(listaDesafiosEmAndamento);
+            });
+        });
+        return listaDesafiosEmAndamento;
+      });
+  }
+
+  novaDicaUsuario(desafioKey, dicas) {
+    let id = this.afAuth.auth.currentUser.uid;
+    let allDicas = dicas;
+    allDicas.shift();
+    let desaf: { pontosDesafio: number; dicasVistas: string[] };
+    let dicaSolicitada: string;
+    let pontosDesafio: number;
+    return this.db
+      .object("perfis/" + id + "/desafiosEmAndamento/" + desafioKey)
+      .snapshotChanges()
+      .map(data => {
+        console.log(data.payload.val());
+        desaf = data.payload.val();
+        if (!desaf.dicasVistas) {
+          desaf.dicasVistas = [];
+          desaf.dicasVistas.push(allDicas[0]);
+          dicaSolicitada = allDicas[0];
+          console.log("entrei ahaha");
+        } else {
+          for (let index = 0; index < allDicas.length; index++) {
+            const element = allDicas[index];
+
+            if (desaf.dicasVistas.indexOf(element) < 0) {
+              desaf.dicasVistas.push(element);
+              dicaSolicitada = element;
+              break;
+            }
+          }
+        }
+        this.db
+          .object("perfis/" + id + "/desafiosEmAndamento/" + desafioKey)
+          .update(desaf);
+        return {dicaSolicitada:dicaSolicitada,pontosDesafio:pontosDesafio}
+      });
+
+    //this.db.object("perfis/"+id+"/desafiosEmAndamento/"+desafioKey).update(dicas)
   }
 }

@@ -4,6 +4,7 @@
   <ion-tab [root]="home" tabTitle="" tabUrlPath="tab" tabIcon="fdba-icon" [rootParams]="tabParams"></ion-tab>
 
   <ion-tab [root]="perfil" tabTitle="" tabUrlPath="tab" tabIcon="fdba-perfil"></ion-tab>
+
   <ion-tab *ngIf="adminBool" [root]="styleguide" tabTitle="Style Guide" tabUrlPath="tab" tabIcon="ios-color-palette"></ion-tab>
 
   <ion-tab *ngIf="adminBool" [root]="admin" tabTitle="Admin" tabUrlPath="tab" tabIcon="ios-flask"></ion-tab>
