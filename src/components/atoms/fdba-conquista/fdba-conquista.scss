@@ -10,6 +10,13 @@ fdba-conquista {
       right: -25px;
       transform: rotate(25deg);
     }
+    &__bonus{
+      z-index: 1;
+      position: absolute;
+      top: 10%;
+      right: -25px;
+      transform: rotate(25deg);
+    }
     &__titulo {
       height: 50%;
       background: $conquista-gradient;
