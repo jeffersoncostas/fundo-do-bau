@@ -23,6 +23,7 @@ import { FdbaPerfilInputComponent } from "./moleculas/fdba-perfil-input/fdba-per
 import { FdbaToogleComponent } from "./moleculas/fdba-toogle/fdba-toogle";
 import { FdbaHomeHeaderComponent } from './moleculas/fdba-home-header/fdba-home-header';
 import { FdbaParabensComponent } from './atoms/fdba-parabens/fdba-parabens';
+import { FdbaListaCardRankingComponent } from './moleculas/fdba-lista-card-ranking/fdba-lista-card-ranking';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { FdbaParabensComponent } from './atoms/fdba-parabens/fdba-parabens';
     FdbaRankingHeaderComponent,
     FdbaPerfilInputComponent,
     FdbaHomeHeaderComponent,
-    FdbaToogleComponent
+    FdbaToogleComponent,
+    FdbaListaCardRankingComponent
   ],
   imports: [IonicModule, RoundProgressModule, FormsModule],
   exports: [
@@ -70,7 +72,8 @@ import { FdbaParabensComponent } from './atoms/fdba-parabens/fdba-parabens';
     FdbaPerfilInputComponent,
     FdbaHomeHeaderComponent,
     FdbaToogleComponent,
-    FdbaParabensComponent]
+    FdbaParabensComponent,
+    FdbaListaCardRankingComponent]
   
 })
 export class ComponentsModule {}
