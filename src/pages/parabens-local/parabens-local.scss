@@ -2,11 +2,39 @@ page-parabens-local {
     ion-content{
         height: 100vh;
         background: $super-dark-blue-gradient;
-    
+        
         .fdba-page--parabens-local{
             &__parabens{
-                font: $xxl-font-size;
+                font-size: $xxl-font-size;
             }
+            &__imagem{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img{
+                    width: 250px;
+                }
+
+                &__neon2{
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    position: absolute;
+                    height: 50%;
+                    width: 50%;
+                    background: $radial-gradient-gold;
+                    filter: blur(80px);
+                    border-radius: 50%;
+                  }
+
+                
+            }
+            &__botao{
+                padding-top: 60px;
+                display: flex;
+                justify-content: center;
+            }
+            
         }   
     }
 }
