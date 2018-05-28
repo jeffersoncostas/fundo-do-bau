@@ -12,6 +12,8 @@ export class LocationProvider {
   private desafiosAndamento: Desafio[] = [];
   private userLatitude: number;
   private userLongitude: number;
+
+  private desafioPagina: Desafio;
   constructor(
     private afAuth: AngularFireAuth,
     private db: AngularFireDatabase
@@ -73,13 +75,13 @@ export class LocationProvider {
       c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)),
       dk = c * RADIUSKILOMETERS;
     let km = this.round(dk);
-
+    console.log(km);
     if (km <= 1.5) {
       return km;
     }
   }
 
-  private distanciaUsuarioDesafioComplete(lat2, lon2, raioDesafio) {
+  async distanciaUsuarioDesafioComplete(lat2, lon2, raioDesafio) {
     let lat1 = this.userLatitude;
     let lon1 = this.userLongitude;
 
@@ -100,10 +102,12 @@ export class LocationProvider {
     let km = this.round2(dk);
     console.log(dk);
 
-    if (dk <= raioDesafio / 1000) {
+    if (dk <= raioDesafio) {
       console.log("Voce achou o desafio", dk);
-      return dk;
+      //;
+      return 1;
     }
+    return 0;
   }
 
   private deg2rad(deg) {
@@ -140,20 +144,62 @@ export class LocationProvider {
     });
   }
 
-  verificarDesafio(latLongDesafio, raioDesafio) {
+  async verificarDesafio(latLongDesafio, raioDesafio, desafio: Desafio) {
+    this.desafioPagina = desafio;
     let localUser = { latitude: 0, longitude: 0 };
     console.log(this.userLatitude, this.userLongitude);
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
         this.userLatitude = position.coords.latitude;
         this.userLongitude = position.coords.longitude;
-        this.distanciaUsuarioDesafioComplete(
-          latLongDesafio[0],
-          latLongDesafio[1],
-          raioDesafio
-        );
-        console.log(this.userLatitude, this.userLongitude);
+      });
+
+      return this.distanciaUsuarioDesafioComplete(
+        latLongDesafio[0],
+        latLongDesafio[1],
+        raioDesafio
+      ).then(data => {
+        if (data) {
+          return this.concluirDesafio().then(() => {
+            return 1;
+          });
+        } else {
+          return this.naoAchouDesafio().then(() => {
+            return this.desafioPagina.pontos;
+          });
+        }
       });
     }
+  }
+
+  async concluirDesafio() {
+    let id = this.afAuth.auth.currentUser.uid;
+    let desafioConcluido = {
+      dicasVistas: this.desafioPagina.dicas,
+      pontosDesafio: this.desafioPagina.pontos,
+      complete: true
+    };
+    console.log(this.desafioPagina, "EPAA");
+    return this.db
+      .object("perfis/" + id + "/desafiosConcluidos/" + this.desafioPagina.key)
+      .set(desafioConcluido)
+      .then(() => {
+        this.db
+          .object(
+            "perfis/" + id + "/desafiosEmAndamento/" + this.desafioPagina.key
+          )
+          .remove();
+      });
+  }
+
+  async naoAchouDesafio() {
+    let id = this.afAuth.auth.currentUser.uid;
+    let pontosAtuais = this.db.object(
+      "perfis/" + id + "/desafiosEmAndamento/" + this.desafioPagina.key
+    );
+
+    this.desafioPagina.pontos = this.desafioPagina.pontos - 1;
+
+    return pontosAtuais.update({ pontosAtuais: this.desafioPagina.pontos });
   }
 }
