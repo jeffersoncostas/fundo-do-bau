@@ -83,4 +83,7 @@ export class StyleGuidePage {
   irParabens() {
     this.navCtrl.push("ParabensVideoPage");
   }
+  irParabensLocal() {
+    this.navCtrl.push("ParabensLocalPage");
+  }
 }
