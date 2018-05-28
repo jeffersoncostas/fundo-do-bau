@@ -133,6 +133,9 @@ export class DesafioPage {
       .verificarDesafio(this.desafio.latLong, this.desafio.raio, this.desafio)
       .then(data => {
         if (data == 1) {
+          setTimeout(() => {
+            this.navCtrl.push("ParabensLocalPage", this.desafio);
+          }, 500);
         } else {
           this.desafio.pontos = data;
           this.naoAchou();

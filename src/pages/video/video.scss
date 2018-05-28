@@ -1,0 +1,12 @@
+page-video {
+  ion-content {
+    iframe {
+      .ytp-chrome-top .ytp-share-button-visible {
+        display: none;
+      }
+    }
+    .scroll-content {
+      margin: 0;
+    }
+  }
+}

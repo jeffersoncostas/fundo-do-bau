@@ -1,5 +1,6 @@
 // App Global Sass
 // Texto
+$xxxll-font-size: 46px;
 $xxxl-font-size: 40px;
 $xxl-font-size: 36px;
 $xlll-font-size: 28px;
@@ -17,22 +18,22 @@ $xss-font-size: 10px;
 $white: #ffff;
 $grey: #e3e3e3;
 $dark-grey: rgb(141, 141, 141);
-$silver: #BABABA;
-$primary: #218DB8;
-$secondary: #46A29F;
-$dark: #29495D;
+$silver: #bababa;
+$primary: #218db8;
+$secondary: #46a29f;
+$dark: #29495d;
 $medium-dark: #224053;
 $super-dark: #101f27;
 $input-registro: #2e7080;
-$border: #FFBA37;
-$gold: #FFBA37;
-$coper: #C26F00;
-$green:#2ab570;
-$white-transparent: rgba(255, 255, 255, 0.30);
-$white-transparent-light: rgba(255, 255, 255, 0.10);
-$white-transparent-medium: rgba(255, 255, 255, 0.50);
+$border: #ffba37;
+$gold: #ffba37;
+$coper: #c26f00;
+$green: #2ab570;
+$white-transparent: rgba(255, 255, 255, 0.3);
+$white-transparent-light: rgba(255, 255, 255, 0.1);
+$white-transparent-medium: rgba(255, 255, 255, 0.5);
 $white-transparent-hight: rgba(255, 255, 255, 0.75);
-$super-dark-transparent :rgba(13, 37, 52, 0.65);
+$super-dark-transparent: rgba(13, 37, 52, 0.65);
 $primary-transparent: rgba(33, 141, 184, 0.692);
 //
 // gradientes
@@ -48,8 +49,12 @@ $dark-blue-gradient: linear-gradient(45deg, #1f58a2, #218db8);
 $super-dark-blue-gradient: linear-gradient(180deg, #35617d, #101f27);
 $primary-light-gradient: linear-gradient(45deg, #218db8, #53a4c4);
 $conquista-gradient: linear-gradient(45deg, #49a39d, #309b7e);
-$desafio-header-gradient: linear-gradient( -180deg, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.404));
-$radial-gradient-gold: radial-gradient(#ffb523, rgba(0, 0, 0, 0.0));
+$desafio-header-gradient: linear-gradient(
+  -180deg,
+  rgba(255, 255, 255, 0),
+  rgba(0, 0, 0, 0.404)
+);
+$radial-gradient-gold: radial-gradient(#ffb523, rgba(0, 0, 0, 0));
 
 //
 //Neon Shadow
@@ -115,8 +120,8 @@ ion-icon {
   }
 }
 
-.tabs-md[tabsHighlight=true] .tab-highlight {
-  filter: blur(.15px);
+.tabs-md[tabsHighlight="true"] .tab-highlight {
+  filter: blur(0.15px);
   height: 55px;
   background: rgba(255, 255, 255, 0.25);
   border-radius: 20%;
@@ -165,7 +170,7 @@ ion-alert.alert-top {
       }
     }
     .alert-input::placeholder {
-      color: rgba(255, 255, 255, 0.486)
+      color: rgba(255, 255, 255, 0.486);
     }
     .alert-button {
       color: white;
@@ -183,20 +188,20 @@ ion-alert.alert-top {
   }
 }
 
-.fdba-modal-naoAchou{
+.fdba-modal-naoAchou {
   .alert-wrapper {
     background: #192f3c;
     border: 2px solid $gold;
     box-shadow: $gold-neon;
     display: flex;
     justify-content: center;
-    
+
     .alert-message {
       color: white;
     }
     .alert-button {
       width: 100%;
-      text-align: center;   
+      text-align: center;
       color: white;
       border: 1px solid $gold;
       background: $gold-gradient;
@@ -205,7 +210,5 @@ ion-alert.alert-top {
     .alert-button .button-inner {
       width: 50%;
     }
-
   }
-
 }

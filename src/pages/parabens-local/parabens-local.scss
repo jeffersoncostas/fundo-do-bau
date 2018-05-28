@@ -1,40 +1,77 @@
 page-parabens-local {
-    ion-content{
-        height: 100vh;
-        background: $super-dark-blue-gradient;
-        
-        .fdba-page--parabens-local{
-            &__parabens{
-                font-size: $xxl-font-size;
-            }
-            &__imagem{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                img{
-                    width: 250px;
-                }
+  ion-content {
+    height: 100vh;
+    background: $super-dark-blue-gradient;
+    .fdba-page--parabens-local {
+      &__parabens {
+        font-size: $xxl-font-size;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 30%;
+        fdba-parabens .fdba-parabens {
+          text-align: center;
+        }
+        fdba-parabens .fdba-parabens__titulo {
+          font-size: $xxxll-font-size;
+        }
 
-                &__neon2{
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    position: absolute;
-                    height: 50%;
-                    width: 50%;
-                    background: $radial-gradient-gold;
-                    filter: blur(80px);
-                    border-radius: 50%;
-                  }
-
-                
-            }
-            &__botao{
-                padding-top: 60px;
-                display: flex;
-                justify-content: center;
-            }
-            
-        }   
+        fdba-parabens .fdba-parabens__descricao {
+          font-size: $xll-font-size;
+        }
+      }
+      &__imagem {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 30%;
+        img {
+          width: 250px;
+        }
+        &__neon2 {
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          position: absolute;
+          height: 200px;
+          width: 200px;
+          background: $radial-gradient-gold;
+          filter: blur(80px);
+          border-radius: 50%;
+        }
+      }
+      &__botao {
+        padding-top: 60px;
+        height: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        fdba-button {
+          width: 70%;
+        }
+      }
     }
+  }
+}
+.tabbar-leave {
+  animation-name: tableave;
+  animation-duration: 0.7s;
+  animation-fill-mode: backwards;
+  bottom: -70px;
+}
+.tabbar-show {
+  animation-name: tableave;
+  animation-duration: 0.7s;
+  animation-fill-mode: backwards;
+  animation-direction: reverse;
+  bottom: 0px;
+}
+
+@keyframes tableave {
+  0% {
+    bottom: 0px;
+  }
+  100% {
+    bottom: -70px;
+  }
 }
