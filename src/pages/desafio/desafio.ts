@@ -39,6 +39,7 @@ export class DesafioPage {
         this.desafio.nome +
         "</b>",
       [
+        { text: "Agora não" },
         {
           text: "Aceito!",
           handler: () => {
@@ -52,8 +53,7 @@ export class DesafioPage {
               })
               .catch(() => this.alertConfirmar(false));
           }
-        },
-        { text: "Agora não" }
+        }
       ],
       ""
     );
@@ -90,10 +90,62 @@ export class DesafioPage {
       });
   }
 
-  desistir() {}
+  desistir() {
+    let that = this;
+    let desistirDb = function() {
+      that.database
+        .desistir(that.desafio.key)
+        .then(() => that.navCtrl.setRoot("HomePage"));
+    };
+
+    this.alert.alertaHandler(
+      "Já vai desistir?",
+      "Você tem certeza que quer desistir de me encontrar?",
+      [
+        { text: "mudei de idea" },
+        {
+          text: "sim",
+          handler: () => {
+            desistirDb();
+          }
+        }
+      ],
+      "error"
+    );
+  }
 
   achei() {
     console.log("achei");
-    this.location.verificarDesafio(this.desafio.latLong);
+    console.log("raio", this.desafio.raio);
+    this.alert.alertaHandler(
+      "Uau!",
+      "Você tem certeza que me achou? Se não tiver me achado você perderá <b>1 ponto </b> deste desafio!",
+      [
+        { text: "Não" },
+        { text: "Tenho certeza!", handler: () => this.verificarAchei() }
+      ],
+      ""
+    );
+  }
+
+  verificarAchei() {
+    this.location
+      .verificarDesafio(this.desafio.latLong, this.desafio.raio, this.desafio)
+      .then(data => {
+        if (data == 1) {
+        } else {
+          this.desafio.pontos = data;
+          this.naoAchou();
+        }
+      });
+  }
+
+  naoAchou() {
+    this.alert.alertaHandler(
+      "Você ainda não me achou!",
+      "Você perdeu <b>1 ponto </b> por não ter me achado :/ </br> Mais cuidado na próxima...",
+      [{ text: "certo!" }],
+      "error"
+    );
   }
 }

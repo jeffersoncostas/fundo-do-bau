@@ -191,4 +191,11 @@ export class DatabaseProvider {
 
     //this.db.object("perfis/"+id+"/desafiosEmAndamento/"+desafioKey).update(dicas)
   }
+
+  desistir(desafioKey) {
+    let id = this.afAuth.auth.currentUser.uid;
+    return this.db
+      .object("perfis/" + id + "/desafiosEmAndamento/" + desafioKey)
+      .remove();
+  }
 }

@@ -11,11 +11,18 @@
     <ion-segment [(ngModel)]="configSegment">
 
       <ion-segment-button value="config" (click)="configSeg.next('config')">
-        configurações
+        <ion-icon name="options"></ion-icon>
       </ion-segment-button>
       <ion-segment-button value="conq" (click)="configSeg.next('conq')">
 
-        conquistas
+        <ion-icon name="ios-star"></ion-icon>
+
+      </ion-segment-button>
+      <ion-segment-button value="concluidos" (click)="configSeg.next('concluidos')">
+
+        <ion-icon name="checkmark"></ion-icon>
+
+
       </ion-segment-button>
     </ion-segment>
   </ion-toolbar>
