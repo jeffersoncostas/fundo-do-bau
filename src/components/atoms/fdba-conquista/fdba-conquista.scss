@@ -2,7 +2,6 @@ fdba-conquista {
   .fdba-conquista {
     width: 100%;
     height: 100px;
-    background: black;
     position: relative;
     &__badge{
       position: absolute;
@@ -16,6 +15,18 @@ fdba-conquista {
       top: 10%;
       right: -25px;
       transform: rotate(25deg);
+    }
+    &__brilho{
+      left: 50%;
+      top: 50%;
+      z-index: -1;
+      transform: translate(-50%, -50%);
+      position: absolute;
+      height: 203%;
+      width: 135%;
+      background: radial-gradient(#2ab570, transparent);
+      filter: blur(25px);
+      border-radius: 50%
     }
     &__titulo {
       height: 50%;
