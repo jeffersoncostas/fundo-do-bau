@@ -1,5 +1,9 @@
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
+import { Desafio } from "../../models/desafio.model";
+import { RecompensasProvider } from "../../providers/recompensas/recompensas";
+import { DatabaseProvider } from "../../providers/database/database";
+import { Conquista } from "../../models/conquista.model";
 
 @IonicPage()
 @Component({
@@ -7,7 +11,37 @@ import { IonicPage, NavController, NavParams } from "ionic-angular";
   templateUrl: "parabens-video.html"
 })
 export class ParabensVideoPage {
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  desafio: Desafio;
+  conquista: Conquista;
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private recompensasProv: RecompensasProvider,
+    private database: DatabaseProvider
+  ) {
+    this.desafio = this.navParams.data;
+  }
 
-  ionViewDidLoad() {}
+  ionViewDidLoad() {
+    console.log("AAAAAAAAAAA PARABENS VIDEO");
+    this.darConquista();
+  }
+
+  confirmarNao() {}
+
+  darConquista() {
+    let getconquistaSub = this.recompensasProv
+      .getConquista(this.desafio)
+      .subscribe(data => {
+        this.conquista = data;
+        console.log(this.conquista);
+        getconquistaSub.unsubscribe();
+      });
+
+    let setConquistaSub = this.recompensasProv
+      .darConquista(this.desafio)
+      .subscribe(() => {
+        setConquistaSub.unsubscribe();
+      });
+  }
 }

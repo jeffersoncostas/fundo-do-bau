@@ -67,10 +67,11 @@ fdba-button {
       width: 100%;
       height: 60px;
       color: $white;
+      text-transform: uppercase;
       font-size: $default-font-size;
       font-variant: none;
       box-shadow: none;
-      background: transparent;
+      background: rgba(255, 255, 255, 0.2);
       border: $border-padrao solid white;
       border-radius: $border-radius-padrao;
     }
@@ -81,7 +82,7 @@ fdba-button {
       font-size: $m-font-size;
       font-variant: small-caps;
       box-shadow: none;
-      background: transparent;
+      background: $white-transparent-light;
       border: $border-padrao solid white;
       border-radius: $border-radius-padrao;
     }

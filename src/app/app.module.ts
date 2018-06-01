@@ -23,6 +23,7 @@ import { TratamentoErrosProvider } from "../providers/tratamento-erros/tratament
 import { DatabaseProvider } from "../providers/database/database";
 import { AlertsProvider } from "../providers/alerts/alerts";
 import { LocationProvider } from "../providers/location/location";
+import { RecompensasProvider } from "../providers/recompensas/recompensas";
 
 @NgModule({
   declarations: [MyApp],
@@ -50,7 +51,8 @@ import { LocationProvider } from "../providers/location/location";
     TratamentoErrosProvider,
     DatabaseProvider,
     AlertsProvider,
-    LocationProvider
+    LocationProvider,
+    RecompensasProvider
   ]
 })
 export class AppModule {}

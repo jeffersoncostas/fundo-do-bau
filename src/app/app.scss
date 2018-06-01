@@ -13,9 +13,9 @@ $s-font-size: 12px;
 $ss-font-size: 11px;
 $xss-font-size: 10px;
 //buttons
-//
+//#fffff
 // Colors
-$white: #ffff;
+$white: white;
 $grey: #e3e3e3;
 $dark-grey: rgb(141, 141, 141);
 $silver: #bababa;
@@ -49,13 +49,8 @@ $dark-blue-gradient: linear-gradient(45deg, #1f58a2, #218db8);
 $super-dark-blue-gradient: linear-gradient(180deg, #35617d, #101f27);
 $primary-light-gradient: linear-gradient(45deg, #218db8, #53a4c4);
 $conquista-gradient: linear-gradient(45deg, #49a39d, #309b7e);
-$desafio-header-gradient: linear-gradient(
-  -180deg,
-  rgba(255, 255, 255, 0),
-  rgba(0, 0, 0, 0.404)
-);
+$desafio-header-gradient: linear-gradient( -180deg, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.404));
 $radial-gradient-gold: radial-gradient(#ffb523, rgba(0, 0, 0, 0));
-
 //
 //Neon Shadow
 $gold-neon: 0 0 40px rgba(255, 186, 55, 0.4);
@@ -195,7 +190,6 @@ ion-alert.alert-top {
     box-shadow: $gold-neon;
     display: flex;
     justify-content: center;
-
     .alert-message {
       color: white;
     }
@@ -206,7 +200,6 @@ ion-alert.alert-top {
       border: 1px solid $gold;
       background: $gold-gradient;
     }
-
     .alert-button .button-inner {
       width: 50%;
     }

@@ -1,5 +1,8 @@
 page-video {
-  ion-content {
+  .fdba-page--video {
+    position: relative;
+    width: 100%;
+    height: 100vh;
     iframe {
       .ytp-chrome-top .ytp-share-button-visible {
         display: none;
@@ -7,6 +10,12 @@ page-video {
     }
     .scroll-content {
       margin: 0;
+    }
+    fdba-button {
+      bottom: 5%;
+      right: 5%;
+      position: absolute;
+      width: 160px;
     }
   }
 }
