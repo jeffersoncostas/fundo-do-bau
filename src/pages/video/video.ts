@@ -11,6 +11,7 @@ import { SafeResourceUrl, DomSanitizer } from "@angular/platform-browser";
 export class VideoPage {
   desafio: Desafio = this.navParams.data;
   videoUrl: SafeResourceUrl;
+  button: boolean = false;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -29,7 +30,8 @@ export class VideoPage {
     this.videoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(
       this.desafio.video
     );
-    console.log("ionViewDidLoad VideoPage");
+
+    this.tempo();
   }
 
   hide() {
@@ -37,5 +39,15 @@ export class VideoPage {
       "style"
     ].display =
       "none";
+  }
+
+  tempo() {
+    setTimeout(() => {
+      console.log("Já pode pular o video!");
+      this.button = true;
+    }, 10000);
+  }
+  irConquista() {
+    this.navCtrl.push("ParabensVideoPage", this.desafio);
   }
 }
