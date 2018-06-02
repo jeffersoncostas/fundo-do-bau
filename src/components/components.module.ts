@@ -21,9 +21,9 @@ import { FdbaDesafioInfoComponent } from "./moleculas/fdba-desafio-info/fdba-des
 import { FdbaRankingHeaderComponent } from "./moleculas/fdba-ranking-header/fdba-ranking-header";
 import { FdbaPerfilInputComponent } from "./moleculas/fdba-perfil-input/fdba-perfil-input";
 import { FdbaToogleComponent } from "./moleculas/fdba-toogle/fdba-toogle";
-import { FdbaHomeHeaderComponent } from './moleculas/fdba-home-header/fdba-home-header';
-import { FdbaParabensComponent } from './atoms/fdba-parabens/fdba-parabens';
-import { ListaCardRankingComponent } from './lista-card-ranking/lista-card-ranking';
+import { FdbaHomeHeaderComponent } from "./moleculas/fdba-home-header/fdba-home-header";
+import { FdbaParabensComponent } from "./atoms/fdba-parabens/fdba-parabens";
+import { FdbaListaCardRankingComponent } from "./moleculas/fdba-lista-card-ranking/fdba-lista-card-ranking";
 
 @NgModule({
   declarations: [
@@ -48,7 +48,7 @@ import { ListaCardRankingComponent } from './lista-card-ranking/lista-card-ranki
     FdbaPerfilInputComponent,
     FdbaHomeHeaderComponent,
     FdbaToogleComponent,
-    ListaCardRankingComponent
+    FdbaListaCardRankingComponent
   ],
   imports: [IonicModule, RoundProgressModule, FormsModule],
   exports: [
@@ -73,7 +73,7 @@ import { ListaCardRankingComponent } from './lista-card-ranking/lista-card-ranki
     FdbaHomeHeaderComponent,
     FdbaToogleComponent,
     FdbaParabensComponent,
-    ListaCardRankingComponent]
-  
+    FdbaListaCardRankingComponent
+  ]
 })
 export class ComponentsModule {}

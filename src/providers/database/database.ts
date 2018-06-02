@@ -220,4 +220,25 @@ export class DatabaseProvider {
         return listaDesafiosConcluidos;
       });
   }
+
+  async getRanking() {
+    let listaRankingUsers: {
+      userName: string;
+      nome: string;
+      pontos: number;
+    }[] = [];
+    let ref = this.db.database.ref("perfis");
+    ref.orderByChild("pontos").on("child_added", users => {
+      let user: Usuario = users.val();
+      let userRanking = { userName: "", pontos: 0, nome: "" };
+      if (user.username) {
+        userRanking.userName = user.username;
+        userRanking.pontos = user.pontos;
+        userRanking.nome = user.nome;
+      }
+
+      listaRankingUsers.push(userRanking);
+    });
+    return listaRankingUsers;
+  }
 }
