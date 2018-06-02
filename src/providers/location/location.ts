@@ -10,6 +10,7 @@ export class LocationProvider {
   private listaIdDesafiosProximos = [];
   private listaDesafiosProximos: Desafio[] = [];
   private desafiosAndamento: Desafio[] = [];
+  private desafiosConcluidos: Desafio[] = [];
   private userLatitude: number;
   private userLongitude: number;
 
@@ -24,8 +25,9 @@ export class LocationProvider {
     this.userLongitude = userLongitude;
   }
 
-  getDesafiosLocation(desafiosAndamento) {
+  getDesafiosLocation(desafiosAndamento, desafiosConcluidos) {
     this.desafiosAndamento = desafiosAndamento;
+    this.desafiosConcluidos = desafiosConcluidos;
     return this.db
       .list("desafioLocation")
       .snapshotChanges()
@@ -137,6 +139,14 @@ export class LocationProvider {
               desafio.myDesafio = true;
               desafio.dicas = el.dicas;
               desafio.pontos = el.pontos;
+            }
+          });
+
+          this.desafiosConcluidos.forEach(el => {
+            if (el.key == desafio.key) {
+              desafio.dicas = el.dicas;
+              desafio.pontos = el.pontos;
+              desafio.complete = true;
             }
           });
           this.listaDesafiosProximos.push(desafio);

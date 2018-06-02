@@ -9,6 +9,7 @@ import { Subscription } from "rxjs/Subscription";
 @Injectable()
 export class DatabaseProvider {
   getAllConquistasUsuarioSubscription: Subscription;
+  userId = this.afAuth.auth.currentUser.uid;
   constructor(
     private afAuth: AngularFireAuth,
     private db: AngularFireDatabase
@@ -88,18 +89,15 @@ export class DatabaseProvider {
   }
 
   async setDesafioAndamento(desafio: Desafio) {
-    let id = this.afAuth.auth.currentUser.uid;
-
     return await this.db
-      .object("perfis/" + id + "/desafiosEmAndamento/" + desafio.key)
+      .object("perfis/" + this.userId + "/desafiosEmAndamento/" + desafio.key)
       .set({ pontosDesafio: desafio.pontos, dicasVistas: [] });
   }
 
   getDesafiosAndamento() {
-    let id = this.afAuth.auth.currentUser.uid;
     let listaDesafiosEmAndamento = [];
     return this.db
-      .list("perfis/" + id + "/desafiosEmAndamento")
+      .list("perfis/" + this.userId + "/desafiosEmAndamento")
       .snapshotChanges()
       .map(data => {
         listaDesafiosEmAndamento = [];
@@ -118,7 +116,6 @@ export class DatabaseProvider {
               desafio.dicas = desafioUser.dicasVistas;
 
               listaDesafiosEmAndamento.push(desafio);
-              console.log(listaDesafiosEmAndamento);
             });
         });
         return listaDesafiosEmAndamento;
@@ -193,9 +190,34 @@ export class DatabaseProvider {
   }
 
   desistir(desafioKey) {
-    let id = this.afAuth.auth.currentUser.uid;
     return this.db
-      .object("perfis/" + id + "/desafiosEmAndamento/" + desafioKey)
+      .object("perfis/" + this.userId + "/desafiosEmAndamento/" + desafioKey)
       .remove();
+  }
+
+  getDesafiosConcluidos() {
+    let listaDesafiosConcluidos: Desafio[] = [];
+    return this.db
+      .list("perfis/" + this.userId + "/desafiosConcluidos")
+      .snapshotChanges()
+      .map(data => {
+        data.forEach(desafioConc => {
+          let desafioConcluido: Desafio;
+          let desafioConcluidoUsuario = desafioConc.payload.val();
+
+          this.db
+            .object("desafios/" + desafioConc.key)
+            .snapshotChanges()
+            .forEach(desafioFull => {
+              desafioConcluido = desafioFull.payload.val();
+              desafioConcluido.complete = desafioConcluidoUsuario.complete;
+              desafioConcluido.dicas = desafioConcluidoUsuario.dicasVistas;
+              desafioConcluido.pontos = desafioConcluidoUsuario.pontosDesafio;
+              desafioConcluido.key = desafioConc.key;
+              listaDesafiosConcluidos.push(desafioConcluido);
+            });
+        });
+        return listaDesafiosConcluidos;
+      });
   }
 }

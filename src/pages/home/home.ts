@@ -19,6 +19,7 @@ export class HomePage {
   // dados capturados do firebase
   userData$: Usuario;
   listaDesafiosEmAndamento$: Desafio[];
+  listaDesafiosConcluidos$: Desafio[];
 
   userDataObservableSubscription: Subscription;
   listaDesafiosSubscription: Subscription;
@@ -100,14 +101,28 @@ export class HomePage {
       .subscribe(data => {
         this.listaDesafiosEmAndamento$ = [];
         this.listaDesafiosEmAndamento$ = data;
-        this.getDesafios();
+        this.getDesafiosConcluidos();
         this.desafiosEmAndamentoSubscription.unsubscribe();
+      });
+  }
+
+  getDesafiosConcluidos() {
+    let desafiosConcluidosSub = this.database
+      .getDesafiosConcluidos()
+      .subscribe(data => {
+        this.listaDesafiosConcluidos$ = data;
+        console.log(data, "desafios concluidos");
+        this.getDesafios();
+        desafiosConcluidosSub.unsubscribe();
       });
   }
 
   getDesafios() {
     this.listaDesafiosSubscription = this.location
-      .getDesafiosLocation(this.listaDesafiosEmAndamento$)
+      .getDesafiosLocation(
+        this.listaDesafiosEmAndamento$,
+        this.listaDesafiosConcluidos$
+      )
       .subscribe(
         data => {
           this.listaDesafios$ = data;
@@ -118,8 +133,11 @@ export class HomePage {
       );
   }
 
-  clickCard(desafio) {
+  clickCard(desafio: Desafio) {
     console.log(desafio);
+    if (desafio.complete) {
+      return this.navCtrl.push("DesafioConcluidoPage", desafio);
+    }
     this.navCtrl.push("DesafioPage", desafio);
   }
 

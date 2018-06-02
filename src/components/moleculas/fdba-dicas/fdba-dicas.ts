@@ -10,7 +10,8 @@ import { Desafio } from "../../../models/desafio.model";
     "buttonText",
     "buttonTextActive",
     "pontosDica",
-    "dicasSolicitadas"
+    "dicasSolicitadas",
+    "type"
   ],
   outputs: ["clickButtonDica"]
 })
@@ -21,6 +22,7 @@ export class FdbaDicasComponent {
   buttonText: string;
   buttonTextActive: string;
   pontosDica: number;
+  type: string;
 
   clickButtonDica = new EventEmitter();
   constructor() {}

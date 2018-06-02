@@ -2,6 +2,18 @@
   <div class="fdba-desafio-header__overlay">
     <div class="fdba-desafio-header__title">
       <span>{{desafio.nome}}</span>
+      <div class="fdba-desafio-header__title__badges">
+        <ng-container *ngFor="let badge of badges">
+          <fdba-badge type="avisos" [avisoIcon]="badge.icon" [avisoText]="badge.nome" [avisoCor]="badge.cor"></fdba-badge>
+        </ng-container>
+
+        <ng-container *ngIf="desafio.myDesafio">
+          <fdba-badge type="avisos" avisoIcon="ios-more" avisoText="Em andamento" avisoCor="gold"></fdba-badge>
+        </ng-container>
+
+
+
+      </div>
     </div>
   </div>
 </div>

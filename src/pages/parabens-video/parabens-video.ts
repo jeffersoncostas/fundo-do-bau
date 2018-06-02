@@ -44,4 +44,12 @@ export class ParabensVideoPage {
         setConquistaSub.unsubscribe();
       });
   }
+
+  aceitarQuiz() {
+    let objDesafioConquista = {
+      desafio: this.desafio,
+      conquista: this.conquista
+    };
+    this.navCtrl.setRoot("QuizPage", objDesafioConquista);
+  }
 }

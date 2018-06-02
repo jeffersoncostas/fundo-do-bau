@@ -22,11 +22,14 @@ export class TabsPage {
   userDataObservableSnapshot: Subscription;
   tabParams: any;
 
+  selectIndex: number = 1;
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     private autenticacao: AutenticacaoProvider
   ) {
+    this.tabChange();
     this.isAdmin();
   }
 
@@ -46,5 +49,20 @@ export class TabsPage {
         }
         this.userDataObservableSnapshot.unsubscribe();
       });
+  }
+
+  tabChange() {
+    console.log("Mudei de pagina tabssss");
+    if (this.navParams.data.tabIndex) {
+      console.log(this.navParams.data);
+      this.selectIndex = this.navParams.data.tabIndex;
+
+      if (this.navParams.data.configSegment) {
+        let configSegmentObj = {
+          configSegment: this.navParams.data.configSegment
+        };
+        this.tabParams = configSegmentObj;
+      }
+    }
   }
 }

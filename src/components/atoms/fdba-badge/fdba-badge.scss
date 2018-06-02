@@ -1,33 +1,47 @@
 fdba-badge {
-    .fdba-badge{
-
-            position: relative;
-            display: flex;
-            justify-content: center;
-        
-        &__content{
-            position: absolute;
-            z-index: 1;
-            margin-top: 9px;
-            color: $white;
-            text-align: center;
-
-            &__text-number{
-                display: block;
-                font-size: $m-font-size;
-                text-align: center;
-            }
-
-            &__text{
-                display: block;
-                top: -10;
-                font-size: $xss-font-size;
-            }
-        }
-
-        &__flag{
-            height: 50px;
-        }
-        
+  .fdba-badge {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    &__content {
+      position: absolute;
+      z-index: 1;
+      margin-top: 9px;
+      color: $white;
+      text-align: center;
+      &__text-number {
+        display: block;
+        font-size: $m-font-size;
+        text-align: center;
+      }
+      &__text {
+        display: block;
+        top: -10;
+        font-size: $xss-font-size;
+      }
     }
+    &__flag {
+      height: 50px;
+    }
+    &--avisos {
+      padding: 5px;
+      border-radius: $border-radius-padrao;
+      background-color: $light-secondary;
+      margin-right: 10px;
+      box-shadow: 0px 4px 8px rgba(35, 211, 202, 0.473), 0px -4px 8px rgba(35, 211, 202, 0.473), 4px 0px 8px rgba(35, 211, 202, 0.473), -4px 0px 8px rgba(35, 211, 202, 0.473);
+      ion-icon {
+        margin-right: 5px;
+      }
+      &--red {
+        @extend .fdba-badge--avisos;
+        background: $red;
+        box-shadow: 0px 4px 6px rgba(255, 45, 45, 0.40);
+      }
+      &--gold {
+        @extend .fdba-badge--avisos;
+        background: $gold;
+        box-shadow: 0px 4px 6px rgba(255, 223, 45, 0.4);
+      }
+    }
+  }
 }

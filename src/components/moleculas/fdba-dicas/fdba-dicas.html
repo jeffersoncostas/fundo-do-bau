@@ -1,4 +1,5 @@
-<div class="fdba-dicas__content">
+<div class="fdba-dicas__content" *ngIf="type != 'concluido' ">
+
   <section class="fdba-dicas">
     <div class="fdba-dicas__titulo">
       <span>Dicas</span>
@@ -23,6 +24,28 @@
   <section class="fdba-dicas__button" *ngIf="desafio.myDesafio == true && desafio.dicas.length < 6">
     <fdba-button type="dica" [buttonText]="buttonText" [buttonTextActive]="buttonTextActive" [pontosDica]="pontosDica" (clickButton)="clickButtonDicaEmit($event); newDica()"></fdba-button>
   </section>
+
+  <div class="fdba-dicas__button__linha"></div>
+</div>
+
+
+
+
+<div class="fdba-dicas__content" *ngIf="type == 'concluido' ">
+  <section class="fdba-dicas">
+    <div class="fdba-dicas__titulo">
+      <span>Dicas</span>
+    </div>
+
+    <div class="fdba-dicas__dicas" *ngFor="let dica of desafio.dicas">
+      <span>
+        {{dica}}
+      </span>
+    </div>
+
+
+  </section>
+
 
   <div class="fdba-dicas__button__linha"></div>
 </div>

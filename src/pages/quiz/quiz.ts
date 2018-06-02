@@ -14,6 +14,7 @@ import { Perguntas } from "../../models/perguntas.model";
 })
 export class QuizPage {
   desafio: Desafio;
+
   pergunta: string;
   resposta: string;
   alternativa: any;
@@ -29,7 +30,10 @@ export class QuizPage {
   ) {}
 
   ionViewDidLoad() {
-    this.acessarDatabase();
+    this.desafio = this.navParams.data.desafio;
+    console.log(this.navParams.data);
+    //this.acessarDatabase();
+    this.iniciarQuiz();
   }
 
   acessarDatabase() {
@@ -41,6 +45,11 @@ export class QuizPage {
         this.separarPerguntas();
         this.pontuacaoConfig();
       });
+  }
+
+  iniciarQuiz() {
+    this.separarPerguntas();
+    this.pontuacaoConfig();
   }
 
   clickAlternativa(alternativa) {
@@ -66,7 +75,7 @@ export class QuizPage {
 
     if (this.paginacao == 4) {
       console.log("parabens, vc conseguiu " + this.quizPontos + " pontos");
-      this.navCtrl.setRoot("HomePage");
+      this.terminouQuiz();
     } else {
       this.paginacao++;
       this.separarPerguntas();
@@ -75,5 +84,12 @@ export class QuizPage {
 
   pontuacaoConfig() {
     this.pontosPergunta = this.desafio.perguntas.pontos / 5;
+  }
+
+  terminouQuiz() {
+    this.desafio.perguntas.pontos = this.quizPontos;
+    let conquista = this.navParams.data.conquista;
+    let desafioConquistaObj = { desafio: this.desafio, conquista: conquista };
+    this.navCtrl.setRoot("ParabensQuizPage", desafioConquistaObj);
   }
 }

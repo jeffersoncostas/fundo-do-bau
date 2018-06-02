@@ -20,7 +20,7 @@
   </section>
 
   <section *ngSwitchCase="'concluidos'">
-    Concluidos
+    <fdba-card [listaDesafios]="desafiosConcluidos" (clickCard)="verPaginaDesafio($event)"></fdba-card>
   </section>
 
 </ion-content>

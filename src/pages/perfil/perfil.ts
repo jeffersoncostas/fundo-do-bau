@@ -7,6 +7,7 @@ import { DatabaseProvider } from "../../providers/database/database";
 import { Conquista } from "../../models/conquista.model";
 import { AlertsProvider } from "../../providers/alerts/alerts";
 import { TratamentoErrosProvider } from "../../providers/tratamento-erros/tratamento-erros";
+import { Desafio } from "../../models/desafio.model";
 
 @IonicPage()
 @Component({
@@ -22,6 +23,8 @@ export class PerfilPage {
   conquistasUsuario$: Conquista[];
   userAuth$: string;
   userAuthSubscription$: Subscription;
+
+  desafiosConcluidos: Desafio[];
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -30,6 +33,12 @@ export class PerfilPage {
     private alerts: AlertsProvider,
     private erros: TratamentoErrosProvider
   ) {}
+  ionViewWillEnter() {
+    console.log(this.navParams.data, "PERFIL PAGEEE");
+    if (this.navParams.data.configSegment) {
+      this.configSegment = this.navParams.data.configSegment;
+    }
+  }
 
   ionViewDidEnter() {
     this.getUser();
@@ -43,6 +52,7 @@ export class PerfilPage {
         this.userData$ = data;
         console.log(data);
         this.getUserConquistas();
+        this.getDesafiosConcluidos();
       });
   }
 
@@ -80,6 +90,20 @@ export class PerfilPage {
     this.autenticacao
       .updateUsername(newPerfil.username)
       .then(data => console.log(data));
+  }
+
+  getDesafiosConcluidos() {
+    let desafiosConcluidosSub = this.database
+      .getDesafiosConcluidos()
+      .subscribe(data => {
+        this.desafiosConcluidos = data;
+        console.log(data);
+        desafiosConcluidosSub.unsubscribe();
+      });
+  }
+
+  verPaginaDesafio(desafio) {
+    this.navCtrl.push("DesafioConcluidoPage", desafio);
   }
 
   // Encerrar eventos da página
