@@ -7,11 +7,6 @@ fdba-card {
     height: 150px;
     border: $border-padrao solid $gold;
     margin-bottom: 40px;
-    &--andamento {
-      @extend .fdba-card;
-      box-shadow: $green-neon;
-      border: 1px solid #2ca02f
-    }
     &__content-image {
       width: 50%;
       height: 100%;
@@ -24,18 +19,17 @@ fdba-card {
       &__overlay {
         width: 100%;
         height: 100%;
-        background-color: rgba(255, 255, 255, 0.37);
-        backdrop-filter: blur(10px);
+        background-color: rgba(255, 255, 255, 0.507);
+        -webkit-backdrop-filter: blur(10px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
     }
     &__content-title {
       width: 50%;
       height: 100%;
       background-color: $dark;
-      &--andamento {
-        @extend .fdba-card__content-title;
-        background-color: #2a6b5c;
-      }
       &__title {
         display: flex;
         color: white;
@@ -44,10 +38,6 @@ fdba-card {
         width: 100%;
         justify-content: center;
         align-items: center;
-        &--andamento {
-          @extend .fdba-card__content-title__title;
-          background-color: #1f5045;
-        }
       }
       &__buttons {
         height: calc(100% - 40px);

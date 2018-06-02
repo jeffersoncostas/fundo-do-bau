@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{desafio.nome}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <fdba-desafio-header [desafio]="desafio" [badges]="badges"></fdba-desafio-header>
+
+  <section class="fdba-page--desafio-concluido__info">
+    <fdba-desafio-info [dificuldade]="desafio.dificuldade" [completaram]="desafio.qtdPessoas" [pontos]="desafio.pontos"></fdba-desafio-info>
+  </section>
+
+
+  <section class="fdba-page--desafio-concluido__dicas">
+    <fdba-dicas type="concluido" [desafio]="desafio"></fdba-dicas>
+  </section>
+
+  <section class="fdba-page--desafio-concluido__button">
+    <fdba-button type="transparente-branco-duplo" buttonText="ver video!" (clickButton)="verVideo()"></fdba-button>
+
+  </section>
+
+</ion-content>

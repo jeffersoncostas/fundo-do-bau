@@ -1,7 +1,15 @@
 <section class="fdba-card" *ngFor="let desafio of listaDesafios" [ngClass]="{'fdba-card--andamento': desafio.myDesafio}">
 
   <div class="fdba-card__content-image" (click)="clickCardEmit(desafio)" [style.background-image]="'url('+desafio.imagem+')'">
-    <div class="fdba-card__content-image__overlay" *ngIf="desafio.myDesafio"></div>
+    <div class="fdba-card__content-image__overlay" *ngIf="desafio.myDesafio">
+      <fdba-badge type="avisos" avisoCor="gold" avisoIcon="ios-more" avisoText="Em andamento"></fdba-badge>
+
+    </div>
+    <div class="fdba-card__content-image__overlay" *ngIf="desafio.complete">
+      <fdba-badge type="avisos" avisoIcon="checkmark" avisoText="Desafio Concluído!"></fdba-badge>
+
+    </div>
+
   </div>
   <div class="fdba-card__content-title" [ngClass]="{'fdba-card__content-title--andamento': desafio.myDesafio}">
 
@@ -10,6 +18,8 @@
 
       <span>{{desafio.nome}}</span>
     </div>
+
+    <!-- botoes ativados -->
     <div class="fdba-card__content-title__buttons" *ngIf="botaoCardVerde && botaoCardVermelho">
       <fdba-button class="fba-card__content-title__buttons__vermelho" type="degrade-vermelho" altura="30" [buttonText]="botaoCardVermelho"
         (clickButton)="desisto(desafio)">
@@ -17,6 +27,8 @@
       <fdba-button class="fba-card__content-title__buttons__verde" type="degrade-verde" altura="30" [buttonText]="botaoCardVerde"
         (clickButton)="teAchei(desafio)"></fdba-button>
     </div>
+
+    <!-- botoes desativados -->
     <div class="fdba-card__content-title__progress" *ngIf="!botaoCardVerde && !botaoCardVermelho" (click)="clickCardEmit(desafio)">
 
       <div class="fdba-card__content-title__progress__circle">
@@ -32,5 +44,7 @@
         <span class="fdba-card__content-title__progress__circle__label">Pontos</span>
       </div>
     </div>
+
+
   </div>
 </section>

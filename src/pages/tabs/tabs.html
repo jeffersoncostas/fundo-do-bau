@@ -1,9 +1,9 @@
-<ion-tabs selectedIndex="1" tabsHighlight="true" name="main-tab">
+<ion-tabs [selectedIndex]="selectIndex" tabsHighlight="true" name="main-tab">
 
   <ion-tab [root]="ranking" tabTitle="" tabUrlPath="tab" tabIcon="fdba-ranking"></ion-tab>
   <ion-tab [root]="home" tabTitle="" tabUrlPath="tab" tabIcon="fdba-icon" [rootParams]="tabParams"></ion-tab>
 
-  <ion-tab [root]="perfil" tabTitle="" tabUrlPath="tab" tabIcon="fdba-perfil"></ion-tab>
+  <ion-tab [root]="perfil" tabTitle="" tabUrlPath="tab" tabIcon="fdba-perfil" [rootParams]="tabParams"></ion-tab>
 
   <ion-tab *ngIf="adminBool" [root]="styleguide" tabTitle="Style Guide" tabUrlPath="tab" tabIcon="ios-color-palette"></ion-tab>
 

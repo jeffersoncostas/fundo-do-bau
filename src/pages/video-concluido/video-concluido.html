@@ -1,0 +1,11 @@
+<ion-content>
+
+  <fdba-button *ngIf="button" (clickButton)=" this.navCtrl.pop()" type="transparente-branco-duplo" buttonText="voltar">
+  </fdba-button>
+  <div class="fdba-page--video-concluido__zona-click" (click)="showButton()"></div>
+  <iframe width="100%" height="100%" [src]="videoUrl" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+
+  </iframe>
+
+
+</ion-content>
