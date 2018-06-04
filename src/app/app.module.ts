@@ -11,6 +11,7 @@ import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
 import { NativeStorage } from "@ionic-native/native-storage";
 import { IonicStorageModule } from "@ionic/storage";
+import {Geolocation} from '@ionic-native/geolocation';
 
 import { AngularFireModule } from "angularfire2";
 import { AngularFireDatabaseModule } from "angularfire2/database";
@@ -45,6 +46,7 @@ import { RecompensasProvider } from "../providers/recompensas/recompensas";
     StatusBar,
     SplashScreen,
     NativeStorage,
+    Geolocation,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     AutenticacaoProvider,
     LoadingsProvider,

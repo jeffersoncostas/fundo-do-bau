@@ -10,6 +10,7 @@ import { Subscription } from "rxjs/Subscription";
 import { Desafio } from "../../models/desafio.model";
 import { LocationProvider } from "../../providers/location/location";
 import { AlertsProvider } from "../../providers/alerts/alerts";
+import { Geolocation } from "@ionic-native/geolocation";
 @IonicPage()
 @Component({
   selector: "page-home",
@@ -40,7 +41,8 @@ export class HomePage {
     private autenticacao: AutenticacaoProvider,
     private database: DatabaseProvider,
     private location: LocationProvider,
-    private alert: AlertsProvider
+    private alert: AlertsProvider,
+    private geolocation: Geolocation
   ) {
     setInterval(() => {}, 300);
   }
@@ -66,32 +68,33 @@ export class HomePage {
   }
 
   getUserLocation() {
-    if (navigator.geolocation) {
-      this.userLocationSubscription = navigator.geolocation.getCurrentPosition(
-        position => {
-          this.userLatitude = position.coords.latitude;
-          this.userLongitude = position.coords.longitude;
-          console.log(this.userLatitude, this.userLongitude, position);
-          this.location.setUserLocation(this.userLatitude, this.userLongitude);
-          this.getDesafiosAndamento();
-        },
-        e =>
-          this.alert.alertaSimples(
-            "Opa!",
-            "Você precisa ativar o GPS obter a melhor experiência no Fundo do Baú!",
-            "error"
-          )
-      );
-
-      if (!this.userLatitude || !this.userLongitude) {
+    this.geolocation
+      .getCurrentPosition({
+        enableHighAccuracy: true,
+        timeout: 5000,
+        maximumAge: 0
+      })
+      .then(position => {
+        this.userLatitude = position.coords.latitude;
+        this.userLongitude = position.coords.longitude;
+        console.log(this.userLatitude, this.userLongitude, position);
+        this.location.setUserLocation(this.userLatitude, this.userLongitude);
+        this.getDesafiosAndamento();
+      })
+      .catch(() => {
         this.alert.alertaSimples(
           "Opa!",
-          "Você precisa ativar o GPS para você ter a melhor experiência no Fundo do Baú!",
+          "Você precisa ativar o GPS obter a melhor experiência no Fundo do Baú! primeiro erro",
           "error"
         );
-      }
-    } else {
-      console.log("aa");
+      });
+
+    if (!this.userLatitude || !this.userLongitude) {
+      this.alert.alertaSimples(
+        "Opa!",
+        "Você precisa ativar o GPS para você ter a melhor experiência no Fundo do Baú! segundo erro",
+        "error"
+      );
     }
   }
 
