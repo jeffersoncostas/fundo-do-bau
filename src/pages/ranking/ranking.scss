@@ -1,3 +1,9 @@
-//fdba-ranking {
-
-//}
+page-ranking {
+  ion-content {
+    background: $super-dark-blue-gradient;
+    .fdba-ranking-header {
+      width: calc(100% + 32px);
+      margin: -16px -16px 16px;
+    }
+  }
+}

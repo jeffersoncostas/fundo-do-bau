@@ -1,25 +1,34 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the RankingPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { Component } from "@angular/core";
+import { IonicPage, NavController, NavParams } from "ionic-angular";
+import { DatabaseProvider } from "../../providers/database/database";
 
 @IonicPage()
 @Component({
-  selector: 'page-ranking',
-  templateUrl: 'ranking.html',
+  selector: "page-ranking",
+  templateUrl: "ranking.html"
 })
 export class RankingPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  listaUsersRanking: { userName: string; nome: string; pontos: number }[];
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private database: DatabaseProvider
+  ) {}
+  ionViewWillLoad() {
+    this.ranking();
+  }
+  ionViewWillEnter() {
+    this.ranking();
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad RankingPage');
+    console.log("ionViewDidLoad RankingPage");
   }
 
+  ranking() {
+    this.database.getRanking().then(data => {
+      this.listaUsersRanking = data.reverse();
+      console.log(data);
+    });
+  }
 }
