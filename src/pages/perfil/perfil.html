@@ -1,0 +1,26 @@
+<fdba-header-config firstSegment="configurações" secondSegment="perfil" [nomeUsuario]="(userData$)?.username" [pontos]="(userData$)?.pontos"
+  [configSegment]="configSegment" (configSeg)="configSegment = $event">
+</fdba-header-config>
+
+<ion-content [ngSwitch]="configSegment" padding>
+
+
+  <section *ngSwitchCase="'config'">
+    <fdba-perfil-input [email]="userAuth$" [name]="(userData$)?.nome" [username]="(userData$)?.username" (newPerfil)="updatePerfil($event)"></fdba-perfil-input>
+  </section>
+
+
+  <section *ngSwitchCase="'conq'">
+    <div class="fdba-page--perfil__conquista-list">
+      <div class="fdba-page--perfil__conquista-list__conquista" *ngFor="let conquista of conquistasUsuario$">
+        <fdba-conquista [titulo]="conquista.nome" [imagem]="conquista.imagem" [descricao]="conquista.descricao" [background]="conquista.background">
+        </fdba-conquista>
+      </div>
+    </div>
+  </section>
+
+  <section *ngSwitchCase="'concluidos'">
+    <fdba-card [listaDesafios]="desafiosConcluidos" (clickCard)="verPaginaDesafio($event)"></fdba-card>
+  </section>
+
+</ion-content>

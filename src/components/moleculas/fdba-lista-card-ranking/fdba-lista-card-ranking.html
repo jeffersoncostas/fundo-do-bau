@@ -1,0 +1,16 @@
+<section class="fdba-lista-card-ranking">
+
+  <div class="fdba-lista-card-ranking__card" *ngFor="let user of listaUsers; let i = index">
+
+    <fdba-card-ranking *ngIf="i==0" type="gold" [userName]="user.nome" [userNick]="user.userName" [userPoints]="user.pontos"
+      [userPosition]="1"></fdba-card-ranking>
+    <fdba-card-ranking *ngIf="i==1" type="silver" [userName]="user.nome" [userNick]="user.userName" [userPoints]="user.pontos"
+      [userPosition]="2"></fdba-card-ranking>
+    <fdba-card-ranking *ngIf="i==2" type="coper" [userName]="user.nome" [userNick]="user.userName" [userPoints]="user.pontos"
+      [userPosition]="3"></fdba-card-ranking>
+    <fdba-card-ranking *ngIf="i >2" type="normal" [userName]="user.nome" [userNick]="user.userName" [userPoints]="user.pontos"
+      [userPosition]="i+1"></fdba-card-ranking>
+
+  </div>
+
+</section>

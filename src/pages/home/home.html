@@ -1,17 +1,24 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
-</ion-header>
+<ion-content padding class="fdba-page--home" (ionScroll)="scroll($event)" (ionScrollStart)="scrollTop()">
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <ion-refresher (ionRefresh)="refresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+
+  <fdba-home-header [toogleFixed]="toogleFixed" [toogle]="home" (configToogle)="home = $event">
+
+  </fdba-home-header>
+
+  <div [ngSwitch]="home" class="fdba-page--home__desafios">
+
+    <section *ngSwitchCase="'desafios'">
+      <fdba-card [listaDesafios]="listaDesafios$" (clickCard)="clickCard($event)"></fdba-card>
+    </section>
+    <section *ngSwitchCase="'desafiosAndamento'">
+
+      <fdba-card [listaDesafios]="listaDesafiosEmAndamento$" (clickCard)="clickCard($event)" botaoCardVermelho="desisto" botaoCardVerde="achei"></fdba-card>
+
+    </section>
+  </div>
 </ion-content>

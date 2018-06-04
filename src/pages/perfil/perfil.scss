@@ -1,0 +1,18 @@
+page-perfil {
+  .scroll-content {
+    padding: 216px 16px 16px !important;
+  }
+  ion-content {
+    background: $super-dark-blue-gradient;
+  }
+  .content-md {
+    color: $white;
+  }
+  .fdba-page--perfil {
+    &__conquista-list {
+      &__conquista {
+        margin-bottom: 40px;
+      }
+    }
+  }
+}

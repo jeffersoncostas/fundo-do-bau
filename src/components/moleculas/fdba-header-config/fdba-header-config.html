@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="fdba-header-config__user-info">
+      <div class="fdba-header-config__user-info__icon-content">
+        <img class="fdba-header-config__user-info__icon-content__img1" *ngIf="configSegment == 'config'" src="../../../assets/imgs/icon-config.svg">
+        <img class="fdba-header-config__user-info__icon-content__img2" *ngIf="configSegment == 'conq'" src="../../../assets/imgs/star-icon.svg">
+      </div>
+      <div class="fdba-header-config__user-info__nome"> {{nomeUsuario}} </div>
+      <div class="fdba-header-config__user-info__pontos"> {{pontos}} pontos</div>
+    </div>
+    <ion-segment [(ngModel)]="configSegment">
+
+      <ion-segment-button value="config" (click)="configSeg.next('config')">
+        <ion-icon name="options"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="conq" (click)="configSeg.next('conq')">
+
+        <ion-icon name="ios-star"></ion-icon>
+
+      </ion-segment-button>
+      <ion-segment-button value="concluidos" (click)="configSeg.next('concluidos')">
+
+        <ion-icon name="checkmark"></ion-icon>
+
+
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>

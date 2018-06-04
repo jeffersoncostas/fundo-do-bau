@@ -1,0 +1,81 @@
+<!-- Degrade -->
+<button *ngIf="type == 'degrade-rosa' " class="fdba-button--degrade-rosa" (click)="clickButtonEmit($event)" [style.height.px]="altura">
+  {{buttonText}}
+</button>
+
+<button *ngIf="type == 'degrade-laranja' " class="fdba-button--degrade-laranja" (click)="clickButtonEmit($event)" [style.height.px]="altura">
+  {{buttonText}}
+</button>
+
+<button *ngIf="type == 'degrade-vermelho' " class="fdba-button--degrade-vermelho" (click)="clickButtonEmit($event)" [style.height.px]="altura">
+  {{buttonText}}
+</button>
+
+<button *ngIf="type == 'degrade-verde' " class="fdba-button--degrade-verde" (click)="clickButtonEmit($event)" [style.height.px]="altura">
+  {{buttonText}}
+</button>
+
+<!-- Back and next -->
+<button *ngIf="type == 'onboarding-proximo' " class="fdba-button--onboarding-proximo" (click)="clickButtonEmit($event)" [style.height.px]="altura">
+  {{buttonText}}
+</button>
+
+<button *ngIf="type == 'onboarding-voltar' " class="fdba-button--onboarding-voltar" (click)="clickButtonEmit($event)" [style.height.px]="altura">
+  {{buttonText}}
+</button>
+
+<!-- Transparente -->
+<button *ngIf="type == 'transparente-branco-duplo' " class="fdba-button--transparente-branco-duplo" (click)="clickButtonEmit($event)"
+  [style.height.px]="altura">
+  {{buttonText}}
+</button>
+
+<button *ngIf="type == 'transparente-branco-duplo-active' " class="fdba-button--transparente-branco-duplo active" (click)="clickButtonEmit($event)"
+  [style.height.px]="altura">
+  {{buttonText}}
+</button>
+
+<button *ngIf="type == 'transparente-branco-grande' " class="fdba-button--transparente-branco-grande" (click)="clickButtonEmit($event)"
+  [style.height.px]="altura">
+  {{buttonText}}
+</button>
+
+<div *ngIf="type == 'botao-link' " class="fdba-button--botao-link" [style.height.px]="altura">
+  <div class="fdba-button--botao-link__resume">{{resume}}</div>
+  <button class="fdba-button--botao-link__button" (click)="clickButtonEmit($event)">{{buttonText}}</button>
+</div>
+
+<div *ngIf="type == 'degrade-quiz' " class="fdba-button--degrade-quiz" [style.height.px]="altura" (click)="clickButtonEmit($event)">
+  <div [style.background-color]="cor"></div>
+  <button>
+    {{buttonText}}
+  </button>
+</div>
+
+<!-- Dica -->
+<div *ngIf="type == 'dica' " class="fdba-button--dica" [style.height.px]="altura">
+
+  <div class="fdba-button--dica__text" [@buttonDica]="botaoDicaAnim">
+    <span [@buttonTextDica]="botaoTextDicaAnim">Trocar {{pontosDica}} pontos por uma dica?</span>
+
+  </div>
+
+  <button (click)="clickButtonDica = true;dicaAnimate();" *ngIf="!clickButtonDica" class="fdba-button--dica--button">
+
+    {{buttonText}}
+  </button>
+
+  <button *ngIf="clickButtonDica" class="fdba-button--dica--active" (click)="clickButtonEmit($event); clickButtonDica = false; dicaAnimate();">
+    {{buttonTextActive}}
+  </button>
+
+</div>
+
+<!--  -->
+<!-- botao transparente submit -->
+
+<button type="submit" *ngIf="type == 'criar-conta-submit' " class="fdba-button--transparente-branco-grande active" (click)="clickButtonEmit($event)"
+  [style.height.px]="altura" [disabled]="disabledProp">
+
+  {{buttonText}}
+</button>

@@ -1,0 +1,18 @@
+<ion-content padding>
+  <section class="fdba-page--parabens-quiz__parabens">
+    <fdba-parabens type="parabens" titulo="<b>Uauu!</b>" descricao="Parece que você aprendeu mesmo!"></fdba-parabens>
+  </section>
+
+  <section *ngIf="conquista && desafio " class="fdba-page--parabens-quiz__conquista">
+
+    <fdba-conquista [titulo]="conquista.nome" [pontos]="desafio.pontos" [bonus]="desafio.perguntas.pontos" [imagem]="conquista.imagem"
+      [descricao]="conquista.descricao"></fdba-conquista>
+  </section>
+
+  <section class="fdba-page--parabens-quiz__botoes" *ngIf="desafio">
+    <fdba-texto-parabens-botao type="quiz" texto="<b>Fantástico</b></br> Você ganhou mais" [pontos]="desafio.perguntas.pontos"
+      textoPonto="pontos!!" buttonText="ver minhas conquistas" (clickButton)="verMinhasConquistas()"></fdba-texto-parabens-botao>
+  </section>
+
+
+</ion-content>

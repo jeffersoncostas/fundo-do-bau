@@ -1,0 +1,31 @@
+page-parabens-video {
+  ion-content {
+    height: 100vh;
+    background: $super-dark-blue-gradient;
+    .fdba-page--parabens-video {
+      &__parabens {
+        height: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 2px solid $white;
+      }
+      &__conquista {
+        padding-top: 15%;
+        height: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        fdba-conquista {
+          width: 90%;
+        }
+      }
+      &__botoes {
+        height: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}

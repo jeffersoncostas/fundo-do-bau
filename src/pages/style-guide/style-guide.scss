@@ -1,0 +1,30 @@
+page-style-guide {
+  .style-guide {
+    margin-top: 40px;
+    &__componente {
+      display: block;
+      width: 100%;
+      border: 2px solid rgb(204, 204, 204);
+      margin-bottom: 15px;
+      &__nome-componente {
+        display: inline-block;
+        height: auto;
+        font-weight: 600;
+        color: rgb(73, 73, 73);
+        border-right: 2px solid rgb(204, 204, 204);
+        padding: 15px;
+      }
+      &__componente-itself {
+        display: inline-block;
+        padding: 0px;
+        width: 100%;
+        &--destaque {
+          display: inline-block;
+          padding: 15px;
+          width: 300px;
+          background-color: gray;
+        }
+      }
+    }
+  }
+}

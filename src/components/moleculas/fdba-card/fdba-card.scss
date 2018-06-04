@@ -1,0 +1,114 @@
+fdba-card {
+  box-sizing: border-box;
+  padding: 0px;
+  .fdba-card {
+    display: flex;
+    width: 100%;
+    height: 150px;
+    border: $border-padrao solid $gold;
+    margin-bottom: 40px;
+    &__content-image {
+      width: 50%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+      &__overlay {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.507);
+        -webkit-backdrop-filter: blur(10px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    &__content-title {
+      width: 50%;
+      height: 100%;
+      background-color: $dark;
+      &__title {
+        display: flex;
+        color: white;
+        background-color: $medium-dark;
+        height: 40px;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+      }
+      &__buttons {
+        height: calc(100% - 40px);
+        display: flex;
+        align-items: center;
+        padding: 0px 5px;
+        fdba-button {
+          padding: 0px 5px;
+          width: 50%;
+          .fdba-button--degrade-vermelho,
+          .fdba-button--degrade-verde {
+            font-size: $s-font-size;
+          }
+        }
+      }
+      &__progress {
+        height: calc(100% - 40px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0px 5px 10px;
+        &__circle {
+          padding: 0px 10px;
+          position: relative;
+          svg {
+            filter: blur(0.3px);
+          }
+          &:before {
+            content: '';
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            background-color: $gold;
+            opacity: .3;
+            filter: blur(8px);
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+          }
+          &:nth-child(2) {
+            &:before {
+              content: '';
+              position: absolute;
+              width: 35px;
+              height: 35px;
+              background-color: $primary;
+              opacity: .3;
+              filter: blur(8px);
+              left: 50%;
+              top: 50%;
+              transform: translate(-50%, -50%);
+            }
+          }
+          &__number {
+            color: white;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-size: $ss-font-size;
+          }
+          &__label {
+            color: white;
+            position: absolute;
+            left: 50%;
+            bottom: -18px;
+            font-size: $xss-font-size;
+            transform: translateX(-50%);
+          }
+        }
+      }
+    }
+  }
+}

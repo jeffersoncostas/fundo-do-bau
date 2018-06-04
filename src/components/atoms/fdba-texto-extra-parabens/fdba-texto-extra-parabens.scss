@@ -1,0 +1,26 @@
+fdba-texto-extra-parabens {
+  .fdba-texto-extra-parabens {
+    height: 90px;
+    width: calc(100% + 32px);
+    margin: 0px -15px;
+    background: $super-dark-transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 50px;
+    &__texto {
+      font-size: $l-font-size;
+      color: white;
+      div {
+        display: inline;
+      }
+      span {
+        color: $gold;
+      }
+      &--quiz {
+        @extend .fdba-texto-extra-parabens__texto;
+        text-align: center;
+      }
+    }
+  }
+}

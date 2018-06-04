@@ -1,0 +1,8 @@
+<fdba-texto-extra-parabens [type]="type" [texto]="texto" [pontos]="pontos"> {{textoPonto}}</fdba-texto-extra-parabens>
+<section class="fdba-texto-parabens-botao" *ngIf="type == 'video'">
+  <fdba-button type="degrade-vermelho" [buttonText]="buttonTextLeft" (clickButton)="clickButtonLeftEmit($event)"></fdba-button>
+  <fdba-button type="degrade-verde" [buttonText]="buttonTextRight" (clickButton)="clickButtonRightEmit($event)"></fdba-button>
+</section>
+<section class="fdba-texto-parabens-botao--quiz" *ngIf="type == 'quiz'">
+  <fdba-button type="degrade-laranja" [buttonText]="buttonText" (clickButton)="clickButtonEmit($event)"></fdba-button>
+</section>

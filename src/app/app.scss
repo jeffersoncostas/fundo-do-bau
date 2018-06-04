@@ -1,16 +1,209 @@
-// http://ionicframework.com/docs/theming/
-
-
 // App Global Sass
-// --------------------------------------------------
-// Put style rules here that you want to apply globally. These
-// styles are for the entire app and not just one component.
-// Additionally, this file can be also used as an entry point
-// to import other Sass files to be included in the output CSS.
+// Texto
+$xxxll-font-size: 46px;
+$xxxl-font-size: 40px;
+$xxl-font-size: 36px;
+$xlll-font-size: 28px;
+$xll-font-size: 25px;
+$xl-font-size: 22px;
+$l-font-size: 18px;
+$m-font-size: 17px;
+$default-font-size: 14px;
+$s-font-size: 12px;
+$ss-font-size: 11px;
+$xss-font-size: 10px;
+//buttons
+//#fffff
+// Colors
+$light-secondary: rgb(35, 211, 202);
+$white: white;
+$grey: #e3e3e3;
+$dark-grey: rgb(141, 141, 141);
+$silver: #bababa;
+$primary: #218db8;
+$secondary: #46a29f;
+$dark: #29495d;
+$medium-dark: #224053;
+$super-dark: #101f27;
+$input-registro: #2e7080;
+$border: #ffba37;
+$gold: #ffba37;
+$coper: #c26f00;
+$green: #2ab570;
+$red: #ff2d2d;
+$white-transparent: rgba(255, 255, 255, 0.3);
+$white-transparent-light: rgba(255, 255, 255, 0.1);
+$white-transparent-medium: rgba(255, 255, 255, 0.5);
+$white-transparent-hight: rgba(255, 255, 255, 0.75);
+$super-dark-transparent: rgba(13, 37, 52, 0.65);
+$primary-transparent: rgba(33, 141, 184, 0.692);
 //
-// Shared Sass variables, which can be used to adjust Ionic's
-// default Sass variables, belong in "theme/variables.scss".
+// gradientes
+$primary-gradient: linear-gradient(45deg, #46a29f, #218db8);
+$gradient-barra-fixa: linear-gradient(45deg, #40bbb3, #218db8);
+$primary-gradient-onboard: linear-gradient(235deg, #46a29f, #218db8);
+$primary-invert-gradient: linear-gradient(-45deg, #46a29f, #218db8);
+$red-gradient: linear-gradient(45deg, #ff2d2d, #ff7070);
+$green-gradient: linear-gradient(45deg, #2ab570, #49ec9a);
+$pink-gradient: linear-gradient(45deg, #ffba37, #f55da4);
+$gold-gradient: linear-gradient(45deg, #ffb523, #ffcd6a);
+$dark-blue-gradient: linear-gradient(45deg, #1f58a2, #218db8);
+$super-dark-blue-gradient: linear-gradient(180deg, #35617d, #101f27);
+$primary-light-gradient: linear-gradient(45deg, #218db8, #53a4c4);
+$conquista-gradient: linear-gradient(45deg, #49a39d, #309b7e);
+$desafio-header-gradient: linear-gradient( -180deg, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.404));
+$radial-gradient-gold: radial-gradient(#ffb523, rgba(0, 0, 0, 0));
 //
-// To declare rules for a specific mode, create a child rule
-// for the .md, .ios, or .wp mode classes. The mode class is
-// automatically applied to the <body> element in the app.
+//Neon Shadow
+$gold-neon: 0 0 40px rgba(255, 186, 55, 0.4);
+$red-neon: 0 0 40px rgba(255, 45, 45, 0.4);
+$green-neon: 0 0 40px rgba(42, 181, 112, 0.4);
+$primary-neon: 0 0 40px rgba(33, 141, 184, 0.4);
+//Border width
+$border-padrao: 1px;
+//border medium
+$border-medium: 1.5px;
+//Border radius
+$border-radius-padrao: 2px;
+$border-radius-circle: 50%;
+//
+//Transparent
+$transparent: transparent;
+//
+//Box shadow
+$box-shadow-conquista: 0px 8px 8px rgba(0, 0, 0, 0.15);
+//
+//Tab
+.tabs-md .tabbar {
+  background: $gradient-barra-fixa;
+  box-shadow: 0 -10px 60px rgba(0, 0, 0, 0.45);
+}
+
+ion-icon {
+  &[class*="fdba-"] {
+    // Instead of using the font-based icons
+    // We're applying SVG masks
+    mask-size: contain;
+    mask-position: 50% 50%;
+    mask-repeat: no-repeat;
+    background: currentColor;
+    width: 1em;
+    height: 1em;
+  } // custom icons
+  &[class*="fdba-icon"] {
+    mask-image: url(../assets/icon/fundo-do-bau-icon.svg);
+  }
+  &[class*="fdba-perfil"] {
+    mask-image: url(../assets/icon/fdba-perfil.svg);
+  }
+  &[class*="fdba-ranking"] {
+    mask-image: url(../assets/icon/fdba-ranking.svg);
+    width: 1.5em;
+    height: 1.5em;
+  }
+}
+
+.tabs-md .tab-button[aria-selected="true"] {
+  color: white;
+  .tab-button-icon {
+    color: white;
+  }
+}
+
+.tabs-md .tab-button {
+  color: rgba(255, 255, 255, 0.55);
+  &-icon {
+    color: rgba(255, 255, 255, 0.55);
+  }
+}
+
+.tabs-md[tabsHighlight="true"] .tab-highlight {
+  filter: blur(0.15px);
+  height: 55px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 20%;
+}
+
+//
+//Header
+.toolbar-background-md {
+  background: $primary;
+}
+
+.toolbar-title-md {
+  color: white;
+}
+
+.bar-button-default-md,
+.bar-button-clear-md-default,
+.bar-button-md-default {
+  color: white;
+}
+
+//
+// Padding
+$padding-page: 16px;
+// Alert
+ion-alert.alert-top {
+  align-items: center;
+  padding: 0;
+}
+
+.fdba-modal- {
+  .alert-wrapper {
+    background: #192f3c;
+    border: 2px solid $gold;
+    box-shadow: $gold-neon;
+    .alert-head {
+      color: white;
+    }
+    .alert-message {
+      color: white;
+    }
+    .alert-input {
+      color: rgba(255, 255, 255, 0.76);
+      &:focus {
+        border-bottom-color: white;
+      }
+    }
+    .alert-input::placeholder {
+      color: rgba(255, 255, 255, 0.486);
+    }
+    .alert-button {
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.288);
+      background: $white-transparent;
+    }
+  }
+}
+
+.fdba-modal-error {
+  @extend .fdba-modal-;
+  .alert-wrapper {
+    border: 2px solid #ff7070;
+    box-shadow: $red-neon;
+  }
+}
+
+.fdba-modal-naoAchou {
+  .alert-wrapper {
+    background: #192f3c;
+    border: 2px solid $gold;
+    box-shadow: $gold-neon;
+    display: flex;
+    justify-content: center;
+    .alert-message {
+      color: white;
+    }
+    .alert-button {
+      width: 100%;
+      text-align: center;
+      color: white;
+      border: 1px solid $gold;
+      background: $gold-gradient;
+    }
+    .alert-button .button-inner {
+      width: 50%;
+    }
+  }
+}

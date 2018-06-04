@@ -1,0 +1,16 @@
+<ion-content padding>
+
+  <section class="fdba-page--parabens-video__parabens">
+    <fdba-parabens type="parabens" titulo="<b>PARABÉNS!!</b>" descricao="Se liga no que você ganhou!"></fdba-parabens>
+  </section>
+
+  <section class="fdba-page--parabens-video__conquista">
+    <fdba-conquista *ngIf="conquista" [titulo]="conquista.nome" [pontos]="desafio.pontos" [imagem]="conquista.imagem" [descricao]="conquista.descricao"></fdba-conquista>
+  </section>
+
+  <section class="fdba-page--parabens-video__botoes">
+    <fdba-texto-parabens-botao type="video" texto="O que você acha de responder um quiz para ganhar mais" [pontos]="desafio.perguntas.pontos"
+      textoPonto="pontos?" buttonTextLeft="não, valeu!" (clickButtonLeft)="confirmarNao()" buttonTextRight="topo!" (clickButtonRight)="aceitarQuiz()"></fdba-texto-parabens-botao>
+  </section>
+
+</ion-content>

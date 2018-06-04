@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 238.576 238">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        fill: #fff;
+      }
+
+      .cls-1 {
+        opacity: 0.048;
+      }
+
+      .cls-2 {
+        opacity: 0.082;
+      }
+
+      .cls-3 {
+        opacity: 0.1;
+      }
+    </style>
+  </defs>
+  <g id="logo" transform="translate(0)">
+    <ellipse id="Ellipse" class="cls-1" cx="119.288" cy="119" rx="119.288" ry="119"/>
+    <ellipse id="Ellipse-2" data-name="Ellipse" class="cls-2" cx="82.199" cy="82" rx="82.199" ry="82" transform="translate(37.09 37)"/>
+    <ellipse id="Ellipse-3" data-name="Ellipse" class="cls-3" cx="46.111" cy="46" rx="46.111" ry="46" transform="translate(73.177 73)"/>
+    <g id="compass" transform="translate(97.235 97)">
+      <g id="compass-2" data-name="compass" transform="translate(0)">
+        <path id="Combined-Shape" class="cls-4" d="M24.053,46A22,22,0,1,1,46.107,24,22.027,22.027,0,0,1,24.053,46Zm0-4A18,18,0,1,0,6.01,24,18.022,18.022,0,0,0,24.053,42ZM18.49,17.077l14.034-4A2,2,0,0,1,35,15.549l-4.01,14a2,2,0,0,1-1.377,1.374l-14.034,4A2,2,0,0,1,13.1,32.451l4.01-14A2,2,0,0,1,18.49,17.077Zm-.54,13.011,9.493-2.706,2.712-9.47-9.493,2.706ZM24.053,26a2,2,0,1,1,2-2A2,2,0,0,1,24.053,26Z" transform="translate(-2 -2)"/>
+      </g>
+    </g>
+  </g>
+</svg>

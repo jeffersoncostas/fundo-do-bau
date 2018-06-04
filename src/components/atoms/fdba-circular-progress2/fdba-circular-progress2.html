@@ -1,0 +1,5 @@
+<div class="fdba-circular-progress2">
+  <!-- <div class="fdba-circular-progress2__circle" [ngStyle]="{'width':raio,'height':raio,'box-shadow':'0px 0px 40px '+ cor}"></div> -->
+  {{current}} {{ raio}}
+  <round-progress [current]="current" [max]="100" [color]="cor" [radius]="raio" [stroke]="7"></round-progress>
+</div>

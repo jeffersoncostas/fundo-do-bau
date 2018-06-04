@@ -1,0 +1,323 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Style Guide</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h3>input de testes</h3>
+  <input type="text" #inputteste>
+  <input type="password" #inputteste2>
+
+  <section class="style-guide">
+
+    <div class="style-guide__componente">
+      <div class="style-guide__componente__nome-componente">FDBA-BUTTON DEGRADE ROSA</div>
+      <div class="style-guide__componente__componente-itself">
+        <fdba-button type="degrade-rosa" buttonText="aceitar desafio" (clickButton)="aceitarDesafioClick( {login:inputteste.value, senha:inputteste2.value} )"></fdba-button>
+      </div>
+    </div>
+
+    <div class="style-guide__componente">
+      <div class="style-guide__componente__nome-componente">FDBA-BUTTON DEGRADE LARANJA</div>
+      <div class="style-guide__componente__componente-itself">
+        <fdba-button type="degrade-laranja" buttonText="ok" (clickButton)="redirecionarPagina({login:inputteste.value,senha:inputteste2.value})"></fdba-button>
+      </div>
+    </div>
+
+    <div class="style-guide__componente">
+      <div class="style-guide__componente__nome-componente">FDBA-BUTTON DEGRADE VERMELHO</div>
+      <div class="style-guide__componente__componente-itself">
+        <fdba-button type="degrade-vermelho" buttonText="desisto!" (clickButton)="voltarHome()"></fdba-button>
+
+      </div>
+    </div>
+
+    <div class="style-guide__componente">
+      <div class="style-guide__componente__nome-componente">FDBA-BUTTON DEGRADE VERDE</div>
+      <div class="style-guide__componente__componente-itself">
+        <fdba-button type="degrade-verde" buttonText="te achei!"></fdba-button>
+      </div>
+    </div>
+
+    <div class="style-guide__componente">
+      <div class="style-guide__componente__nome-componente">FDBA-BUTTON DEGRADE QUIZ</div>
+      <div class="style-guide__componente__componente-itself">
+        <fdba-button type="degrade-quiz" buttonText="d.pedro i" cor="#3dd689"></fdba-button>
+      </div>
+    </div>
+
+    <div class="style-guide__componente">
+      <div class="style-guide__componente__nome-componente">FDBA-BUTTON ONBOARDING PROXIMO</div>
+      <div class="style-guide__componente__componente-itself">
+        <fdba-button type="onboarding-proximo" buttonText="próximo"></fdba-button>
+      </div>
+    </div>
+
+    <div class="style-guide__componente">
+      <div class="style-guide__componente__nome-componente">FDBA-BUTTON ONBOARDING VOLTAR</div>
+      <div class="style-guide__componente__componente-itself">
+        <fdba-button type="onboarding-voltar" buttonText="voltar"></fdba-button>
+      </div>
+    </div>
+
+    <div class="style-guide__componente">
+      <div class="style-guide__componente__nome-componente">FDBA-BUTTON TRANSPARENTE BRANCO DUPLO</div>
+      <div class="style-guide__componente__componente-itself--destaque">
+        <fdba-button type="transparente-branco-duplo" buttonText="Desafios"></fdba-button>
+      </div>
+    </div>
+
+    <div class="style-guide__componente">
+      <div class="style-guide__componente__nome-componente">FDBA-BUTTON TRANSPARENTE BRANCO DUPLO ATIVO</div>
+      <div class="style-guide__componente__componente-itself--destaque">
+        <fdba-button type="transparente-branco-duplo-active" buttonText="Desafios em andamento"></fdba-button>
+      </div>
+    </div>
+
+    <div class="style-guide__componente">
+      <div class="style-guide__componente__nome-componente">FDBA-BUTTON TRANSPARENTE BRANCO GRANDE</div>
+      <div class="style-guide__componente__componente-itself--destaque">
+        <fdba-button type="transparente-branco-grande" buttonText="me conheça melhor"></fdba-button>
+      </div>
+    </div>
+
+    <div class="style-guide__componente">
+      <div class="style-guide__componente__nome-componente">FDBA-CARD BOTOES</div>
+      <div class="style-guide__componente__componente-itself">
+        <fdba-card (clickCard)="clickCardTeste()" (clickButtonAchei)="achouDesafio($event)" (clickButtonDesisto)="desistoDesafio($event)"
+          botaoCardVermelho="desisto" botaoCardVerde="te achei"></fdba-card>
+      </div>
+    </div>
+
+    <div class="style-guide__componente">
+      <div class="style-guide__componente__nome-componente">FDBA-CARD CIRCLE PROGRESS</div>
+      <div class="style-guide__componente__componente-itself">
+        <fdba-card (clickCard)="clickCardTeste()" (clickButtonAchei)="achouDesafio($event)" (clickButtonDesisto)="desistoDesafio($event)"></fdba-card>
+      </div>
+    </div>
+
+    <div class="style-guide__componente">
+      <div class="style-guide__componente__nome-componente">FDBA- CIRCULO DE PROGRESSO</div>
+      <div class="style-guide__componente__componente-itself--destaque">
+        <round-progress [current]="10" [max]="100" [radius]="17" [stroke]="4" [color]="'#218DB8'"></round-progress>
+      </div>
+    </div>
+
+    <div class="style-guide__componente">
+      <div class="style-guide__componente__nome-componente">FDBA- BOTAO LINK</div>
+      <div class="style-guide__componente__componente-itself--destaque">
+        <fdba-button type="botao-link" buttonText="login" resume="Já possui uma conta?"></fdba-button>
+      </div>
+    </div>
+
+    <div class="style-guide__componente">
+      <div class="style-guide__componente__nome-componente">FDBA- TEXTO EXTRA PARABENS</div>
+      <div class="style-guide__componente__componente-itself">
+        <fdba-texto-extra-parabens type="video" texto="O que você acha de responder um quiz para ganhar mais" pontos="50">pontos?</fdba-texto-extra-parabens>
+        <fdba-texto-extra-parabens type="quiz" texto="Fántastico! <br/> Você ganhou mais" pontos="50">pontos!!</fdba-texto-extra-parabens>
+      </div>
+    </div>
+
+    <div class="style-guide__componente">
+      <div class="style-guide__componente__nome-componente">FDBA- TEXTO EXTRA PARABENS BOTAO VIDEO</div>
+      <div class="style-guide__componente__componente-itself">
+        <fdba-texto-parabens-botao type="video" texto="O que você acha de responder um quiz para ganhar mais" pontos="100" textoPonto="pontos?"
+          buttonTextLeft="não, valeu!" buttonTextRight="topo!"></fdba-texto-parabens-botao>
+
+      </div>
+    </div>
+
+    <div class="style-guide__componente">
+      <div class="style-guide__componente__nome-componente">FDBA- TEXTO EXTRA PARABENS BOTAO QUIZ</div>
+      <div class="style-guide__componente__componente-itself">
+        <fdba-texto-parabens-botao type="quiz" texto="Fántastico! <br/> Você ganhou mais" pontos="80" textoPonto="pontos!!" buttonText="veja todas as conquistas!"></fdba-texto-parabens-botao>
+
+      </div>
+    </div>
+
+    <div class="style-guide__componente">
+      <div class="style-guide__componente__nome-componente">FDBA- CONQUISTA EXPANDIDA</div>
+      <div class="style-guide__componente__componente-itself">
+        <fdba-conquista titulo="Explorador Iniciante!" pontos='100' imagem="../../assets/imgs/logo.png" descricao=" <b>WOW!</b> Parece que o bixinho da curiosidade te mordeu!"></fdba-conquista>
+      </div>
+    </div>
+
+    <div class="style-guide__componente">
+      <div class="style-guide__componente__nome-componente">FDBA- CONQUISTA EXPANDIDA BADGE DUPLO</div>
+      <div class="style-guide__componente__componente-itself--destaque">
+        <fdba-conquista titulo="Explorador Iniciante!" brilho='true' pontos='100' bonus='100' imagem="../../assets/imgs/logo.png" descricao=" <b>WOW!</b> Parece que o bixinho da curiosidade te mordeu!"></fdba-conquista>
+      </div>
+    </div>
+
+    <div class="style-guide__componente">
+      <div class="style-guide__componente__nome-componente">FDBA- CONQUISTA REDUZIDA</div>
+      <div class="style-guide__componente__componente-itself">
+        <fdba-conquista titulo="Explorador Iniciante!" imagem="../../assets/imgs/logo.png"></fdba-conquista>
+      </div>
+    </div>
+
+
+    <div class="style-guide__componente">
+      <div class="style-guide__componente__nome-componente">FDBA- BOTAO DICA</div>
+      <div class="style-guide__componente__componente-itself--destaque">
+        <fdba-button type="dica" buttonText="+" buttonTextActive="ok" pontosDica="10" (clickButton)="testeDica()"></fdba-button>
+      </div>
+    </div>
+
+    <div class="style-guide__componente">
+      <div class="style-guide__componente__nome-componente">FDBA- BADGE RED</div>
+      <div class="style-guide__componente__componente-itself--destaque">
+        <fdba-badge type="badge-red" badgePoints='100'></fdba-badge>
+      </div>
+    </div>
+
+    <div class="style-guide__componente">
+      <div class="style-guide__componente__nome-componente">FDBA- BADGE YELLOW</div>
+      <div class="style-guide__componente__componente-itself--destaque">
+        <fdba-badge type="badge-yellow" badgePoints='100'></fdba-badge>
+      </div>
+    </div>
+
+    <div class="style-guide__componente">
+      <div class="style-guide__componente__nome-componente">FDBA- BADGE SILVER</div>
+      <div class="style-guide__componente__componente-itself--destaque">
+        <fdba-badge type="badge-silver" badgePoints='100'></fdba-badge>
+      </div>
+    </div>
+
+    <div class="style-guide__componente">
+      <div class="style-guide__componente__nome-componente">FDBA- BADGE COPER</div>
+      <div class="style-guide__componente__componente-itself--destaque">
+        <fdba-badge type="badge-coper" badgePoints='100'></fdba-badge>
+      </div>
+    </div>
+
+    <div class="style-guide__componente">
+      <div class="style-guide__componente__nome-componente">FDBA- DICA</div>
+      <div class="style-guide__componente__componente-itself--destaque">
+        <!-- <fdba-dicas buttonText="+" buttonTextActive="ok" pontosDica="7"></fdba-dicas> -->
+      </div>
+    </div>
+
+    <div class="style-guide__componente">
+      <div class="style-guide__componente__nome-componente">FDBA- HEADER DESAFIO</div>
+      <div class="style-guide__componente__componente-itself">
+        <!-- <fdba-desafio-header> </fdba-desafio-header> -->
+      </div>
+    </div>
+
+    <div class="style-guide__componente">
+      <div class="style-guide__componente__nome-componente">FDBA- INPUT</div>
+      <div class="style-guide__componente__componente-itself--destaque">
+        <fdba-input type="criar-conta"></fdba-input>
+      </div>
+    </div>
+
+    <div class="style-guide__componente">
+      <div class="style-guide__componente__nome-componente">FDBA- CARD RANKING GOLD</div>
+      <div class="style-guide__componente__componente-itself--destaque">
+        <fdba-card-ranking type="gold" userName='João Doria' userNick='dorinha_show' userPoints='200'></fdba-card-ranking>
+      </div>
+    </div>
+
+    <div class="style-guide__componente">
+      <div class="style-guide__componente__nome-componente">FDBA- INPUT</div>
+      <div class="style-guide__componente__componente-itself--destaque">
+        <fdba-input type="login"></fdba-input>
+      </div>
+    </div>
+
+    <div class="style-guide__componente">
+      <div class="style-guide__componente__nome-componente">FDBA- CARD RANKING SILVER</div>
+      <div class="style-guide__componente__componente-itself--destaque">
+        <fdba-card-ranking type="silver" userName='João Doria' userNick='dorinha_show' userPoints='200'></fdba-card-ranking>
+      </div>
+    </div>
+
+    <div class="style-guide__componente">
+      <div class="style-guide__componente__nome-componente">FDBA- CARD RANKING COPER</div>
+      <div class="style-guide__componente__componente-itself--destaque">
+        <fdba-card-ranking type="coper" userName='João Doria' userNick='dorinha_show' userPoints='200'></fdba-card-ranking>
+      </div>
+    </div>
+
+    <div class="style-guide__componente">
+      <div class="style-guide__componente__nome-componente">FDBA- CARD RANKING NORMAL</div>
+      <div class="style-guide__componente__componente-itself--destaque">
+        <fdba-card-ranking type="normal" userName='João Doria' userNick='dorinha_show' userPoints='200' userPosition='4'></fdba-card-ranking>
+      </div>
+    </div>
+
+    <div class="style-guide__componente">
+      <div class="style-guide__componente__nome-componente">FDBA- DESAFIO INFO</div>
+      <div class="style-guide__componente__componente-itself--destaque">
+        <fdba-desafio-info dificuldade="20" pontos="30" completaram="200"></fdba-desafio-info>
+      </div>
+    </div>
+
+    <div class="style-guide__componente">
+      <div class="style-guide__componente__nome-componente">FDBA- HEADER CONFIG</div>
+      <div class="style-guide__componente__componente-itself--destaque">
+        <fdba-header-config></fdba-header-config>
+      </div>
+    </div>
+
+    <div class="style-guide__componente">
+      <div class="style-guide__componente__nome-componente">FDBA- RANKING HEADER</div>
+      <div class="style-guide__componente__componente-itself--destaque">
+        <fdba-ranking-header></fdba-ranking-header>
+      </div>
+    </div>
+
+    <div class="style-guide__componente">
+      <div class="style-guide__componente__nome-componente">FDBA- HEADER HOME</div>
+      <div class="style-guide__componente__componente-itself">
+        <fdba-home-header> </fdba-home-header>
+      </div>
+    </div>
+
+    <div class="style-guide__componente">
+      <div class="style-guide__componente__nome-componente">FDBA-PARABENS</div>
+      <div class="style-guide__componente__componente-itself">
+        <fdba-parabens type="parabens" titulo="<b>PARABÉNS!!</b>" descricao="Se liga no que você ganhou!"></fdba-parabens>
+      </div>
+    </div>
+
+    <div class="style-guide__componente">
+      <div class="style-guide__componente__nome-componente">FDBA-PARABENS LOCAL</div>
+      <div class="style-guide__componente__componente-itself">
+        <fdba-parabens type="parabens-local" titulo="<b>PARABÉNS!!</b>" descricao="Você me achou!" imagem="../../assets/imgs/logo.png"></fdba-parabens>
+      </div>
+    </div>
+
+    <div class="style-guide__componente__componente-itself">
+      <fdba-home-header> </fdba-home-header>
+    </div>
+
+    <div class="style-guide__componente__nome-componente">FDBA- CLICK MODAL</div>
+    <div class="style-guide__componente__componente-itself">
+      <fdba-button type="degrade-laranja" buttonText="ok" (clickButton)="clickModal()"></fdba-button>
+    </div>
+
+
+    <div class="style-guide__componente__nome-componente">FDBA- PAGE PARABENS VIDEO</div>
+    <div class="style-guide__componente__componente-itself">
+      <fdba-button type="degrade-laranja" buttonText="parabens video" (clickButton)="irParabens()"></fdba-button>
+    </div>
+
+    <div class="style-guide__componente__nome-componente">FDBA- PAGE PARABENS LOCAL</div>
+    <div class="style-guide__componente__componente-itself">
+      <fdba-button type="degrade-rosa" buttonText="parabens local" (clickButton)="irParabensLocal()"></fdba-button>
+    </div>
+
+    <div class="style-guide__componente">
+      <div class="style-guide__componente__nome-componente">NOME COMPONENTE</div>
+      <div class="style-guide__componente__componente-itself"> COMPONENTE EM SI</div>
+    </div>
+
+  </section>
+</ion-content>

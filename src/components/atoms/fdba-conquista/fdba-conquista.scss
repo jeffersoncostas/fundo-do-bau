@@ -1,0 +1,74 @@
+fdba-conquista {
+  .fdba-conquista {
+    width: 100%;
+    height: 100px;
+    position: relative;
+    &__badge{
+      position: absolute;
+      top: 60%;
+      right: -25px;
+      transform: rotate(25deg);
+    }
+    &__bonus{
+      z-index: 1;
+      position: absolute;
+      top: 10%;
+      right: -25px;
+      transform: rotate(25deg);
+    }
+    &__brilho{
+      left: 50%;
+      top: 50%;
+      z-index: -1;
+      transform: translate(-50%, -50%);
+      position: absolute;
+      height: 203%;
+      width: 135%;
+      background: radial-gradient(#2ab570, transparent);
+      filter: blur(25px);
+      border-radius: 50%
+    }
+    &__titulo {
+      height: 50%;
+      background: $conquista-gradient;
+      display: flex;
+      &__imagem {
+        width: 60px;
+        height: 100%;
+        background: $white;
+        box-shadow: $box-shadow-conquista;
+        img {
+          height: 100%;
+          width: 60px;
+        }
+      }
+      &__texto {
+        padding: 0px 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: $l-font-size;
+        box-shadow: $box-shadow-conquista;
+        width: calc(100% - 60px);
+      }
+    }
+    &__descricao {
+      background: $white;
+      padding: 0px 60px;
+      height: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      span {
+        color: $dark-grey;
+        font-size: $default-font-size;
+      }
+    }
+    &--no-descricao {
+      @extend .fdba-conquista;
+      height: auto;
+    }
+  }
+}

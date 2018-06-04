@@ -1,0 +1,50 @@
+fdba-desafio-header {
+  .fdba-desafio-header {
+    padding: 0px;
+    width: 100%;
+    height: 170px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    &__overlay {
+      background: $desafio-header-gradient;
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+    &__title {
+      z-index: 1;
+      color: white;
+      font-size: $default-font-size;
+      position: absolute;
+      top: 120px;
+      padding: 15px;
+      width: 100%;
+      display: flex;
+      &__badges {
+        text-align: right;
+        position: absolute;
+        right: 20px;
+        &__badge {
+          padding: 5px;
+          border-radius: $border-radius-padrao;
+          background-color: $light-secondary;
+          margin-right: 10px;
+          box-shadow: 0px 4px 8px rgba(35, 211, 202, 0.473), 0px -4px 8px rgba(35, 211, 202, 0.473), 4px 0px 8px rgba(35, 211, 202, 0.473), -4px 0px 8px rgba(35, 211, 202, 0.473);
+          ion-icon {
+            margin-right: 5px;
+          }
+          &--red {
+            @extend .fdba-desafio-header__title__badges__badge;
+            background: $red;
+            box-shadow: 0px 4px 6px rgba(255, 45, 45, 0.40);
+          }
+          &--gold {
+            @extend .fdba-desafio-header__title__badges__badge;
+            background: $gold;
+            box-shadow: 0px 4px 6px rgba(255, 223, 45, 0.4);
+          }
+        }
+      }
+    }
+  }
+}

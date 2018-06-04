@@ -1,0 +1,155 @@
+fdba-button {
+  .fdba-button {
+    &--degrade-rosa {
+      width: 100%;
+      height: 60px;
+      color: $white;
+      background: $pink-gradient;
+      font-size: $default-font-size;
+      font-variant: small-caps;
+      box-shadow: $gold-neon;
+      border-radius: $border-radius-padrao;
+    }
+    &--degrade-laranja {
+      width: 100%;
+      height: 60px;
+      color: $white;
+      background: $gold-gradient;
+      font-size: $default-font-size;
+      font-variant: small-caps;
+      box-shadow: $gold-neon;
+      border-radius: $border-radius-padrao;
+    }
+    &--degrade-vermelho {
+      width: 100%;
+      height: 60px;
+      color: $white;
+      background: $red-gradient;
+      font-size: $default-font-size;
+      font-variant: small-caps;
+      box-shadow: $red-neon;
+      border-radius: $border-radius-padrao;
+    }
+    &--degrade-verde {
+      width: 100%;
+      height: 60px;
+      color: $white;
+      background: $green-gradient;
+      font-size: $default-font-size;
+      font-variant: small-caps;
+      box-shadow: $green-neon;
+      border-radius: $border-radius-padrao;
+    }
+    &--degrade-quiz {
+      display: flex;
+      border: $border-padrao solid $gold;
+      div {
+        display: inline-block;
+        width: 20%;
+        height: 60px;
+        border-right: $border-padrao solid $gold;
+        background-color: black;
+      }
+      button {
+        display: inline-block;
+        width: 80%;
+        height: 60px;
+        color: $white;
+        background: $primary-light-gradient;
+        font-size: $m-font-size;
+        font-variant: none;
+        text-transform: uppercase;
+        box-shadow: $green-neon;
+        border-radius: $border-radius-padrao;
+      }
+    }
+    &--transparente-branco-duplo {
+      width: 100%;
+      height: 60px;
+      color: $white;
+      text-transform: uppercase;
+      font-size: $default-font-size;
+      font-variant: none;
+      box-shadow: none;
+      background: rgba(255, 255, 255, 0.2);
+      border: $border-padrao solid white;
+      border-radius: $border-radius-padrao;
+    }
+    &--transparente-branco-grande {
+      width: 100%;
+      height: 90px;
+      color: $white;
+      font-size: $m-font-size;
+      font-variant: small-caps;
+      box-shadow: none;
+      background: $white-transparent-light;
+      border: $border-padrao solid white;
+      border-radius: $border-radius-padrao;
+    }
+    &--onboarding-proximo {
+      width: 100%;
+      height: 60px;
+      color: $white;
+      background: $primary-light-gradient;
+      font-size: $default-font-size;
+      font-variant: small-caps;
+      box-shadow: $primary-neon;
+      border-radius: $border-radius-padrao;
+    }
+    &--onboarding-voltar {
+      width: 100%;
+      height: 60px;
+      color: $super-dark;
+      background: $grey;
+      font-size: $default-font-size;
+      font-variant: small-caps;
+      box-shadow: none;
+      border-radius: $border-radius-padrao;
+    }
+    &--botao-link {
+      text-align: center;
+      color: $white-transparent-medium;
+      font-size: $default-font-size;
+      box-shadow: none;
+      background: transparent;
+      text-decoration: none;
+      &__button {
+        @extend .fdba-button--botao-link;
+        font-variant: small-caps;
+        text-decoration: underline;
+      }
+    }
+    &--dica {
+      display: flex;
+      align-items: center;
+      &--button {
+        width: 40px;
+        height: 40px;
+        border-radius: $border-radius-circle;
+        border: $border-padrao solid $white;
+        background-color: $white-transparent-light;
+        font-variant: small-caps;
+        font-size: $m-font-size;
+        color: $white;
+      }
+      &__text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        margin-right: -20px;
+        background-color: $white-transparent;
+        border: $border-padrao solid $white;
+        color: $white;
+        border-radius: 20px 0px 0px 20px;
+      }
+      &--active {
+        @extend .fdba-button--dica--button;
+        background-color: $super-dark;
+      }
+    }
+  }
+  .active {
+    background: $white-transparent;
+  }
+}

@@ -1,0 +1,24 @@
+<div>
+
+  <form [formGroup]="perfil" (ngSubmit)="salvarEmit()">
+
+    <ion-item>
+      <ion-label fixed>Email</ion-label>
+      <ion-input type="email" formControlName="email" [value]="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Nome</ion-label>
+      <ion-input type="text" formControlName="name" [value]="name"></ion-input>
+    </ion-item>
+    <ion-item>
+
+      <ion-label fixed>Username</ion-label>
+      <ion-input type="text" formControlName="username" [value]="username"></ion-input>
+    </ion-item>
+
+    <fdba-button altura="50" type="criar-conta-submit" buttonText="salvar" [disabledProp]="!perfil.valid"></fdba-button>
+
+  </form>
+  <fdba-button class="fdba-input__criar-conta" type="botao-link" buttonText="criar conta" resume="Não possui uma conta?" (clickButton)="logoutEmit($event)"></fdba-button>
+</div>

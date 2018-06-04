@@ -1,0 +1,99 @@
+fdba-card-ranking {
+    .fdba-card-ranking {
+
+
+        &__card-gold{
+            position: relative;
+            text-align: center;
+            border: $border-medium solid $gold;
+        }
+
+        &__card-silver{
+            position: relative;
+            text-align: center;
+            border: $border-medium solid $silver;
+        }
+
+        &__card-coper{
+            position: relative;
+            text-align: center;
+            border: $border-medium solid $coper;
+        }
+
+        &__card-normal{
+            position: relative;
+            text-align: center;
+            border: $border-medium solid $white;
+        }
+
+        &__image-star{
+            height: 50px;
+            position: absolute;
+            top: 17%;
+            left: -28px;
+        }
+
+        &__image-circle{
+            height: 40px;
+            position: absolute;
+            top: 27%;
+            left: -22px;
+        }
+
+        &__position-star{
+            z-index: 1;
+            height: 50px;
+            color: $white;
+            font-size: $xl-font-size;
+            position: absolute;
+            top: 35%;
+            left: -9px;
+        }
+
+        &__position-circle{
+            z-index: 1;
+            height: 50px;
+            color: $white;
+            font-size: $l-font-size;
+            position: absolute;
+            top: 36%;
+            left: -7px;
+        }
+
+        &__text-name{
+            display: block;
+            margin-top: 20px;
+            font-size: $l-font-size;
+            color: $white;
+        }
+        &__text-nick{
+            display: block;
+            margin-bottom: 20px;
+            font-size: $s-font-size;
+            color: $white-transparent-medium;
+        }
+
+        &__point-box{
+            text-align: right;
+            display: block;
+            background-color: $white-transparent-light;
+        }
+
+        &__text-points{
+            display: block;
+            padding: 5px;
+            font-size: $s-font-size;
+            color: $white;
+        }
+
+        &__flag{
+            z-index: 2;
+            position: absolute;
+            top: 50%;
+            right: -15px;
+           
+        }
+
+
+    }
+}

@@ -1,0 +1,43 @@
+fdba-header-config {
+  .toolbar-md {
+    height: 200px;
+    align-items: flex-end;
+    padding: 4px 4px 0;
+  }
+  .toolbar-background-md {
+    background: $dark-blue-gradient;
+  }
+  .segment-md .segment-button {
+    color: $white;
+    font-size: $ss-font-size;
+  }
+  .segment-activated {
+    border-color: $white !important;
+  }
+  .fdba-header-config__user-info {
+    padding: 0px 20px;
+    margin-bottom: 50px;
+    &__nome {
+      color: $white;
+      font-size: $xl-font-size;
+    }
+    &__pontos {
+      color: $white;
+      font-size: $s-font-size;
+    }
+    &__icon-content {
+      width: 100%;
+      height: 50px;
+      display: flex;
+      justify-content: flex-end;
+      &__img1 {
+        width: 100px;
+        height: 100px;
+      }
+      &__img2 {
+        width: 95px;
+        height: 40px;
+      }
+    }
+  }
+}

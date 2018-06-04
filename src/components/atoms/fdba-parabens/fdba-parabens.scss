@@ -1,0 +1,55 @@
+fdba-parabens {
+  .fdba-parabens {
+    height: 100px;
+    width: calc(100% + 32px);
+    margin: 0px -15px;
+    background: $transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+    
+    &__titulo {
+      text-align: center;
+      font-size: $xll-font-size;
+    }
+    &__descricao {
+      font-size: $l-font-size;
+    }
+    &__local {
+      color: $dark-grey;
+      &__titulo {
+        text-align: center;
+        font-size: $xl-font-size;
+      }
+      &__descricao {
+        text-align: center;
+        font-size: $l-font-size;
+        border-bottom: 2px black solid;
+      }
+      &__imagem {
+        position: relative;
+        width: 100px;
+        height: 100%;
+        margin: auto;
+        background: $transparent; // box-shadow: $gold-neon;
+        display: block;
+        img {
+          height: 100%;
+          width: 100px;
+        }
+        &__neon {
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          background: $radial-gradient-gold;
+          filter: blur(15px);
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}

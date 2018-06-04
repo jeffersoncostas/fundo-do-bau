@@ -1,0 +1,20 @@
+page-desafio-concluido {
+  ion-content {
+    background: $super-dark-blue-gradient;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    fdba-desafio-header {
+      .fdba-desafio-header {
+        margin: -16px -16px 10px;
+        width: calc(100% + 32px);
+      }
+    }
+    .fdba-page--desafio-concluido {
+      &__dicas {
+        margin-top: 15%;
+        margin-bottom: 10%;
+      }
+    }
+  }
+}

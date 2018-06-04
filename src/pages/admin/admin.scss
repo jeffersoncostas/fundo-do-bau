@@ -1,0 +1,26 @@
+page-admin {
+  .item-md {
+    background: none;
+  }
+  .section-forms {
+    margin-bottom: 50px;
+    background: $grey;
+    padding: 20px 0px;
+    h3 {
+      padding: 0px 20px;
+    }
+    .conquista {
+      margin-bottom: 30px;
+    }
+  }
+  .admin-segments {
+    height: 100%;
+    width: 100%;
+    ion-content {
+      height: 100%;
+    }
+  }
+  .scroll-content {
+    margin-bottom: 130px;
+  }
+}
