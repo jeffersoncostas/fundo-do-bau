@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { AngularFireAuth } from "angularfire2/auth";
 import { AngularFireDatabase, snapshotChanges } from "angularfire2/database";
 import { Desafio } from "../../models/desafio.model";
+import { Geolocation } from "@ionic-native/geolocation";
 
 @Injectable()
 export class LocationProvider {
@@ -17,7 +18,8 @@ export class LocationProvider {
   private desafioPagina: Desafio;
   constructor(
     private afAuth: AngularFireAuth,
-    private db: AngularFireDatabase
+    private db: AngularFireDatabase,
+    private geolocation: Geolocation
   ) {}
 
   setUserLocation(userLatitude, userLongitude) {
@@ -159,7 +161,7 @@ export class LocationProvider {
     let localUser = { latitude: 0, longitude: 0 };
     console.log(this.userLatitude, this.userLongitude);
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(position => {
+      this.geolocation.getCurrentPosition().then(position => {
         this.userLatitude = position.coords.latitude;
         this.userLongitude = position.coords.longitude;
       });

@@ -21,7 +21,9 @@ fdba-home-header {
       z-index: 1;
       position: absolute;
       width: 70%;
-      margin-top: 20%;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%)
     }
   }
   .content-fixed {
@@ -46,11 +48,12 @@ fdba-home-header {
       height: 100%;
       background-color: $primary-transparent;
       top: 0;
+      right: 0;
     }
     &__cidade {
       position: absolute;
       color: $white;
-      bottom: 65px;
+      bottom: 0;
       text-align: center;
       font-size: $xxxl-font-size;
     }
