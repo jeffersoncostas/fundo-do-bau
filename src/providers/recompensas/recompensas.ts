@@ -19,6 +19,7 @@ export class RecompensasProvider {
     let pontoDesafio;
     return this.userDb
       .snapshotChanges()
+      .take(1)
       .map(data => {
         console.log(data.payload.val());
         pontoDesafio = desafio.pontos;
@@ -36,6 +37,7 @@ export class RecompensasProvider {
     let listaConquistas = [];
     return this.userDb
       .snapshotChanges()
+      .take(1)
       .map(data => {
         if (data.payload.val().conquistas) {
           listaConquistas = data.payload.val().conquistas;
@@ -56,6 +58,7 @@ export class RecompensasProvider {
     return this.db
       .object("conquistas/" + desafio.conquista)
       .snapshotChanges()
+      .take(1)
       .map(data => {
         return data.payload.val();
       })

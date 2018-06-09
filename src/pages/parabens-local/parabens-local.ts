@@ -30,7 +30,7 @@ export class ParabensLocalPage {
       .darPontos(this.desafio)
       .subscribe(data => {
         console.log("Ganhou ", data);
-        pontosSub.unsubscribe;
+        pontosSub.unsubscribe();
       });
   }
 

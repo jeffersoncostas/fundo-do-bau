@@ -2,19 +2,20 @@ import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { AutenticacaoProvider } from "../../providers/autenticacao/autenticacao";
 import { DatabaseProvider } from "../../providers/database/database";
+import { popsUp } from "../../animations/animation.animation";
 
-import { Observable } from "rxjs/Observable";
 import { Usuario } from "../../models/usuario.model";
-import { AngularFireObject } from "angularfire2/database";
 import { Subscription } from "rxjs/Subscription";
 import { Desafio } from "../../models/desafio.model";
 import { LocationProvider } from "../../providers/location/location";
 import { AlertsProvider } from "../../providers/alerts/alerts";
 import { Geolocation } from "@ionic-native/geolocation";
+import { LoadingsProvider } from "../../providers/loadings/loadings";
 @IonicPage()
 @Component({
   selector: "page-home",
-  templateUrl: "home.html"
+  templateUrl: "home.html",
+  animations: [popsUp]
 })
 export class HomePage {
   // dados capturados do firebase
@@ -42,7 +43,8 @@ export class HomePage {
     private database: DatabaseProvider,
     private location: LocationProvider,
     private alert: AlertsProvider,
-    private geolocation: Geolocation
+    private geolocation: Geolocation,
+    private loading: LoadingsProvider
   ) {
     setInterval(() => {}, 300);
   }
@@ -68,6 +70,8 @@ export class HomePage {
   }
 
   getUserLocation() {
+    //this.loading.loadingPadrao("carregando");
+    console.log("ENTREI AQUI NA GEO");
     this.geolocation
       .getCurrentPosition({
         enableHighAccuracy: true,
@@ -89,13 +93,15 @@ export class HomePage {
         );
       });
 
-    if (!this.userLatitude || !this.userLongitude) {
-      this.alert.alertaSimples(
-        "Opa!",
-        "Você precisa ativar o GPS para você ter a melhor experiência no Fundo do Baú! segundo erro",
-        "error"
-      );
-    }
+    setTimeout(() => {
+      if (!this.userLatitude || !this.userLongitude) {
+        this.alert.alertaSimples(
+          "Opa!",
+          "Você precisa ativar o GPS para você ter a melhor experiência no Fundo do Baú! segundo erro",
+          "error"
+        );
+      }
+    }, 4000);
   }
 
   getDesafiosAndamento() {
@@ -131,6 +137,7 @@ export class HomePage {
           this.listaDesafios$ = data;
           console.log("desafios total", this.listaDesafios$);
           this.listaDesafiosSubscription.unsubscribe();
+          //this.loading.loadingPadraoDismiss();
         },
         error => console.log(error)
       );
@@ -150,7 +157,6 @@ export class HomePage {
     } else {
       this.toogleFixed = false;
     }
-    //console.log(this.toogleFixed);
   }
 
   scrollTop() {

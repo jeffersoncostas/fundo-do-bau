@@ -22,7 +22,7 @@
   <fdba-button *ngIf="!desafio.myDesafio" class="fdba-page--desafio__aceitarButton" type="degrade-rosa" buttonText="aceitar desafio!"
     (clickButton)="alertAceitar()"></fdba-button>
 
-  <section *ngIf="desafio.myDesafio" class="fdba-page--desafio__botoesAceitarDesistir">
+  <section [@slideUp] *ngIf="desafio.myDesafio" class="fdba-page--desafio__botoesAceitarDesistir">
     <fdba-button type="degrade-vermelho" buttonText="desisto!" (clickButton)="desistir()"></fdba-button>
     <fdba-button type="degrade-verde" buttonText="te achei!" (clickButton)="achei()"></fdba-button>
   </section>

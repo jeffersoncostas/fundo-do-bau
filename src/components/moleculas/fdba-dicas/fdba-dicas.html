@@ -6,11 +6,15 @@
     </div>
 
     <ng-container *ngIf="desafio.myDesafio == true">
-      <div class="fdba-dicas__dicas" *ngFor="let dica of desafio.dicas">
-        <span>
-          {{dica}}
-        </span>
+      <div [@popsUp]="desafio.dicas.length">
+
+        <div class="fdba-dicas__dicas" *ngFor="let dica of desafio.dicas">
+          <span>
+            {{dica}}
+          </span>
+        </div>
       </div>
+
     </ng-container>
 
     <div class="fdba-dicas__dicas marmota" *ngIf="!desafio.myDesafio">

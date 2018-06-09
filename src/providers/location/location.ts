@@ -33,6 +33,7 @@ export class LocationProvider {
     return this.db
       .list("desafioLocation")
       .snapshotChanges()
+      .take(1)
       .map(data => {
         this.listaDesafiosProximos = [];
         this.listaIdDesafiosProximos = [];
@@ -115,7 +116,7 @@ export class LocationProvider {
   }
 
   private deg2rad(deg) {
-    var rad = deg * Math.PI / 180;
+    var rad = (deg * Math.PI) / 180;
     return rad;
   }
   private round(x) {
@@ -132,6 +133,7 @@ export class LocationProvider {
       this.db
         .object("desafios/" + desafioProx.key)
         .snapshotChanges()
+        .take(1)
         .forEach(data => {
           let key = data.payload.key;
           let desafio: Desafio = data.payload.val();

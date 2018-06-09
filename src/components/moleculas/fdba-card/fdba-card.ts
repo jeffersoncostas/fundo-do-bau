@@ -1,31 +1,30 @@
-import { Component, EventEmitter } from '@angular/core';
-import { Desafio } from '../../../models/desafio.model';
+import { Component, EventEmitter } from "@angular/core";
+import { Desafio } from "../../../models/desafio.model";
+import { popsUp } from "../../../animations/animation.animation";
 
 @Component({
-  selector: 'fdba-card',
-  templateUrl: 'fdba-card.html',
-  inputs: ['listaDesafios', 'botaoCardVerde', 'botaoCardVermelho'],
-  outputs: ['clickCard', 'clickButtonAchei', 'clickButtonDesisto']
+  selector: "fdba-card",
+  templateUrl: "fdba-card.html",
+  inputs: ["listaDesafios", "botaoCardVerde", "botaoCardVermelho"],
+  outputs: ["clickCard", "clickButtonAchei", "clickButtonDesisto"],
+  animations: [popsUp]
 })
 export class FdbaCardComponent {
   clickCard = new EventEmitter();
   clickButtonAchei = new EventEmitter();
   clickButtonDesisto = new EventEmitter();
-  listaDesafios: Desafio[]
+  listaDesafios: Desafio[];
   botaoCardVerde: string;
   botaoCardVermelho: string;
 
-  constructor() {
-
-  }
+  constructor() {}
 
   clickCardEmit(click) {
     this.clickCard.next(click);
-
   }
 
   teAchei(desafio: Desafio) {
-    console.log(desafio)
+    console.log(desafio);
     this.clickButtonAchei.next(desafio);
   }
 

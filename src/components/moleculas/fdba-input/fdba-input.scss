@@ -1,5 +1,6 @@
 fdba-input {
   form {
+    margin-bottom: 10px;
     .item-md {
       background-color: transparent;
       padding: 0px;
@@ -69,14 +70,14 @@ fdba-input {
         }
       }
     }
-    .fdba-input {
-      &__password {
-        margin-bottom: 40px;
-      }
-      &__criar-conta {
-        .fdba-button--botao-link {
-          margin-top: 30px;
-        }
+  }
+  .fdba-input {
+    &__password {
+      margin-bottom: 40px;
+    }
+    &__criar-conta {
+      .fdba-button--botao-link {
+        margin-top: 20px;
       }
     }
   }
