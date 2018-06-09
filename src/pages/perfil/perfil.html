@@ -6,12 +6,13 @@
 
 
   <section *ngSwitchCase="'config'">
-    <fdba-perfil-input [email]="userAuth$" [name]="(userData$)?.nome" [username]="(userData$)?.username" (newPerfil)="updatePerfil($event)"></fdba-perfil-input>
+    <fdba-perfil-input [email]="userAuth$" [name]="(userData$)?.nome" [username]="(userData$)?.username" (newPerfil)="updatePerfil($event)"
+      (logout)="logout()"></fdba-perfil-input>
   </section>
 
 
   <section *ngSwitchCase="'conq'">
-    <div class="fdba-page--perfil__conquista-list">
+    <div class="fdba-page--perfil__conquista-list" *ngIf="conquistasUsuario$">
       <div class="fdba-page--perfil__conquista-list__conquista" *ngFor="let conquista of conquistasUsuario$">
         <fdba-conquista [titulo]="conquista.nome" [imagem]="conquista.imagem" [descricao]="conquista.descricao" [background]="conquista.background">
         </fdba-conquista>
@@ -20,7 +21,7 @@
   </section>
 
   <section *ngSwitchCase="'concluidos'">
-    <fdba-card [listaDesafios]="desafiosConcluidos" (clickCard)="verPaginaDesafio($event)"></fdba-card>
+    <fdba-card *ngIf="desafiosConcluidos" [listaDesafios]="desafiosConcluidos" (clickCard)="verPaginaDesafio($event)"></fdba-card>
   </section>
 
 </ion-content>

@@ -8,6 +8,7 @@ import { Conquista } from "../../models/conquista.model";
 import { AlertsProvider } from "../../providers/alerts/alerts";
 import { TratamentoErrosProvider } from "../../providers/tratamento-erros/tratamento-erros";
 import { Desafio } from "../../models/desafio.model";
+import { LoadingsProvider } from "../../providers/loadings/loadings";
 
 @IonicPage()
 @Component({
@@ -31,7 +32,8 @@ export class PerfilPage {
     private autenticacao: AutenticacaoProvider,
     private database: DatabaseProvider,
     private alerts: AlertsProvider,
-    private erros: TratamentoErrosProvider
+    private erros: TratamentoErrosProvider,
+    private loading: LoadingsProvider
   ) {}
   ionViewWillEnter() {
     console.log(this.navParams.data, "PERFIL PAGEEE");
@@ -53,43 +55,56 @@ export class PerfilPage {
         console.log(data);
         this.getUserConquistas();
         this.getDesafiosConcluidos();
+        this.userDataObservableSnapshot.unsubscribe();
       });
   }
 
   getUserConquistas() {
-    this.database
-      .getAllConquistasUsuario(this.userData$.conquistas)
-      .then(data => (this.conquistasUsuario$ = data));
+    if (this.userData$.conquistas) {
+      this.database
+        .getAllConquistasUsuario(this.userData$.conquistas)
+        .then(data => (this.conquistasUsuario$ = data));
+    } else {
+      this.conquistasUsuario$ = [];
+    }
   }
   getUserData() {
     this.userAuthSubscription$ = this.autenticacao.getUser().subscribe(data => {
       console.log(data);
       this.userAuth$ = data.email;
+      this.userAuthSubscription$.unsubscribe();
     });
   }
 
   updatePerfil(newPerfil) {
-    this.autenticacao.updateEmail(newPerfil.email).then(
-      data => {
-        if (!data) {
-          this.alerts.alertaSimples(
-            "Pronto!",
-            "Seu e-mail foi alterado para " + newPerfil.email,
-            ""
-          );
-        } else {
-          let erroMessage = this.erros.tratarErros(data.code);
-          this.alerts.alertaSimples("Algo errado!", erroMessage, "error");
-        }
-      },
-      error => console.log(error)
-    );
+    this.loading.loadingPadrao("Um momento..");
     this.autenticacao
-      .updateNome(newPerfil.name)
-      .then(data => console.log(data));
-    this.autenticacao
-      .updateUsername(newPerfil.username)
-      .then(data => console.log(data));
+      .updateEmail(newPerfil.email)
+      .then(
+        data => {
+          if (!data) {
+            this.loading.loadingPadraoDismiss();
+          } else {
+            let erroMessage = this.erros.tratarErros(data.code);
+            this.alerts.alertaSimples("Algo errado!", erroMessage, "error");
+            this.loading.loadingPadraoDismiss();
+          }
+        },
+        error => console.log(error)
+      )
+      .then(() => {
+        this.autenticacao
+          .updateNome(newPerfil.name)
+          .then(data => (this.userData$.nome = newPerfil.name));
+      })
+      .then(() => {
+        this.autenticacao
+          .updateUsername(newPerfil.username)
+          .then(data => (this.userData$.username = newPerfil.username));
+      })
+      .then(() => {
+        this.alerts.alertaSimples("Pronto!", "Perfil atualizado", "");
+      });
   }
 
   getDesafiosConcluidos() {
@@ -105,11 +120,22 @@ export class PerfilPage {
   verPaginaDesafio(desafio) {
     this.navCtrl.push("DesafioConcluidoPage", desafio);
   }
+  logout() {
+    this.loading.loadingPadrao("deslogando..");
+    this.autenticacao
+      .logout()
+      .then(() => {
+        this.loading.loadingPadraoDismiss();
+
+        this.alerts.alertaSimples("Deslogado!", "Você saiu da sua conta", "");
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  }
 
   // Encerrar eventos da página
   ionViewDidLeave() {
-    this.userDataObservableSnapshot.unsubscribe();
-    this.database.unsubscribeGetAllConquistasUsuario();
     this.userAuthSubscription$.unsubscribe();
   }
 }

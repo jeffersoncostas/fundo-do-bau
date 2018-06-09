@@ -3,18 +3,20 @@ import { LoadingController } from "ionic-angular";
 
 @Injectable()
 export class LoadingsProvider {
-  loading: any;
-  constructor(public loadingCtrl: LoadingController) {}
+  private loading: any;
+  constructor(private loadingCtrl: LoadingController) {}
 
   loadingPadrao(texto) {
     this.loading = this.loadingCtrl.create({
-      content: texto
+      spinner: "hide",
+      content:
+        " <div class='fdba-loading' > <div class='fdba-loading__neon' ></div> <img class='fdba-loading__img' src='assets/imgs/fdba-logo.svg' >  </div>"
     });
 
     this.loading.present();
   }
 
-  loadingPadraoDismiss() {
+  async loadingPadraoDismiss() {
     this.loading.dismiss();
   }
 }

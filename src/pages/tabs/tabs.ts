@@ -36,6 +36,7 @@ export class TabsPage {
   isAdmin() {
     this.userDataObservableSnapshot = this.autenticacao
       .getProfile()
+      .take(1)
       .subscribe(profile => {
         console.log(profile);
         this.userData$ = profile;

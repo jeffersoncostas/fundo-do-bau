@@ -31,9 +31,7 @@ export class AutenticacaoProvider {
     let usuario = {
       username: user.username,
       pontos: user.pontos,
-      nome: user.nome,
-      adm: user.adm,
-      conquistas: user.conquistas
+      adm: user.adm
     };
     this.afAuth.authState.subscribe(auth => {
       this.db.object(`perfis/${auth.uid}`).set(usuario);
@@ -54,6 +52,7 @@ export class AutenticacaoProvider {
     return this.db
       .object<Usuario>(`perfis/${userId}`)
       .snapshotChanges()
+      .take(1)
       .map(data => (usuario = data.payload.val()));
   }
 

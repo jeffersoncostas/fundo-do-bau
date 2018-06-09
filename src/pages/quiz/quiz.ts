@@ -6,6 +6,7 @@ import { Desafio } from "../../models/desafio.model";
 import { Observable } from "rxjs/Observable";
 import "rxjs/add/operator/map";
 import { Perguntas } from "../../models/perguntas.model";
+import { AlertsProvider } from "../../providers/alerts/alerts";
 
 @IonicPage()
 @Component({
@@ -26,7 +27,8 @@ export class QuizPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    private database: DatabaseProvider
+    private database: DatabaseProvider,
+    private alert: AlertsProvider
   ) {}
 
   ionViewDidLoad() {
@@ -44,6 +46,7 @@ export class QuizPage {
         console.log(this.desafio);
         this.separarPerguntas();
         this.pontuacaoConfig();
+        this.databaseSubscriber$.unsubscribe();
       });
   }
 
@@ -69,8 +72,10 @@ export class QuizPage {
     if (resposta === alternativa) {
       console.log("resposta correta ;)");
       this.quizPontos += this.pontosPergunta;
+      this.alert.alertaSimples("Parabéns!!", "Resposta correta!", "");
     } else {
       console.log("resposta errada D:");
+      this.alert.alertaSimples("Poxa :/", "Você errou!", "error");
     }
 
     if (this.paginacao == 4) {

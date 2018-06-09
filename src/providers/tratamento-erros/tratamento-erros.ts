@@ -11,6 +11,15 @@ export class TratamentoErrosProvider {
 
       case "auth/requires-recent-login":
         return "Você precisa fazer o login novamente";
+
+      case "auth/user-not-found":
+        return "Usuário ou senha inválidos";
+
+      case "auth/wrong-password":
+        return "Usuário ou senha inválidos";
+
+      case "auth/email-already-in-use":
+        return "E-mail já está em uso";
     }
   }
 }

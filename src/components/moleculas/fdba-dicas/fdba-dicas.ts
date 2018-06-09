@@ -1,5 +1,6 @@
 import { Component, EventEmitter } from "@angular/core";
 import { Desafio } from "../../../models/desafio.model";
+import { popsUp } from "../../../animations/animation.animation";
 
 @Component({
   selector: "fdba-dicas",
@@ -13,7 +14,8 @@ import { Desafio } from "../../../models/desafio.model";
     "dicasSolicitadas",
     "type"
   ],
-  outputs: ["clickButtonDica"]
+  outputs: ["clickButtonDica"],
+  animations: [popsUp]
 })
 export class FdbaDicasComponent {
   desafio: Desafio;

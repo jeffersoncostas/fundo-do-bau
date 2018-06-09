@@ -37,6 +37,7 @@ export class DatabaseProvider {
     return this.db
       .list(`desafios/`)
       .snapshotChanges()
+      .take(1)
       .map(data => {
         listaDesafios = [];
         data.forEach(element => {
@@ -50,6 +51,7 @@ export class DatabaseProvider {
     return this.db
       .object(`conquistas/${idConquista}`)
       .snapshotChanges()
+      .take(1)
       .map(conquista => {
         return conquista.payload.val();
       });
@@ -64,6 +66,8 @@ export class DatabaseProvider {
         idConquista
       ).subscribe(data => {
         conquistasUsuarioReal.push(data);
+
+        this.getAllConquistasUsuarioSubscription.unsubscribe();
       });
     });
     return conquistasUsuarioReal;
@@ -77,6 +81,7 @@ export class DatabaseProvider {
     return this.db
       .list("conquistas/")
       .snapshotChanges()
+      .take(1)
       .map(conquistas => {
         let listaConquistas$ = [];
         console.log(conquistas);
@@ -99,6 +104,7 @@ export class DatabaseProvider {
     return this.db
       .list("perfis/" + this.userId + "/desafiosEmAndamento")
       .snapshotChanges()
+      .take(1)
       .map(data => {
         listaDesafiosEmAndamento = [];
 
@@ -108,6 +114,7 @@ export class DatabaseProvider {
           this.db
             .object("desafios/" + desafioEmAndamentoUsuario.key)
             .snapshotChanges()
+            .take(1)
             .forEach(data => {
               let desafio: Desafio = data.payload.val();
               desafio.key = data.key;
@@ -134,6 +141,7 @@ export class DatabaseProvider {
     return this.db
       .object("perfis/" + id + "/desafiosEmAndamento/" + desafioKey)
       .snapshotChanges()
+      .take(1)
       .map(data => {
         console.log(data.payload.val());
         desaf = data.payload.val();
@@ -158,6 +166,7 @@ export class DatabaseProvider {
           this.db
             .object("desafios/" + desafioKey + "/dicas")
             .snapshotChanges()
+            .take(1)
             .forEach(todasDicas => {
               let allDicas = todasDicas.payload.val();
               for (let index = 0; index < allDicas.length; index++) {
@@ -200,6 +209,7 @@ export class DatabaseProvider {
     return this.db
       .list("perfis/" + this.userId + "/desafiosConcluidos")
       .snapshotChanges()
+      .take(1)
       .map(data => {
         data.forEach(desafioConc => {
           let desafioConcluido: Desafio;
@@ -208,6 +218,7 @@ export class DatabaseProvider {
           this.db
             .object("desafios/" + desafioConc.key)
             .snapshotChanges()
+            .take(1)
             .forEach(desafioFull => {
               desafioConcluido = desafioFull.payload.val();
               desafioConcluido.complete = desafioConcluidoUsuario.complete;

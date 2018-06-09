@@ -53,6 +53,7 @@ $primary-light-gradient: linear-gradient(45deg, #218db8, #53a4c4);
 $conquista-gradient: linear-gradient(45deg, #49a39d, #309b7e);
 $desafio-header-gradient: linear-gradient( -180deg, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.404));
 $radial-gradient-gold: radial-gradient(#ffb523, rgba(0, 0, 0, 0));
+$radial-gradient-white: radial-gradient(#ffffff, rgba(0, 0, 0, 0));
 //
 //Neon Shadow
 $gold-neon: 0 0 40px rgba(255, 186, 55, 0.4);
@@ -204,6 +205,64 @@ ion-alert.alert-top {
     }
     .alert-button .button-inner {
       width: 50%;
+    }
+  }
+}
+
+.loading-md .loading-wrapper {
+  background: none;
+  box-shadow: none;
+  .fdba-loading {
+    position: relative;
+    width: 70px;
+    animation: fdba-loading-animation 1.1s;
+    animation-iteration-count: infinite;
+    &__img {}
+    &__neon {
+      z-index: 1;
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      filter: blur(10px);
+      opacity: 0;
+      background: $radial-gradient-white;
+      border-radius: 50%;
+      animation: fdba-loading-animation-neon .6s;
+      animation-iteration-count: infinite;
+    }
+  }
+  @keyframes fdba-loading-animation {
+    0% {
+      transform: rotate(0) scale(1)
+    }
+    40% {
+      transform: rotate(320deg) scale(1.3)
+    }
+    100% {
+      transform: rotate(360deg) scale(0.90)
+    }
+  }
+  @keyframes fdba-loading-animation-neon {
+    0% {
+      top: 50%;
+      left: 50%;
+      opacity: 0;
+      transform: scale(0.90) translate(-50%, -50%);
+    }
+    50% {
+      top: 50%;
+      left: 50%;
+      opacity: 0.2;
+      transform: scale(1.05) translate(-50%, -50%);
+    }
+    100% {
+      top: 50%;
+      left: 50%;
+      opacity: 0;
+      transform: scale(0.90) translate(-50%, -50%);
     }
   }
 }

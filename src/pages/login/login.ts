@@ -7,6 +7,9 @@ import {
 } from "ionic-angular";
 import { AutenticacaoProvider } from "../../providers/autenticacao/autenticacao";
 import { LoadingsProvider } from "../../providers/loadings/loadings";
+import { TratamentoErrosProvider } from "../../providers/tratamento-erros/tratamento-erros";
+import { AlertsProvider } from "../../providers/alerts/alerts";
+import { TabsPage } from "../tabs/tabs";
 
 @IonicPage()
 @Component({
@@ -19,26 +22,32 @@ export class LoginPage {
     public navParams: NavParams,
     private autenticar: AutenticacaoProvider,
     private loading: LoadingsProvider,
-    private alert: AlertController
+    private alert: AlertController,
+    private tratamentoErros: TratamentoErrosProvider,
+    private alertProvider: AlertsProvider
   ) {}
 
   ionViewDidLoad() {}
 
   logar(user) {
     this.loading.loadingPadrao("Logando...");
-    this.autenticar.login(user).then(
-      data => {
+    this.autenticar
+      .login(user)
+      .then(data => {
         this.loading.loadingPadraoDismiss();
         this.navCtrl.setRoot(
           "TabsPage",
-          {},
+          { login: true },
           { animate: true, direction: "forward" }
         );
-      },
-      error => {
+      })
+      .catch(e => {
         this.loading.loadingPadraoDismiss();
-      }
-    );
+
+        let erro = this.tratamentoErros.tratarErros(e.code);
+        console.log(e);
+        this.alertProvider.alertaSimples("Eita!", erro, "error");
+      });
   }
 
   esqueciSenha() {

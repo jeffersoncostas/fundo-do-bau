@@ -1,5 +1,18 @@
+<ion-header>
+  <ion-navbar>
+    <fdba-ranking-header></fdba-ranking-header>
+
+
+  </ion-navbar>
+</ion-header>
+
 <ion-content padding>
-  <fdba-ranking-header></fdba-ranking-header>
+  <ion-refresher (ionRefresh)="refresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+
 
   <fdba-lista-card-ranking [listaUsers]="listaUsersRanking"></fdba-lista-card-ranking>
+
 </ion-content>

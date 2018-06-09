@@ -11,7 +11,7 @@ import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
 import { NativeStorage } from "@ionic-native/native-storage";
 import { IonicStorageModule } from "@ionic/storage";
-import {Geolocation} from '@ionic-native/geolocation';
+import { Geolocation } from "@ionic-native/geolocation";
 
 import { AngularFireModule } from "angularfire2";
 import { AngularFireDatabaseModule } from "angularfire2/database";
@@ -25,7 +25,6 @@ import { DatabaseProvider } from "../providers/database/database";
 import { AlertsProvider } from "../providers/alerts/alerts";
 import { LocationProvider } from "../providers/location/location";
 import { RecompensasProvider } from "../providers/recompensas/recompensas";
-
 @NgModule({
   declarations: [MyApp],
   imports: [

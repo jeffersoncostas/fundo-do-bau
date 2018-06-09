@@ -20,5 +20,5 @@
     <fdba-button altura="50" type="criar-conta-submit" buttonText="salvar" [disabledProp]="!perfil.valid"></fdba-button>
 
   </form>
-  <fdba-button class="fdba-input__criar-conta" type="botao-link" buttonText="criar conta" resume="Não possui uma conta?" (clickButton)="logoutEmit($event)"></fdba-button>
+  <fdba-button type="degrade-vermelho" buttonText="sair da conta" (clickButton)="logoutEmit($event)"></fdba-button>
 </div>

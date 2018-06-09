@@ -1,6 +1,7 @@
-<section class="fdba-lista-card-ranking">
+<section *ngIf="listaUsers" [@popsUp]="listaUsers.length" class="fdba-lista-card-ranking">
 
-  <div class="fdba-lista-card-ranking__card" *ngFor="let user of listaUsers; let i = index">
+  <div class="fdba-lista-card-ranking__card" *ngFor="let user of listaUsers.slice().reverse(); let i = index">
+
 
     <fdba-card-ranking *ngIf="i==0" type="gold" [userName]="user.nome" [userNick]="user.userName" [userPoints]="user.pontos"
       [userPosition]="1"></fdba-card-ranking>
