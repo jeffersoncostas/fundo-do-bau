@@ -13,14 +13,14 @@
   <div [ngSwitch]="home" class="fdba-page--home__desafios">
 
     <section *ngSwitchCase="'desafios'">
+      <fdba-texto-aviso *ngIf="!listaDesafios$" texto="Nenhum desafio perto de você"></fdba-texto-aviso>
+
+
       <fdba-card [listaDesafios]="listaDesafios$" (clickCard)="clickCard($event)"></fdba-card>
-
-
-
-
     </section>
-    <section *ngSwitchCase="'desafiosAndamento'">
 
+    <section *ngSwitchCase="'desafiosAndamento'">
+      <fdba-texto-aviso *ngIf="!listaDesafiosEmAndamento$.length" texto="Nenhum desafio em andamento"></fdba-texto-aviso>
       <fdba-card [listaDesafios]="listaDesafiosEmAndamento$" (clickCard)="clickCard($event)" botaoCardVermelho="desisto" botaoCardVerde="achei"></fdba-card>
 
     </section>

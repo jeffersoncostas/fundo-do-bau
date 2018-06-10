@@ -37,7 +37,7 @@ export class DatabaseProvider {
     return this.db
       .list(`desafios/`)
       .snapshotChanges()
-      .take(1)
+
       .map(data => {
         listaDesafios = [];
         data.forEach(element => {

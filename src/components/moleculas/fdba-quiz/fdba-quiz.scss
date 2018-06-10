@@ -11,10 +11,12 @@ fdba-quiz {
         width: 15px;
         margin: 0px 7px;
         background: $white;
+        transition: all .4s
       }
       &--active {
         @extend .fdba-quiz__paginacao--inactive;
         width: 50px;
+        transition: all .4s
       }
     }
     &__pergunta {
@@ -25,6 +27,7 @@ fdba-quiz {
       align-items: center;
       height: 120px;
       background: $super-dark-transparent;
+      padding: 0px 17px;
       &__numero {
         color: $white;
         font-size: $xxl-font-size;
@@ -32,12 +35,12 @@ fdba-quiz {
       }
       &__pergunta {
         color: $white;
-        width: 200px;
         display: inline-block;
         font-size: $xl-font-size;
       }
     }
     &__alternativas {
+      position: relative;
       &__botoes {
         margin: 0px 0px 20px;
       }

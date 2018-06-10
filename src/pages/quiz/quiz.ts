@@ -1,17 +1,20 @@
-import { Component, ViewChild } from "@angular/core";
+import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { DatabaseProvider } from "../../providers/database/database";
 import { Subscription } from "rxjs/Subscription";
 import { Desafio } from "../../models/desafio.model";
-import { Observable } from "rxjs/Observable";
 import "rxjs/add/operator/map";
-import { Perguntas } from "../../models/perguntas.model";
 import { AlertsProvider } from "../../providers/alerts/alerts";
+import {
+  entradaParabens,
+  quizAlternativa
+} from "../../animations/animation.animation";
 
 @IonicPage()
 @Component({
   selector: "page-quiz",
-  templateUrl: "quiz.html"
+  templateUrl: "quiz.html",
+  animations: [entradaParabens, quizAlternativa]
 })
 export class QuizPage {
   desafio: Desafio;

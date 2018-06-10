@@ -4,11 +4,18 @@ import { Desafio } from "../../models/desafio.model";
 import { RecompensasProvider } from "../../providers/recompensas/recompensas";
 import { DatabaseProvider } from "../../providers/database/database";
 import { Conquista } from "../../models/conquista.model";
+import {
+  entradaParabens,
+  entradaConquista,
+  badgePontos,
+  slideUp
+} from "../../animations/animation.animation";
 
 @IonicPage()
 @Component({
   selector: "page-parabens-video",
-  templateUrl: "parabens-video.html"
+  templateUrl: "parabens-video.html",
+  animations: [entradaParabens, entradaConquista, badgePontos, slideUp]
 })
 export class ParabensVideoPage {
   desafio: Desafio;

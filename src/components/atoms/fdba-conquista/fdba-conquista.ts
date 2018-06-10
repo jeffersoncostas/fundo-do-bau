@@ -1,9 +1,19 @@
 import { Component } from "@angular/core";
+import { badgePontos } from "../../../animations/animation.animation";
 
 @Component({
   selector: "fdba-conquista",
   templateUrl: "fdba-conquista.html",
-  inputs: ["imagem", "titulo", "descricao", "background", "pontos","bonus","brilho"]
+  inputs: [
+    "imagem",
+    "titulo",
+    "descricao",
+    "background",
+    "pontos",
+    "bonus",
+    "brilho"
+  ],
+  animations: [badgePontos]
 })
 export class FdbaConquistaComponent {
   imagem: string;

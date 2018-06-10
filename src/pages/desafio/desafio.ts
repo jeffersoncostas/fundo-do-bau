@@ -5,13 +5,13 @@ import { DatabaseProvider } from "../../providers/database/database";
 import { AlertsProvider } from "../../providers/alerts/alerts";
 import { LoadingsProvider } from "../../providers/loadings/loadings";
 import { LocationProvider } from "../../providers/location/location";
-import { HomePage } from "../home/home";
-import { slideUp } from "../../animations/animation.animation";
+
+import { slideUp, popsUp } from "../../animations/animation.animation";
 
 @IonicPage()
 @Component({
   selector: "page-desafio",
-  animations: [slideUp],
+  animations: [slideUp, popsUp],
   templateUrl: "desafio.html"
 })
 export class DesafioPage {
@@ -135,7 +135,7 @@ export class DesafioPage {
       .verificarDesafio(this.desafio.latLong, this.desafio.raio, this.desafio)
       .then(data => {
         if (data == 1) {
-          this.navCtrl.push("ParabensLocalPage", this.desafio);
+          this.navCtrl.setRoot("ParabensLocalPage", this.desafio);
         } else {
           this.desafio.pontos = data;
           this.naoAchou();

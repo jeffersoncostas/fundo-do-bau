@@ -2,11 +2,18 @@ import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { Desafio } from "../../models/desafio.model";
 import { RecompensasProvider } from "../../providers/recompensas/recompensas";
+import {
+  parabensBau,
+  entradaParabens,
+  popsUp,
+  slideUp
+} from "../../animations/animation.animation";
 
 @IonicPage()
 @Component({
   selector: "page-parabens-local",
-  templateUrl: "parabens-local.html"
+  templateUrl: "parabens-local.html",
+  animations: [parabensBau, entradaParabens, popsUp, slideUp]
 })
 export class ParabensLocalPage {
   desafio: Desafio = this.navParams.data;

@@ -70,8 +70,8 @@ export class HomePage {
   }
 
   getUserLocation() {
-    //this.loading.loadingPadrao("carregando");
-    console.log("ENTREI AQUI NA GEO");
+    this.loading.loadingPadrao("carregando");
+
     this.geolocation
       .getCurrentPosition({
         enableHighAccuracy: true,
@@ -137,7 +137,7 @@ export class HomePage {
           this.listaDesafios$ = data;
           console.log("desafios total", this.listaDesafios$);
           this.listaDesafiosSubscription.unsubscribe();
-          //this.loading.loadingPadraoDismiss();
+          this.loading.loadingPadraoDismiss();
         },
         error => console.log(error)
       );

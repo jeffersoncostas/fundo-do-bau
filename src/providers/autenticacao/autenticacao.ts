@@ -2,8 +2,6 @@ import { Injectable } from "@angular/core";
 import { AngularFireAuth } from "angularfire2/auth";
 import { Usuario } from "../../models/usuario.model";
 import { AngularFireDatabase } from "angularfire2/database";
-import { Desafio } from "../../models/desafio.model";
-import { Subscription } from "rxjs/Subscription";
 @Injectable()
 export class AutenticacaoProvider {
   constructor(

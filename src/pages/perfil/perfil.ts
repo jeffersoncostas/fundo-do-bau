@@ -43,6 +43,8 @@ export class PerfilPage {
   }
 
   ionViewDidEnter() {
+    console.log(this.navParams.data, "PERFIL PAGEEE");
+
     this.getUser();
     this.getUserData();
   }

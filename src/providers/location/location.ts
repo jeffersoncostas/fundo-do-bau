@@ -1,13 +1,11 @@
 import { Injectable } from "@angular/core";
 import { AngularFireAuth } from "angularfire2/auth";
-import { AngularFireDatabase, snapshotChanges } from "angularfire2/database";
+import { AngularFireDatabase } from "angularfire2/database";
 import { Desafio } from "../../models/desafio.model";
 import { Geolocation } from "@ionic-native/geolocation";
 
 @Injectable()
 export class LocationProvider {
-  private constdistanciaMin: number = 20;
-  private desafioProximo: { key: string; location: number[] };
   private listaIdDesafiosProximos = [];
   private listaDesafiosProximos: Desafio[] = [];
   private desafiosAndamento: Desafio[] = [];
@@ -45,7 +43,7 @@ export class LocationProvider {
             location[1]
           );
           console.log(resultDistancia);
-          if (resultDistancia) {
+          if (resultDistancia >= 0) {
             let desafioProximo = {
               key: element.payload.key,
               location: location
@@ -104,7 +102,7 @@ export class LocationProvider {
           Math.pow(Math.sin(lonDifference / 2), 2),
       c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)),
       dk = c * RADIUSKILOMETERS;
-    let km = this.round2(dk);
+    //let km = this.round2(dk);
     console.log(dk);
 
     if (dk <= raioDesafio) {
@@ -120,10 +118,6 @@ export class LocationProvider {
     return rad;
   }
   private round(x) {
-    return Math.round(x * 10) / 10;
-  }
-
-  private round2(x) {
     return Math.round(x * 10) / 10;
   }
 
@@ -160,7 +154,6 @@ export class LocationProvider {
 
   async verificarDesafio(latLongDesafio, raioDesafio, desafio: Desafio) {
     this.desafioPagina = desafio;
-    let localUser = { latitude: 0, longitude: 0 };
     console.log(this.userLatitude, this.userLongitude);
     if (navigator.geolocation) {
       this.geolocation.getCurrentPosition().then(position => {

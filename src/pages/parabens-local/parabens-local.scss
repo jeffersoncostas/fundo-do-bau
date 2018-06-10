@@ -15,7 +15,6 @@ page-parabens-local {
         fdba-parabens .fdba-parabens__titulo {
           font-size: $xxxll-font-size;
         }
-
         fdba-parabens .fdba-parabens__descricao {
           font-size: $xll-font-size;
         }
@@ -27,6 +26,7 @@ page-parabens-local {
         height: 30%;
         img {
           width: 250px;
+          position: absolute;
         }
         &__neon2 {
           top: 50%;
@@ -37,7 +37,12 @@ page-parabens-local {
           width: 200px;
           background: $radial-gradient-gold;
           filter: blur(80px);
+          opacity: .8;
           border-radius: 50%;
+          animation-name: neon;
+          animation-iteration-count: infinite;
+          animation-duration: 2s;
+          animation-timing-function: ease
         }
       }
       &__botao {
@@ -48,23 +53,58 @@ page-parabens-local {
         align-items: center;
         fdba-button {
           width: 70%;
+          animation-name: button-Anim;
+          animation-iteration-count: infinite;
+          animation-duration: 2s;
+          animation-timing-function: ease-in-out
         }
       }
     }
   }
 }
+
 .tabbar-leave {
   animation-name: tableave;
   animation-duration: 0.7s;
   animation-fill-mode: backwards;
   bottom: -70px;
 }
+
 .tabbar-show {
   animation-name: tableave;
   animation-duration: 0.7s;
   animation-fill-mode: backwards;
   animation-direction: reverse;
   bottom: 0px;
+}
+
+@keyframes neon {
+  0% {
+    opacity: .8;
+    transform: scale(.95) translate(-50%, -50%)
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translate(-50%, -50%)
+  }
+}
+
+@keyframes button-Anim {
+  0% {
+    transform: scale(1)
+  }
+  30% {
+    transform: scale(1.1)
+  }
+  50% {
+    transform: scale(1)
+  }
+  70% {
+    transform: scale(1.1)
+  }
+  100% {
+    transform: scale(1)
+  }
 }
 
 @keyframes tableave {

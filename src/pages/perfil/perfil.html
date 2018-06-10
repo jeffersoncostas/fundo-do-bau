@@ -12,6 +12,8 @@
 
 
   <section *ngSwitchCase="'conq'">
+    <fdba-texto-aviso texto="Você não possui nenhuma conquista" *ngIf="!conquistasUsuario$.length"></fdba-texto-aviso>
+
     <div class="fdba-page--perfil__conquista-list" *ngIf="conquistasUsuario$">
       <div class="fdba-page--perfil__conquista-list__conquista" *ngFor="let conquista of conquistasUsuario$">
         <fdba-conquista [titulo]="conquista.nome" [imagem]="conquista.imagem" [descricao]="conquista.descricao" [background]="conquista.background">
@@ -21,6 +23,11 @@
   </section>
 
   <section *ngSwitchCase="'concluidos'">
+    <fdba-texto-aviso texto="Você não concluiu nenhum desafio" *ngIf="!desafiosConcluidos.length"></fdba-texto-aviso>
+
+
+
+
     <fdba-card *ngIf="desafiosConcluidos" [listaDesafios]="desafiosConcluidos" (clickCard)="verPaginaDesafio($event)"></fdba-card>
   </section>
 

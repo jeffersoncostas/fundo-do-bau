@@ -1,16 +1,13 @@
-import {
-  Component,
-  EventEmitter,
-  SimpleChange,
-  SimpleChanges
-} from "@angular/core";
-import { Desafio } from "../../../models/desafio.model";
+import { Component, EventEmitter } from "@angular/core";
+
+import { quizAlternativa } from "../../../animations/animation.animation";
 
 @Component({
   selector: "fdba-quiz",
   templateUrl: "fdba-quiz.html",
   inputs: ["paginacao", "pergunta", "resposta", "alternativa"],
-  outputs: ["clickButtonQuiz"]
+  outputs: ["clickButtonQuiz"],
+  animations: [quizAlternativa]
 })
 export class FdbaQuizComponent {
   paginacao: number;
@@ -25,7 +22,7 @@ export class FdbaQuizComponent {
 
   constructor() {}
   ngOnInit() {}
-  ngOnChanges(changes: SimpleChanges) {
+  ngOnChanges() {
     this.singleArray = [];
     this.singleArrayF();
   }

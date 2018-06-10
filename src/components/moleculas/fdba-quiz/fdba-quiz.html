@@ -14,9 +14,10 @@
 
   </div>
 
-  <div class="fdba-quiz__alternativas" *ngIf="pergunta">
+  <div class="fdba-quiz__alternativas" *ngIf="singleArray.length">
 
-    <div class="fdba-quiz__alternativas__botoes" *ngFor="let item of singleArray; index as i">
+    <div [@quizAlternativa] class="fdba-quiz__alternativas__botoes" *ngFor="let item of singleArray; index as i">
+
       <fdba-button type="degrade-quiz" [buttonText]="item.text" [cor]="item.cores" (clickButton)="clickButtonQuizEmit(item.text)"></fdba-button>
     </div>
   </div>

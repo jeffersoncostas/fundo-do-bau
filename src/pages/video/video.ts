@@ -26,6 +26,7 @@ export class VideoPage {
     document.querySelector(".tabs-md .tabbar")["style"].bottom = "-70px";
 
     document.querySelector(".tabs-md .tabbar")["classList"].add("tabbar-leave");
+
     console.log(this.desafio);
     this.videoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(
       this.desafio.video
@@ -45,7 +46,7 @@ export class VideoPage {
     setTimeout(() => {
       console.log("Já pode pular o video!");
       this.button = true;
-    }, 10000);
+    }, 1000);
   }
   irConquista() {
     this.navCtrl.push("ParabensVideoPage", this.desafio);

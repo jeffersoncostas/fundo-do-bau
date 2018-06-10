@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, NgZone } from "@angular/core";
 import {
   IonicPage,
   NavController,
@@ -24,7 +24,8 @@ export class LoginPage {
     private loading: LoadingsProvider,
     private alert: AlertController,
     private tratamentoErros: TratamentoErrosProvider,
-    private alertProvider: AlertsProvider
+    private alertProvider: AlertsProvider,
+    private zone: NgZone
   ) {}
 
   ionViewDidLoad() {}
@@ -35,11 +36,14 @@ export class LoginPage {
       .login(user)
       .then(data => {
         this.loading.loadingPadraoDismiss();
-        this.navCtrl.setRoot(
-          "TabsPage",
-          { login: true },
-          { animate: true, direction: "forward" }
-        );
+
+        this.zone.runTask(() => {
+          this.navCtrl.setRoot(
+            "TabsPage",
+            { login: true },
+            { animate: true, direction: "forward" }
+          );
+        });
       })
       .catch(e => {
         this.loading.loadingPadraoDismiss();
