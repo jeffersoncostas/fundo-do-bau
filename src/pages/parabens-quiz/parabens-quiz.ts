@@ -23,4 +23,16 @@ export class ParabensQuizPage {
   verMinhasConquistas() {
     this.navCtrl.setRoot("TabsPage", { tabIndex: 2, configSegment: "conq" });
   }
+
+  voltarParaTelaInicial(){
+    document
+      .querySelector(".tabs-md .tabbar")
+      ["classList"].add("tabbar-show");
+
+    document.querySelector(".tabs-md .tabbar")["style"].bottom = "0px";
+
+    document.querySelector(".tabs-md .tabbar")["classList"].remove("tabbar-leave");
+
+    this.navCtrl.setRoot("HomePage")
+  }
 }
