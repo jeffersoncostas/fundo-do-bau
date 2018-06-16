@@ -1,4 +1,5 @@
 <ion-header>
+
   <ion-navbar>
     <fdba-ranking-header></fdba-ranking-header>
 
@@ -7,8 +8,9 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-refresher (ionRefresh)="refresh($event)">
-    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="Refreshing...">
+  <ion-refresher pullMin="100" (ionRefresh)="refresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Puxe para atualizar os desafios próximos" refreshingSpinner="circles"
+      refreshingText="Atualizando....">
     </ion-refresher-content>
   </ion-refresher>
 

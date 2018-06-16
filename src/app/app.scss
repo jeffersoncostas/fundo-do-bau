@@ -74,6 +74,12 @@ $transparent: transparent;
 //Box shadow
 $box-shadow-conquista: 0px 8px 8px rgba(0, 0, 0, 0.15);
 //
+//APP
+ion-nav {
+  background: $super-dark-blue-gradient
+}
+
+//
 //Tab
 .tabs-md .tabbar {
   background: $gradient-barra-fixa;
@@ -265,4 +271,9 @@ ion-alert.alert-top {
       transform: scale(0.90) translate(-50%, -50%);
     }
   }
+}
+
+ion-refresher-content {
+  height: 165%;
+  background: rgba(0, 0, 0, 0.6);
 }

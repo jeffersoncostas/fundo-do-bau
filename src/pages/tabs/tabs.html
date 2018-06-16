@@ -1,12 +1,12 @@
-<ion-tabs #tabs tabsHighlight="true" name="main-tab">
+<ion-tabs tabsHighlight=" true " name="main-tab " [selectedIndex]="selectedIndex ">
 
-  <ion-tab [root]="ranking" tabTitle="" tabUrlPath="tab" tabIcon="fdba-ranking"></ion-tab>
-  <ion-tab [root]="home" tabTitle="" tabUrlPath="tab" tabIcon="fdba-icon" [rootParams]="tabParams"></ion-tab>
+  <ion-tab (ionSelect)="transition($event)" [root]="ranking" tabTitle="" tabUrlPath="tab" tabIcon="fdba-ranking"></ion-tab>
+  <ion-tab (ionSelect)="transition($event)" [root]="home" tabTitle="" tabUrlPath="tab" tabIcon="fdba-icon" [rootParams]="tabParams"></ion-tab>
 
-  <ion-tab [root]="perfil" tabTitle="" tabUrlPath="tab" tabIcon="fdba-perfil" [rootParams]="tabParams"></ion-tab>
+  <ion-tab (ionSelect)="transition($event)" [root]="perfil" tabTitle="" tabUrlPath="tab" tabIcon="fdba-perfil" [rootParams]="tabParams"></ion-tab>
 
-  <ion-tab *ngIf="adminBool" [root]="styleguide" tabTitle="Style Guide" tabUrlPath="tab" tabIcon="ios-color-palette"></ion-tab>
+  <ion-tab (ionSelect)="transition($event)" *ngIf="adminBool" [root]="styleguide" tabTitle="Style Guide" tabUrlPath="tab" tabIcon="ios-color-palette"></ion-tab>
 
-  <ion-tab *ngIf="adminBool" [root]="admin" tabTitle="Admin" tabUrlPath="tab" tabIcon="ios-flask"></ion-tab>
+  <ion-tab (ionSelect)="transition($event)" *ngIf="adminBool" [root]="admin" tabTitle="Admin" tabUrlPath="tab" tabIcon="ios-flask"></ion-tab>
 
 </ion-tabs>

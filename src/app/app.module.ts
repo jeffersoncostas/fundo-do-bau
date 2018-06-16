@@ -12,6 +12,7 @@ import { SplashScreen } from "@ionic-native/splash-screen";
 import { NativeStorage } from "@ionic-native/native-storage";
 import { IonicStorageModule } from "@ionic/storage";
 import { Geolocation } from "@ionic-native/geolocation";
+import { NativePageTransitions } from "@ionic-native/native-page-transitions";
 
 import { AngularFireModule } from "angularfire2";
 import { AngularFireDatabaseModule } from "angularfire2/database";
@@ -25,6 +26,7 @@ import { DatabaseProvider } from "../providers/database/database";
 import { AlertsProvider } from "../providers/alerts/alerts";
 import { LocationProvider } from "../providers/location/location";
 import { RecompensasProvider } from "../providers/recompensas/recompensas";
+import { CountTabProvider } from "../providers/count-tab/count-tab";
 @NgModule({
   declarations: [MyApp],
   imports: [
@@ -46,6 +48,7 @@ import { RecompensasProvider } from "../providers/recompensas/recompensas";
     SplashScreen,
     NativeStorage,
     Geolocation,
+    NativePageTransitions,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     AutenticacaoProvider,
     LoadingsProvider,
@@ -53,7 +56,8 @@ import { RecompensasProvider } from "../providers/recompensas/recompensas";
     DatabaseProvider,
     AlertsProvider,
     LocationProvider,
-    RecompensasProvider
+    RecompensasProvider,
+    CountTabProvider
   ]
 })
 export class AppModule {}

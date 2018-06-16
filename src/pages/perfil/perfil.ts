@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { IonicPage, NavController, NavParams } from "ionic-angular";
+import { IonicPage, NavController, NavParams, Events } from "ionic-angular";
 import { Usuario } from "../../models/usuario.model";
 import { Subscription } from "rxjs/Subscription";
 import { AutenticacaoProvider } from "../../providers/autenticacao/autenticacao";
@@ -33,7 +33,8 @@ export class PerfilPage {
     private database: DatabaseProvider,
     private alerts: AlertsProvider,
     private erros: TratamentoErrosProvider,
-    private loading: LoadingsProvider
+    private loading: LoadingsProvider,
+    private events: Events
   ) {}
   ionViewWillEnter() {
     console.log(this.navParams.data, "PERFIL PAGEEE");
@@ -128,7 +129,7 @@ export class PerfilPage {
       .logout()
       .then(() => {
         this.loading.loadingPadraoDismiss();
-
+        this.events.publish("logout");
         this.alerts.alertaSimples("Deslogado!", "Você saiu da sua conta", "");
       })
       .catch(e => {

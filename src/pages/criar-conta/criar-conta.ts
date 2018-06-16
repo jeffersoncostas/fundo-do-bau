@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { IonicPage, NavController, NavParams } from "ionic-angular";
+import { IonicPage, NavController, NavParams, Events } from "ionic-angular";
 import { Usuario } from "../../models/usuario.model";
 import { AutenticacaoProvider } from "../../providers/autenticacao/autenticacao";
 import { LoadingsProvider } from "../../providers/loadings/loadings";
@@ -21,7 +21,8 @@ export class CriarContaPage {
     private autenticar: AutenticacaoProvider,
     private loading: LoadingsProvider,
     private tratamentoErro: TratamentoErrosProvider,
-    private alert: AlertsProvider
+    private alert: AlertsProvider,
+    private events: Events
   ) {}
 
   ionViewDidLoad() {}
@@ -44,6 +45,8 @@ export class CriarContaPage {
       .then(data => {
         this.loading.loadingPadraoDismiss();
         this.navCtrl.setRoot("TabsPage");
+
+        this.events.publish("criar-conta");
       })
       .catch(error => {
         this.loading.loadingPadraoDismiss();

@@ -6,20 +6,22 @@ import { Storage } from "@ionic/storage";
 import { AutenticacaoProvider } from "../providers/autenticacao/autenticacao";
 import { AngularFireAuth } from "angularfire2/auth";
 import { Subscription } from "rxjs/Subscription";
+import { Events } from "ionic-angular";
 
 @Component({
   templateUrl: "app.html"
 })
 export class MyApp {
   rootPage;
+  static instance: MyApp = null;
   firebaseSubscription: Subscription;
   constructor(
     platform: Platform,
     statusBar: StatusBar,
     splashScreen: SplashScreen,
     ionicStorage: Storage,
-    autenticacao: AutenticacaoProvider,
-    firebase: AngularFireAuth
+    firebase: AngularFireAuth,
+    private events: Events
   ) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
@@ -43,6 +45,19 @@ export class MyApp {
         } else {
           this.rootPage = "OnboardPage";
         }
+      });
+
+      events.subscribe("logout", () => {
+        console.log("APP COMPONENT LOGOUT!");
+        this.rootPage = "LoginPage";
+      });
+      events.subscribe("login", () => {
+        console.log("APP COMPONENT LOGIN!");
+        this.rootPage = "TabsPage";
+      });
+      events.subscribe("criar-conta", () => {
+        console.log("APP COMPONENT CRIAR CONTA!");
+        this.rootPage = "TabsPage";
       });
     });
   }

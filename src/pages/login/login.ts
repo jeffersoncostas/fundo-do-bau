@@ -1,9 +1,10 @@
-import { Component, NgZone } from "@angular/core";
+import { Component } from "@angular/core";
 import {
   IonicPage,
   NavController,
   NavParams,
-  AlertController
+  AlertController,
+  Events
 } from "ionic-angular";
 import { AutenticacaoProvider } from "../../providers/autenticacao/autenticacao";
 import { LoadingsProvider } from "../../providers/loadings/loadings";
@@ -25,7 +26,7 @@ export class LoginPage {
     private alert: AlertController,
     private tratamentoErros: TratamentoErrosProvider,
     private alertProvider: AlertsProvider,
-    private zone: NgZone
+    private events: Events
   ) {}
 
   ionViewDidLoad() {}
@@ -37,13 +38,13 @@ export class LoginPage {
       .then(data => {
         this.loading.loadingPadraoDismiss();
 
-        this.zone.runTask(() => {
-          this.navCtrl.setRoot(
-            "TabsPage",
-            { login: true },
-            { animate: true, direction: "forward" }
-          );
-        });
+        // this.navCtrl.setRoot(
+        //   "TabsPage",
+        //   { login: true },
+        //   { animate: true, direction: "forward" }
+        // );
+
+        this.events.publish("login");
       })
       .catch(e => {
         this.loading.loadingPadraoDismiss();

@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { AutenticacaoProvider } from "../../providers/autenticacao/autenticacao";
 import { DatabaseProvider } from "../../providers/database/database";
-import { popsUp } from "../../animations/animation.animation";
+import { popsUp, entradaPaginas } from "../../animations/animation.animation";
 
 import { Usuario } from "../../models/usuario.model";
 import { Subscription } from "rxjs/Subscription";
@@ -15,9 +15,10 @@ import { LoadingsProvider } from "../../providers/loadings/loadings";
 @Component({
   selector: "page-home",
   templateUrl: "home.html",
-  animations: [popsUp]
+  animations: [popsUp, entradaPaginas]
 })
 export class HomePage {
+  transition: string;
   // dados capturados do firebase
   userData$: Usuario;
   listaDesafiosEmAndamento$: Desafio[];
@@ -48,11 +49,15 @@ export class HomePage {
   ) {
     setInterval(() => {}, 300);
   }
-
-  ionViewDidEnter() {
+  ionViewDidLoad() {
     this.getUser();
     this.getUserLocation();
   }
+  ionViewWillEnter() {
+    this.transition = "entrada";
+    console.log("VAI ENTRAR", this.transition);
+  }
+  ionViewDidEnter() {}
   ngOnChanges() {
     console.log("oi");
 
@@ -91,6 +96,7 @@ export class HomePage {
           "Você precisa ativar o GPS obter a melhor experiência no Fundo do Baú! primeiro erro",
           "error"
         );
+        this.loading.loadingPadraoDismiss();
       });
 
     setTimeout(() => {
@@ -100,6 +106,7 @@ export class HomePage {
           "Você precisa ativar o GPS para você ter a melhor experiência no Fundo do Baú! segundo erro",
           "error"
         );
+        this.loading.loadingPadraoDismiss();
       }
     }, 4000);
   }
@@ -170,7 +177,7 @@ export class HomePage {
       this.subscribeAll().then(e => {
         refresher.complete();
       });
-    }, 800);
+    }, 1000);
   }
   async subscribeAll() {
     this.getUser();
@@ -183,5 +190,9 @@ export class HomePage {
     // this.listaDesafiosSubscription.unsubscribe();
     // this.desafiosEmAndamentoSubscription.unsubscribe();
     navigator.geolocation.clearWatch(this.userLocationSubscription);
+  }
+  ionViewWillLeave() {
+    this.transition = "saida";
+    console.log("VAI SAIR", this.transition);
   }
 }

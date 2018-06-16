@@ -20,12 +20,9 @@ export class RankingPage {
     //this.ranking();
   }
   ionViewWillEnter() {
+    this.listaUsersRanking = [];
     this.ranking();
     this.loading.loadingPadrao("carregando...");
-  }
-
-  ionViewDidLoad() {
-    console.log("ionViewDidLoad RankingPage");
   }
 
   async ranking() {

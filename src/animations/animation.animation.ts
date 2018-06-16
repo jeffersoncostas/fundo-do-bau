@@ -128,6 +128,39 @@ export const entradaParabens = trigger("entradaParabens",[
   ])
 
 ])
+// prettier-ignore
+export const entradaPaginas = trigger("entradaPaginas",[
+  //transition("*=>*",[
+
+
+    transition(":enter", [
+      style({
+        opacity: 0,
+        transform: "scale(1.1)"
+      }),
+      animate(".9s ease", keyframes([
+        style({ opacity: 0, transform: "scale(1.1)", offset: 0 }),
+        style({ opacity: 0.6, transform: "scale(.8,1)", offset: .4 }),
+        style({ opacity: 0.8, transform: "scale(1.1,1)", offset: .7 }),
+        style({ opacity: 1, transform: "scale(1)", offset: 1 }),
+      ]))
+    ]),
+    transition(":leave", [
+      style({
+        opacity: 1,
+        transform: "scale(1)"
+      }),
+      animate(".9s ease", keyframes([
+        style({ opacity: 1, transform: "scale(1)", offset: 0 }),
+        style({ opacity: 0.8, transform: "scale(1.1,1)", offset: .4 }),
+        style({ opacity: 0.6, transform: "scale(.8,1)", offset: .7 }),
+        style({ opacity: 0, transform: "scale(1.1)", offset: 1 })
+      ]))
+    ])
+
+  //])
+
+])
 
 // prettier-ignore
 export const entradaConquista = trigger("entradaConquista",[
